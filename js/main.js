@@ -1,3 +1,8 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener('DOMContentLoaded', () => {
   // Force scroll to top on reload to replay logo animation
   if ('scrollRestoration' in history) {
@@ -129,9 +134,6 @@ function setupScrollAnimations() {
   animatedElements.forEach(el => observer.observe(el));
 }
 
-/**
- * Set up dynamic split hover animations for premium hero
- */
 function setupHeroInteractions() {
   const leftCard = document.querySelector('.selection-card.left-card');
   const rightCard = document.querySelector('.selection-card.right-card');
@@ -140,205 +142,118 @@ function setupHeroInteractions() {
 
   if (leftCard && leftBg && rightBg) {
     leftCard.addEventListener('mouseenter', () => {
-      leftBg.style.opacity = '0.75';
-      rightBg.style.opacity = '0.18';
+      leftBg.classList.add('hover-active');
+      rightBg.classList.add('hover-inactive');
     });
     leftCard.addEventListener('mouseleave', () => {
-      leftBg.style.opacity = '';
-      rightBg.style.opacity = '';
+      leftBg.classList.remove('hover-active');
+      rightBg.classList.remove('hover-inactive');
     });
   }
 
   if (rightCard && leftBg && rightBg) {
     rightCard.addEventListener('mouseenter', () => {
-      rightBg.style.opacity = '0.75';
-      leftBg.style.opacity = '0.18';
+      rightBg.classList.add('hover-active');
+      leftBg.classList.add('hover-inactive');
     });
     rightCard.addEventListener('mouseleave', () => {
-      rightBg.style.opacity = '';
-      leftBg.style.opacity = '';
+      rightBg.classList.remove('hover-active');
+      leftBg.classList.remove('hover-inactive');
     });
   }
 }
 
-/**
- * Set up dynamic logo shrink and direct to navigation placeholder on scroll
- */
 function setupLogoAnimation() {
-  const placeholder = document.querySelector('.logo-placeholder');
-  const animatedLogo = document.querySelector('.animated-scroll-logo');
-  const curtain = document.querySelector('.logo-curtain');
+  const scrollWrapper = document.querySelector('.hero-scroll-wrapper');
+  const premiumHero = document.querySelector('.premium-hero');
+  const brandLogo = document.querySelector('#brand-logo');
+  const measureTarget = document.querySelector('#logo-measure-target');
+  const navSlot = document.querySelector('#nav-logo-slot');
   const heroContent = document.querySelector('.hero-content-wrapper');
+  const leftBg = document.querySelector('.hero-bg-half.left');
+  const rightBg = document.querySelector('.hero-bg-half.right');
+  const scrollDownHint = document.querySelector('.scroll-down-hint');
+  const navContainer = document.querySelector('nav');
+  const navActions = document.querySelector('.nav-actions');
 
-  if (!placeholder || !animatedLogo) return;
+  if (!scrollWrapper || !premiumHero || !brandLogo || !measureTarget || !navSlot) return;
 
-  function updateLogoPosition() {
-    // Get boundary of target placeholder in header navigation
-    const targetRect = placeholder.getBoundingClientRect();
+  // Expose initial transform data
+  let initialTransform = { scale: 1, x: 0, y: 0 };
 
-    // Scroll range to complete the morph transition
-    const scrollThreshold = 800;
-    const progress = Math.min(1, window.scrollY / scrollThreshold);
+  function initializeLogoTransform() {
+    const targetRect = measureTarget.getBoundingClientRect();
+    const slotRect = navSlot.getBoundingClientRect();
 
-    if (curtain) {
-      curtain.style.opacity = (1 - progress).toString();
-      if (progress >= 1) {
-        curtain.style.display = 'none';
-      } else {
-        curtain.style.display = 'block';
-      }
-    }
+    const scale = targetRect.width / slotRect.width;
+    const deltaX = targetRect.left - slotRect.left;
+    const deltaY = targetRect.top - slotRect.top;
 
-    // Initial position: Center of current screen viewport
-    const startX = window.innerWidth / 2;
-    const startY = window.innerHeight / 2;
+    initialTransform = { scale, x: deltaX, y: deltaY };
 
-    // Target position: Center of placeholder in the navbar
-    const targetX = targetRect.left + targetRect.width / 2;
-    const targetY = targetRect.top + targetRect.height / 2;
-
-    // Linearly interpolate positions based on scroll progress
-    const currentX = startX + (targetX - startX) * progress;
-    const currentY = startY + (targetY - startY) * progress;
-
-    // Interpolate scale
-    const isMobile = window.innerWidth < 768;
-    const startScale = isMobile ? 3.0 : 6.0;
-    const targetScale = 1.0;
-    const currentScale = startScale + (targetScale - startScale) * progress;
-
-    // Apply styles to overlay logo
-    animatedLogo.style.left = `${currentX}px`;
-    animatedLogo.style.top = `${currentY}px`;
-    animatedLogo.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
-
-    // Activate links and hover interactions only when settled inside navbar
-    if (progress >= 0.95) {
-      animatedLogo.style.pointerEvents = 'auto';
-    } else {
-      animatedLogo.style.pointerEvents = 'none';
-    }
-
-    // Hero content remains visible and static
+    gsap.set(brandLogo, {
+      x: deltaX,
+      y: deltaY,
+      scale: scale,
+      transformOrigin: "top left"
+    });
   }
 
-  window.addEventListener('scroll', updateLogoPosition);
-  window.addEventListener('resize', updateLogoPosition);
-  
-  // Run on initial load
-  updateLogoPosition();
+  initializeLogoTransform();
 
-  // Scroll Snapping for the morph zone
-  let isSnapping = false;
-  let lockEndTime = 0;
-  let touchStartY = 0;
-
-  window.addEventListener('wheel', (e) => {
-    const scrollY = window.scrollY;
-    const threshold = scrollThreshold;
-    const roundedScrollY = Math.round(scrollY);
-    const now = Date.now();
-
-    // If within the 3-second lock window, block all scrolls
-    if (now < lockEndTime) {
-      e.preventDefault();
-      // Keep viewport locked exactly at threshold
-      if (roundedScrollY !== threshold) {
-        window.scrollTo({ top: threshold });
-      }
-      return;
-    }
-
-    if (roundedScrollY < threshold) {
-      if (e.deltaY > 0 && !isSnapping) {
-        isSnapping = true;
-        window.scrollTo({
-          top: threshold,
-          behavior: 'smooth'
-        });
-        setTimeout(() => {
-          isSnapping = false;
-          lockEndTime = Date.now() + 3000; // Lock for 3 seconds after animation concludes
-        }, 800);
-      } else if (e.deltaY < 0 && !isSnapping && scrollY > 0) {
-        isSnapping = true;
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-        setTimeout(() => { isSnapping = false; }, 800);
-      }
-      e.preventDefault();
-    } else if (roundedScrollY === threshold) {
-      if (e.deltaY < 0 && !isSnapping) {
-        isSnapping = true;
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-        setTimeout(() => { isSnapping = false; }, 800);
-        e.preventDefault();
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: scrollWrapper,
+      start: 'top top',
+      end: '+=1000', 
+      pin: premiumHero,
+      scrub: true,
+      invalidateOnRefresh: true,
+      onRefresh: () => {
+        gsap.set(brandLogo, { clearProps: "all" });
+        initializeLogoTransform();
       }
     }
-  }, { passive: false });
+  });
 
-  window.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
+  // 1. Scroll hint disappears immediately
+  tl.to(scrollDownHint, {
+    opacity: 0,
+    y: 20,
+    duration: 0.1,
+    ease: "none"
+  }, 0);
 
-  window.addEventListener('touchmove', (e) => {
-    const scrollY = window.scrollY;
-    const threshold = scrollThreshold;
-    const roundedScrollY = Math.round(scrollY);
-    const now = Date.now();
+  // 2. Logo Animation Stage 1 (0-25%): Shrink to 65% of huge size
+  tl.to(brandLogo, {
+    x: () => initialTransform.x * 0.65,
+    y: () => initialTransform.y * 0.65,
+    scale: () => initialTransform.scale * 0.65,
+    duration: 0.25,
+    ease: "none"
+  }, 0);
 
-    // If within 3-second lock window, block all touches
-    if (now < lockEndTime) {
-      e.preventDefault();
-      if (roundedScrollY !== threshold) {
-        window.scrollTo({ top: threshold });
-      }
-      return;
-    }
+  // 3. Logo Animation Stage 2 (25-70%): Shrink into navbar slot
+  tl.to(brandLogo, {
+    x: 0,
+    y: 0,
+    scale: 1,
+    duration: 0.45,
+    ease: "none"
+  }, 0.25);
 
-    // Determine if we should intercept the swipe
-    const isSwipingDown = touchStartY < e.touches[0].clientY; // Swiping down = scrolling up
-    const isSwipingUp = touchStartY > e.touches[0].clientY;   // Swiping up = scrolling down
+  // 4. Content Fade In (70-100%): Fade in hero content, backgrounds, and navbar elements
+  tl.to([leftBg, rightBg], {
+    opacity: 0.4,
+    pointerEvents: 'auto',
+    duration: 0.3,
+    ease: "none"
+  }, 0.7);
 
-    let shouldIntercept = false;
-    if (roundedScrollY < threshold) {
-      shouldIntercept = true;
-    } else if (roundedScrollY === threshold && isSwipingDown) {
-      shouldIntercept = true;
-    }
-
-    if (shouldIntercept) {
-      const touchEndY = e.touches[0].clientY;
-      const diffY = touchStartY - touchEndY;
-      
-      if (Math.abs(diffY) > 15) {
-        if (diffY > 0) { // Scrolling down
-          if (roundedScrollY < threshold && !isSnapping) {
-            isSnapping = true;
-            window.scrollTo({
-              top: threshold,
-              behavior: 'smooth'
-            });
-            setTimeout(() => {
-              isSnapping = false;
-              lockEndTime = Date.now() + 3000; // Lock for 3 seconds after animation concludes
-            }, 800);
-          }
-        } else if (diffY < 0 && !isSnapping && scrollY > 0) { // Scrolling up
-          isSnapping = true;
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-          setTimeout(() => { isSnapping = false; }, 800);
-        }
-        e.preventDefault();
-      }
-    }
-  }, { passive: false });
+  tl.to([heroContent, navContainer, navActions], {
+    opacity: 1,
+    pointerEvents: 'auto',
+    duration: 0.3,
+    ease: "none"
+  }, 0.7);
 }

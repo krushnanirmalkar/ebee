@@ -381,22 +381,16 @@
 </head>
 <body class="dark-theme">
 
-  <!-- Opaque Curtain Background overlay -->
-  <div class="logo-curtain"></div>
-
-  <!-- Animated Scroll Logo -->
-  <a href="/" class="animated-scroll-logo">
-    <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img scroll-logo-img" style="height: 44px; width: auto; display: block;">
-  </a>
-
   <!-- HEADER -->
-  <header>
+  <header id="site-header" style="will-change: opacity;">
     <div class="container nav-container">
-      <div class="logo-placeholder select-none pointer-events-none">
-        <div style="width: 120px; height: 44px;"></div>
+      <div id="nav-logo-slot" style="display: flex; align-items: center; width: auto; height: 44px;">
+        <a href="/" id="brand-logo" class="logo" style="display: block; width: 100%;">
+          <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img" style="height: 44px; width: auto; display: block; will-change: transform; transform-origin: top left;">
+        </a>
       </div>
       
-      <nav>
+      <nav style="opacity: 0; pointer-events: none; will-change: opacity;">
         <ul class="nav-links">
           <li class="dropdown">
             <span class="dropdown-trigger">
@@ -462,21 +456,25 @@
     <section class="premium-hero">
     <!-- Hero Background Split -->
     <div class="hero-bg-container">
-      <div class="hero-bg-half left">
-        <div class="hero-bg-img" style="background-image: url('/assets/images/rwa_hero_new.jpg');"></div>
+      <div class="hero-bg-solid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; z-index: 1;"></div>
+      
+      <div class="hero-bg-half left" style="opacity: 0; will-change: opacity;">
+        <div class="hero-bg-img" style="background-image: url('./assets/images/rwa_hero_new.jpg');"></div>
         <div class="hero-bg-overlay"></div>
       </div>
-      <div class="hero-bg-half right">
-        <div class="hero-bg-img" style="background-image: url('/assets/images/developer_hero_new.jpg');"></div>
+      <div class="hero-bg-half right" style="opacity: 0; will-change: opacity;">
+        <div class="hero-bg-img" style="background-image: url('./assets/images/developer_hero_new.jpg');"></div>
         <div class="hero-bg-overlay"></div>
       </div>
-      <!-- Subtle Blue/Purple Neon Lighting Accents -->
-      <div class="neon-glow-left"></div>
-      <div class="neon-glow-right"></div>
     </div>
+    <!-- INVISIBLE TARGET FOR JS MEASUREMENT -->
+    <div id="logo-measure-target" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(300px, 48vw, 700px); height: 0; padding-bottom: calc(clamp(300px, 48vw, 700px) * (553.86 / 841.89)); z-index: 10; pointer-events: none; visibility: hidden;"></div>
+    
+    <div class="scroll-down-hint" style="position: absolute; bottom: 40px; font-family: 'Outfit', sans-serif; font-size: 12px; letter-spacing: 3px; color: rgba(255,255,255,0.4); z-index: 20;">Scroll to explore</div>
 
-    <div class="hero-content-wrapper">
-      <div class="hero-header-text">
+    <div class="hero-content-wrapper" style="opacity: 0; pointer-events: none; z-index: 10; position: relative; will-change: opacity;">
+
+      <div class="hero-header-text" style="animation: none;">
         <h1 class="hero-title">What best describes you?</h1>
       </div>
 
@@ -542,7 +540,7 @@
 
       <!-- Scroll Down Explore Heading -->
       <div class="hero-explore-heading">
-        <h3 class="explore-heading-title">just want to explore about us then scroll down</h3>
+        <h3 class="explore-heading-title">JUST WANT TO EXPLORE ABOUT US THEN SCROLL DOWN</h3>
         <a href="#positioning" class="explore-scroll-arrow-btn" aria-label="Scroll Down">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="explore-arrow-icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
