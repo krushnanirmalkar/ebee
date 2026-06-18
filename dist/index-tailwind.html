@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBEECHARGE | Property EV Charging Infrastructure Ecosystem</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#03050c',
+            brandDarker: '#080d1a',
+            electricIndigo: '#4f46e5',
+            electricViolet: '#7c3aed',
+            electricBlue: '#2563eb',
+            neonBlue: '#3b82f6',
+            mutedGray: '#94a3b8',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Outfit', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Slow panning/zooming keyframes for split background sides */
+    @keyframes panLeft {
+      0% { transform: scale(1.02) translate(0, 0); }
+      100% { transform: scale(1.10) translate(1%, 0.5%); }
+    }
+    @keyframes panRight {
+      0% { transform: scale(1.02) translate(0, 0); }
+      100% { transform: scale(1.11) translate(-1%, -0.5%); }
+    }
+    .animate-pan-left {
+      animation: panLeft 40s ease-in-out infinite alternate;
+    }
+    .animate-pan-right {
+      animation: panRight 45s ease-in-out infinite alternate;
+    }
+
+    /* Staggered card fade-up styles */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-up {
+      animation: fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+  </style>
+</head>
+<body class="bg-[#03050c] text-white font-sans h-full overflow-x-hidden antialiased">
+
+  <!-- Opaque Curtain Background overlay -->
+  <div class="logo-curtain fixed inset-0 bg-[#03050c] z-[9998] transition-opacity duration-100 pointer-events-none"></div>
+
+  <!-- ANIMATED SCROLL LOGO -->
+  <a href="/" class="animated-scroll-logo fixed z-[9999] origin-center select-none pointer-events-none flex flex-col items-center">
+    <span class="font-outfit font-extrabold text-2xl tracking-tight text-white leading-none">ebee</span>
+    <span class="text-[9px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-electricIndigo to-electricBlue uppercase tracking-[0.25em] mt-0.5 ml-0.5">charge</span>
+  </a>
+
+  <!-- HEADER NAVIGATION -->
+  <header id="tailwind-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo Target Placeholder (invisible spacer) -->
+      <div class="logo-placeholder select-none pointer-events-none">
+        <div class="w-20 h-8"></div>
+      </div>
+
+      <!-- Middle Nav Links -->
+      <nav class="hidden md:flex items-center space-x-10">
+        <!-- Solutions Dropdown -->
+        <div class="relative group/menu">
+          <button class="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">
+            Solutions
+            <svg class="ml-1 w-3.5 h-3.5 text-slate-400 group-hover/menu:text-white transition-transform duration-200 group-hover/menu:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown Options -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible transition-all duration-300 transform translate-y-2 group-hover/menu:translate-y-0 z-50">
+            <div class="bg-[#0b0e17]/95 border border-white/10 backdrop-blur-md rounded-xl p-2 shadow-2xl shadow-black/80">
+              <a href="/rwa/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">Housing Societies</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Simplify resident charging and billing.</span>
+              </a>
+              <a href="/commercial-properties/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">Commercial Properties</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Attract office tenants and fleets.</span>
+              </a>
+              <a href="/developers/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">Developers</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Generate revenue and unlock asset yield.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Dropdown -->
+        <div class="relative group/menu">
+          <button class="flex items-center text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">
+            Products
+            <svg class="ml-1 w-3.5 h-3.5 text-slate-400 group-hover/menu:text-white transition-transform duration-200 group-hover/menu:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown Options -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64 opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible transition-all duration-300 transform translate-y-2 group-hover/menu:translate-y-0 z-50">
+            <div class="bg-[#0b0e17]/95 border border-white/10 backdrop-blur-md rounded-xl p-2 shadow-2xl shadow-black/80">
+              <a href="/products/smart-db/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">Smart DB</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Grid-aware smart panel backbone.</span>
+              </a>
+              <a href="/products/movable-charger/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">Movable Charger</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Wheeled dynamic charging nodes.</span>
+              </a>
+              <a href="/products/ebee-dashboard/" class="block px-4 py-3 hover:bg-white/5 rounded-lg transition-colors">
+                <span class="block text-sm font-semibold text-white">EBEE Dashboard</span>
+                <span class="block text-[11px] text-slate-400 mt-0.5">Central power & yield controls.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/about/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">About</a>
+        <a href="/contact/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Contact</a>
+      </nav>
+
+      <!-- Request Demo CTA -->
+      <div class="flex items-center">
+        <a href="/demo/" class="px-5 py-2.5 bg-gradient-to-r from-electricBlue to-electricIndigo hover:from-electricBlue/90 hover:to-electricIndigo/90 text-sm font-semibold rounded-lg shadow-lg shadow-electricBlue/20 hover:shadow-electricBlue/30 hover:scale-[1.02] transition-all duration-200">
+          Request Demo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Scroll Wrapper for Morphing Logo -->
+  <div class="relative w-full h-[calc(100vh+800px)]">
+    <div class="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-center">
+
+      <!-- CINEMATIC SPLIT BACKGROUND LAYERS -->
+      <div class="absolute inset-0 w-full h-full flex overflow-hidden z-0 pointer-events-none">
+        <!-- Left Background Half (Residential) -->
+        <div id="bg-left" class="relative flex-1 h-full opacity-30 transition-all duration-[800ms] ease-out border-r border-white/5">
+          <div class="absolute inset-0 bg-cover bg-center animate-pan-left" style="background-image: url('/assets/rwa_hero_new-CmAR6VJ7.jpg');"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#03050c] via-transparent to-[#03050c]/80"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#03050c] via-transparent to-[#03050c]"></div>
+        </div>
+
+        <!-- Right Background Half (Commercial) -->
+        <div id="bg-right" class="relative flex-1 h-full opacity-30 transition-all duration-[800ms] ease-out">
+          <div class="absolute inset-0 bg-cover bg-center animate-pan-right" style="background-image: url('/assets/developer_hero_new-DsbIr7h5.jpg');"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#03050c] via-transparent to-[#03050c]/80"></div>
+          <div class="absolute inset-0 bg-gradient-to-l from-[#03050c] via-transparent to-[#03050c]"></div>
+        </div>
+
+        <!-- Subtle Blue/Purple Neon Accent Lighting Glows -->
+        <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[60%] bg-gradient-to-tr from-electricIndigo/20 to-transparent rounded-full filter blur-[100px]"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[60%] bg-gradient-to-bl from-electricBlue/15 to-transparent rounded-full filter blur-[100px]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#03050c_95%)]"></div>
+      </div>
+
+  <!-- HERO MAIN CONTENT -->
+  <main class="relative z-10 w-full flex-grow flex flex-col items-center justify-center px-6 pt-16 pb-4">
+    <div class="max-w-6xl w-full mx-auto flex flex-col items-center justify-center text-center">
+      
+      <!-- Typography Header -->
+      <div class="mb-5 max-w-2xl animate-fade-up">
+        <span class="text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-electricViolet to-electricIndigo uppercase tracking-[0.25em] mb-1 block filter drop-shadow-[0_0_12px_rgba(124,58,237,0.3)] font-outfit">
+          CHOOSE YOUR EXPERIENCE
+        </span>
+        <h1 class="text-3xl sm:text-4.5xl lg:text-5xl font-extrabold tracking-tight text-white mb-2 font-outfit leading-tight">
+          What best describes you?
+        </h1>
+      </div>
+
+      <!-- Main Interaction: Glassmorphism Cards -->
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-0 w-full max-w-4xl relative">
+        
+        <!-- Left Card: Housing Society -->
+        <a href="/rwa/" id="card-left" class="group flex-1 w-full max-w-md bg-[#0a0d18]/45 border border-white/10 backdrop-blur-xl rounded-2xl py-6 px-8 text-left transition-all duration-500 hover:scale-[1.01] hover:bg-[#0a0d18]/65 hover:border-electricBlue/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(37,99,235,0.12)] flex flex-col justify-between min-h-[280px] relative overflow-hidden animate-fade-up [animation-delay:150ms]">
+          <!-- Inner Radial Glow -->
+          <div class="absolute inset-0 bg-gradient-to-br from-electricBlue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <!-- Icon -->
+            <div class="w-11 h-11 rounded-full bg-electricBlue/10 border border-electricBlue/30 flex items-center justify-center text-white mb-4 group-hover:scale-105 group-hover:bg-electricBlue/20 transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+            </div>
+            <!-- Title -->
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-1.5 font-outfit">
+              Housing Society
+            </h2>
+            <!-- Description -->
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 flex-grow">
+              Simplify charging for residents. Automate billing and monitor with ease.
+            </p>
+            <!-- CTA Button -->
+            <div class="w-9 h-9 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white group-hover:bg-electricBlue group-hover:border-electricBlue group-hover:shadow-[0_0_15px_rgba(37,99,235,0.6)] group-hover:scale-105 transition-all duration-300 mt-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Glowing Divider and OR Badge -->
+        <div class="flex lg:flex-col items-center justify-center relative w-full lg:w-16 h-10 lg:h-72 z-20">
+          <div class="w-full lg:w-[1px] h-[1px] lg:h-full bg-gradient-to-r lg:bg-gradient-to-b from-transparent via-electricIndigo/60 to-transparent shadow-[0_0_6px_rgba(79,70,229,0.3)] animate-pulse"></div>
+          <div class="absolute w-8 h-8 rounded-full bg-[#080d1a] border border-white/10 flex items-center justify-center text-[9px] font-extrabold text-indigo-300 tracking-wider shadow-lg shadow-black">
+            OR
+          </div>
+        </div>
+
+        <!-- Right Card: Developer / Commercial -->
+        <a href="/developers/" id="card-right" class="group flex-1 w-full max-w-md bg-[#0a0d18]/45 border border-white/10 backdrop-blur-xl rounded-2xl py-6 px-8 text-left transition-all duration-500 hover:scale-[1.01] hover:bg-[#0a0d18]/65 hover:border-electricIndigo/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(124,58,237,0.12)] flex flex-col justify-between min-h-[280px] relative overflow-hidden animate-fade-up [animation-delay:250ms]">
+          <!-- Inner Radial Glow -->
+          <div class="absolute inset-0 bg-gradient-to-br from-electricViolet/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          
+          <div class="relative z-10 flex flex-col h-full justify-between">
+            <!-- Icon -->
+            <div class="w-11 h-11 rounded-full bg-electricIndigo/10 border border-electricIndigo/30 flex items-center justify-center text-white mb-4 group-hover:scale-105 group-hover:bg-electricIndigo/20 transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 16.5h1.5m3 0H15M6 21v-3.75c0-.621.504-1.125 1.125-1.125h9.75c.621 0 1.125.504 1.125 1.125V21" />
+              </svg>
+            </div>
+            <!-- Title -->
+            <h2 class="text-2xl font-bold tracking-tight text-white mb-1.5 font-outfit whitespace-pre-line leading-none">Developer /
+Commercial</h2>
+            <!-- Description -->
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-5 flex-grow">
+              Unlock new revenue streams and build future-ready infrastructure.
+            </p>
+            <!-- CTA Button -->
+            <div class="w-9 h-9 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white group-hover:bg-electricIndigo group-hover:border-electricIndigo group-hover:shadow-[0_0_15px_rgba(124,58,237,0.6)] group-hover:scale-105 transition-all duration-300 mt-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Scroll Down Explore Heading -->
+      <div class="mt-10 flex flex-col items-center animate-fade-up [animation-delay:350ms] z-10">
+        <h3 class="text-sm sm:text-base font-bold tracking-[0.2em] text-slate-400 font-outfit uppercase">
+          just want to explore about us then scroll down
+        </h3>
+        <a href="#positioning" class="mt-4 flex items-center justify-center w-11 h-11 rounded-full border border-electricBlue/30 bg-electricBlue/5 text-electricBlue hover:bg-electricBlue hover:text-white hover:border-electricBlue hover:shadow-[0_0_20px_rgba(37,99,235,0.7)] hover:scale-110 transition-all duration-300 group" aria-label="Scroll Down">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 animate-bounce group-hover:translate-y-0.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+    </div>
+  </div>
+
+
+
+  <!-- DYNAMIC INTERACTION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Force scroll to top on reload to replay logo animation
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+
+      // Header Scroll Background Toggle
+      const tailwindHeader = document.getElementById('tailwind-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          tailwindHeader.classList.add('bg-[#0b0e17]/85', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        } else {
+          tailwindHeader.classList.remove('bg-[#0b0e17]/85', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        }
+      });
+
+      // 1. Card Hover Effects
+      const cardLeft = document.getElementById('card-left');
+      const cardRight = document.getElementById('card-right');
+      const bgLeft = document.getElementById('bg-left');
+      const bgRight = document.getElementById('bg-right');
+
+      if (cardLeft && bgLeft && bgRight) {
+        cardLeft.addEventListener('mouseenter', () => {
+          bgLeft.style.opacity = '0.7';
+          bgRight.style.opacity = '0.15';
+        });
+        cardLeft.addEventListener('mouseleave', () => {
+          bgLeft.style.opacity = '0.3';
+          bgRight.style.opacity = '0.3';
+        });
+      }
+
+      if (cardRight && bgLeft && bgRight) {
+        cardRight.addEventListener('mouseenter', () => {
+          bgRight.style.opacity = '0.7';
+          bgLeft.style.opacity = '0.15';
+        });
+        cardRight.addEventListener('mouseleave', () => {
+          bgRight.style.opacity = '0.3';
+          bgLeft.style.opacity = '0.3';
+        });
+      }
+
+      // 2. Animated Scroll Logo morphing to navbar slot on scroll
+      const placeholder = document.querySelector('.logo-placeholder');
+      const animatedLogo = document.querySelector('.animated-scroll-logo');
+      const curtain = document.querySelector('.logo-curtain');
+      const heroContent = document.querySelector('main');
+
+      function updateLogoPosition() {
+        if (!placeholder || !animatedLogo) return;
+
+        // Bounding rect for target location in fixed header
+        const targetRect = placeholder.getBoundingClientRect();
+
+        // Calculate scroll threshold (e.g. 800px of scroll to complete the morph)
+        const scrollThreshold = 800;
+        const progress = Math.min(1, window.scrollY / scrollThreshold);
+
+        if (curtain) {
+          curtain.style.opacity = (1 - progress).toString();
+          if (progress >= 1) {
+            curtain.style.display = 'none';
+          } else {
+            curtain.style.display = 'block';
+          }
+        }
+
+        // Source position (center of current viewport)
+        const startX = window.innerWidth / 2;
+        const startY = window.innerHeight / 2;
+
+        // Target position (center of navigation placeholder)
+        const targetX = targetRect.left + targetRect.width / 2;
+        const targetY = targetRect.top + targetRect.height / 2;
+
+        // Interpolated coordinates
+        const currentX = startX + (targetX - startX) * progress;
+        const currentY = startY + (targetY - startY) * progress;
+
+        // Interpolated scale
+        const isMobile = window.innerWidth < 768;
+        const startScale = isMobile ? 3.0 : 6.0;
+        const targetScale = 1.0;
+        const currentScale = startScale + (targetScale - startScale) * progress;
+
+        // Apply transformations
+        animatedLogo.style.left = `${currentX}px`;
+        animatedLogo.style.top = `${currentY}px`;
+        animatedLogo.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
+
+        // Toggle clickability based on morph status
+        if (progress >= 0.95) {
+          animatedLogo.classList.remove('pointer-events-none');
+        } else {
+          animatedLogo.classList.add('pointer-events-none');
+        }
+
+        // Hero content remains visible and static
+      }
+
+      window.addEventListener('scroll', updateLogoPosition);
+      window.addEventListener('resize', updateLogoPosition);
+      
+      // Initialize immediately on load
+      updateLogoPosition();
+
+      // Scroll Snapping for the morph zone
+      let isSnapping = false;
+      let lockEndTime = 0;
+      let touchStartY = 0;
+
+      window.addEventListener('wheel', (e) => {
+        const scrollY = window.scrollY;
+        const threshold = scrollThreshold;
+        const roundedScrollY = Math.round(scrollY);
+        const now = Date.now();
+
+        // If within the 3-second lock window, block all scrolls
+        if (now < lockEndTime) {
+          e.preventDefault();
+          // Keep viewport locked exactly at threshold
+          if (roundedScrollY !== threshold) {
+            window.scrollTo({ top: threshold });
+          }
+          return;
+        }
+
+        if (roundedScrollY < threshold) {
+          if (e.deltaY > 0 && !isSnapping) {
+            isSnapping = true;
+            window.scrollTo({
+              top: threshold,
+              behavior: 'smooth'
+            });
+            setTimeout(() => {
+              isSnapping = false;
+              lockEndTime = Date.now() + 3000; // Lock for 3 seconds after animation concludes
+            }, 800);
+          } else if (e.deltaY < 0 && !isSnapping && scrollY > 0) {
+            isSnapping = true;
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            setTimeout(() => { isSnapping = false; }, 800);
+          }
+          e.preventDefault();
+        } else if (roundedScrollY === threshold) {
+          if (e.deltaY < 0 && !isSnapping) {
+            isSnapping = true;
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            setTimeout(() => { isSnapping = false; }, 800);
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+
+      window.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        const scrollY = window.scrollY;
+        const threshold = scrollThreshold;
+        const roundedScrollY = Math.round(scrollY);
+        const now = Date.now();
+
+        // If within 3-second lock window, block all touches
+        if (now < lockEndTime) {
+          e.preventDefault();
+          if (roundedScrollY !== threshold) {
+            window.scrollTo({ top: threshold });
+          }
+          return;
+        }
+
+        // Determine if we should intercept the swipe
+        const isSwipingDown = touchStartY < e.touches[0].clientY; // Swiping down = scrolling up
+        const isSwipingUp = touchStartY > e.touches[0].clientY;   // Swiping up = scrolling down
+
+        let shouldIntercept = false;
+        if (roundedScrollY < threshold) {
+          shouldIntercept = true;
+        } else if (roundedScrollY === threshold && isSwipingDown) {
+          shouldIntercept = true;
+        }
+
+        if (shouldIntercept) {
+          const touchEndY = e.touches[0].clientY;
+          const diffY = touchStartY - touchEndY;
+          
+          if (Math.abs(diffY) > 15) {
+            if (diffY > 0) { // Scrolling down
+              if (roundedScrollY < threshold && !isSnapping) {
+                isSnapping = true;
+                window.scrollTo({
+                  top: threshold,
+                  behavior: 'smooth'
+                });
+                setTimeout(() => {
+                  isSnapping = false;
+                  lockEndTime = Date.now() + 3000; // Lock for 3 seconds after animation concludes
+                }, 800);
+              }
+            } else if (diffY < 0 && !isSnapping && scrollY > 0) { // Scrolling up
+              isSnapping = true;
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
+              setTimeout(() => { isSnapping = false; }, 800);
+            }
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+    });
+  </script>
+</body>
+</html>

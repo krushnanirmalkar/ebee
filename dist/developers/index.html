@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Metadata -->
+  <title>Commercial Developers EV Infrastructure Solutions | EBEECHARGE</title>
+  <meta name="description" content="Generate high-yield revenue from your parking spaces. Deploy the EBEECHARGE commercial EV ecosystem with load-balanced Smart DB and Movable Chargers.">
+  <link rel="canonical" href="http://localhost:5173/developers/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Commercial Developers EV Infrastructure Solutions | EBEECHARGE">
+  <meta property="og:description" content="Turn EV charging into a profitable amenity. High-fidelity analytics, revenue-sharing, and interactive yield calculators.">
+  <meta property="og:image" content="/assets/developer_hero-RyOc8dtL.png">
+  <meta property="og:url" content="http://localhost:5173/developers/">
+  
+  <!-- Stylesheet -->
+
+  <style>
+    /* Styling for Developers Chapter Layout */
+    .chapter-section {
+      padding: 120px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+    
+    .chapter-section:last-of-type {
+      border-bottom: none;
+    }
+    
+    .chapter-num-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(91, 95, 239, 0.08);
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .sec-dark .chapter-num-badge {
+      color: var(--accent);
+      background: rgba(182, 185, 255, 0.08);
+    }
+    
+    .chapter-title-text {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    /* Chapter 2 Missing assets list */
+    .missing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+      margin-top: 4rem;
+    }
+    
+    .missing-card {
+      background: var(--bg-light);
+      border-left: 3px solid #ef4444;
+      padding: 2.5rem 2rem;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    }
+    
+    .missing-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+    
+    .missing-desc {
+      font-size: 0.95rem;
+      color: var(--text-dark-muted);
+      line-height: 1.6;
+    }
+    
+    /* Chapter 3 ecosystem elements */
+    .comm-eco-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+    
+    .comm-eco-card {
+      background: var(--bg-light);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: var(--border-radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: left;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+      transition: all var(--transition-fast);
+    }
+    
+    .comm-eco-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(91,95,239,0.08);
+      border-color: rgba(91,95,239,0.2);
+    }
+    
+    .comm-eco-icon {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: flex;
+    }
+    
+    .comm-eco-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    
+    .comm-eco-desc {
+      font-size: 0.95rem;
+      color: var(--text-dark-muted);
+      line-height: 1.6;
+    }
+    
+    /* Chapter 4 flowchart */
+    .flow-journey-container {
+      position: relative;
+      margin-top: 4rem;
+    }
+    
+    .journey-timeline-line {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(91, 95, 239, 0.15);
+      z-index: 1;
+    }
+    
+    .journey-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .journey-step-node {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .journey-step-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 20px rgba(91,95,239,0.06);
+    }
+    
+    .journey-step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .journey-step-desc {
+      font-size: 0.9rem;
+      color: var(--text-dark-muted);
+      line-height: 1.5;
+    }
+    
+    /* Chapter 7 values grid */
+    .val-enh-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+      margin-top: 4rem;
+    }
+    
+    .val-enh-card {
+      border-top: 1px solid rgba(15,23,42,0.08);
+      padding-top: 2rem;
+      text-align: left;
+    }
+    
+    .val-enh-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    .val-enh-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    
+    .val-enh-desc {
+      font-size: 0.95rem;
+      color: var(--text-dark-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .missing-grid, .comm-eco-grid, .val-enh-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .journey-timeline-line {
+        display: none;
+      }
+      .journey-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .journey-step-node {
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      .journey-step-circle {
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/developers-N6qslPS9.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-_i0P86pG.js">
+  <link rel="modulepreload" crossorigin href="/assets/dashboard-mockup-BgsI9KFM.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-CYZpMGBQ.css">
+</head>
+<body class="dark-theme">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <img src="/assets/logo-Bb8I47uc.svg" alt="EBEECHARGE" class="logo-img">
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Solutions
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/rwa/" class="dropdown-item">
+                <div class="dropdown-title">Housing Societies</div>
+                <div class="dropdown-desc">Simplify resident charging and billing.</div>
+              </a>
+              <a href="/commercial-properties/" class="dropdown-item">
+                <div class="dropdown-title">Commercial Properties</div>
+                <div class="dropdown-desc">Attract tenants and support office park fleets.</div>
+              </a>
+              <a href="/developers/" class="dropdown-item">
+                <div class="dropdown-title">Developers</div>
+                <div class="dropdown-desc">Generate revenue and unlock asset value.</div>
+              </a>
+              <a href="/public-infrastructure/" class="dropdown-item">
+                <div class="dropdown-title">Public Infrastructure</div>
+                <div class="dropdown-desc">Scale transit hubs and highway depots.</div>
+              </a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Products
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/products/smart-db/" class="dropdown-item">
+                <div class="dropdown-title">Smart DB</div>
+                <div class="dropdown-desc">The Foundation: Grid-aware balancing.</div>
+              </a>
+              <a href="/products/movable-charger/" class="dropdown-item">
+                <div class="dropdown-title">Movable Charger</div>
+                <div class="dropdown-desc">The Flexibility Layer: Wheeled charging nodes.</div>
+              </a>
+              <a href="/products/ebee-dashboard/" class="dropdown-item">
+                <div class="dropdown-title">EBEE Dashboard</div>
+                <div class="dropdown-desc">The Intelligence Layer: Central controls.</div>
+              </a>
+            </div>
+          </li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/demo/" class="btn btn-primary" style="padding: 0.5rem 1.25rem; border: none;">Request Demo</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Deep Navy Contrast) -->
+  <section class="hero hero-dark sec-dark" style="height: 85vh; min-height: 600px;">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-glow" style="top: 35%; left: 20%;"></div>
+    
+    <div class="container split-story">
+      <div class="story-details">
+        <span class="section-subtitle">Solutions for Developers</span>
+        <h1>Unlock yield revenue from EV infrastructure.</h1>
+        <p class="hero-subheadline" style="color: var(--text-light-muted); margin-bottom: 3rem; margin-top: 1.5rem;">
+          Turn parking spaces into high-earning assets. EBEECHARGE handles the complete planning, dynamic balancing, and revenue split distribution.
+        </p>
+        <a href="/demo/?type=developer" class="btn btn-primary">Request Revenue Proposal →</a>
+      </div>
+      
+      <div class="story-visual" style="box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+        <img src="/assets/developer_hero-RyOc8dtL.png" alt="Premium commercial property with integrated EV charging slots">
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1: Property Expectation (Warm White) -->
+  <section class="chapter-section sec-light">
+    <div class="container split-story">
+      <div class="story-details">
+        <span class="chapter-num-badge">Chapter 01</span>
+        <h2 class="chapter-title-text" style="color: var(--text-dark);">A Mandatory Asset Class.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1.5rem;">
+          EV charging infrastructure is no longer a luxury addition. It is rapidly becoming a key tenant demand and buyer expectation. High-spending shoppers, premium office park lessees, and high-yield buyers prioritize properties that supply robust, reliable charging networks.
+        </p>
+      </div>
+      <div class="story-visual">
+        <img src="/assets/developer_hero-RyOc8dtL.png" alt="Premium commercial building parking layout">
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2: What Developers are Missing (Warm White) -->
+  <section class="chapter-section sec-light" style="background-color: rgba(182, 185, 255, 0.04);">
+    <div class="container text-center">
+      <span class="chapter-num-badge">Chapter 02</span>
+      <h2 class="chapter-title-text" style="color: var(--text-dark); max-width: 700px; margin: 0 auto;">Unrealized Asset Potential</h2>
+      
+      <div class="missing-grid">
+        <div class="missing-card">
+          <h3 class="missing-title">Unused Parking Assets</h3>
+          <p class="missing-desc">Valuable basement and open parking bays sitting idle, producing zero additional returns while EV motorists actively seek charged locations.</p>
+        </div>
+        <div class="missing-card" style="border-left-color: #f59e0b;">
+          <h3 class="missing-title">No charging monetization</h3>
+          <p class="missing-desc">Properties offering basic, unmetered plugs are missing out on dynamic markup collections and dynamic session margins during peak hours.</p>
+        </div>
+        <div class="missing-card" style="border-left-color: #3b82f6;">
+          <h3 class="missing-title">No EV Strategy</h3>
+          <p class="missing-desc">Lack of grid assessment loops leads to random socket additions that overload local building main meters and waste capital budgets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3: The EBEE Commercial Ecosystem (Warm White) -->
+  <section class="chapter-section sec-light">
+    <div class="container text-center">
+      <span class="chapter-num-badge">Chapter 03</span>
+      <h2 class="chapter-title-text" style="color: var(--text-dark); max-width: 700px; margin: 0 auto 1.5rem;">The EBEE Commercial Ecosystem</h2>
+      <p style="max-width: 600px; margin: 0 auto 3rem; color: var(--text-dark-muted);">Our integrated commercial elements automate planning, power routing, and transaction splits.</p>
+
+      <div class="comm-eco-grid">
+        <div class="comm-eco-card">
+          <div class="comm-eco-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+          <h3 class="comm-eco-title">Smart DB Panel</h3>
+          <p class="comm-eco-desc">Grid protection foundation. Limits overall current draws when building retail demands peak, saving grid caps.</p>
+        </div>
+        <div class="comm-eco-card">
+          <div class="comm-eco-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="comm-eco-title">Movable Charger</h3>
+          <p class="comm-eco-desc">Wheeled flagship units. Rolled sequentially to parked cars by valet, avoiding space bottlenecks and grid capacity CapEx.</p>
+        </div>
+        <div class="comm-eco-card">
+          <div class="comm-eco-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3 class="comm-eco-title">EBEE Dashboard</h3>
+          <p class="comm-eco-desc">Corporate dashboard console. Tracks multi-site sessions, sets weekend markup multipliers, and triggers automated payouts.</p>
+        </div>
+        <div class="comm-eco-card">
+          <div class="comm-eco-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+          </div>
+          <h3 class="comm-eco-title">Queue Management</h3>
+          <p class="comm-eco-desc">Digital queue tracking software coordinates valet tasks, matching vehicle states to charging priority lists automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4: How Revenue Flows (Warm White with Soft Accent) -->
+  <section class="chapter-section sec-light" style="background-color: rgba(91, 95, 239, 0.03);">
+    <div class="container text-center">
+      <span class="chapter-num-badge">Chapter 04</span>
+      <h2 class="chapter-title-text" style="color: var(--text-dark); max-width: 700px; margin: 0 auto 1.5rem;">How Revenue Flows</h2>
+      <p style="max-width: 600px; margin: 0 auto 4rem; color: var(--text-dark-muted);">A fully automated payment split model requires zero operational oversight from landlords.</p>
+
+      <div class="flow-journey-container" style="margin-bottom: 5rem;">
+        <div class="journey-timeline-line"></div>
+        <div class="journey-steps-grid">
+          
+          <div class="journey-step-node">
+            <div class="journey-step-circle">01</div>
+            <h3 class="journey-step-title">Driver Arrives</h3>
+            <p class="journey-step-desc">Driver parks EV in the designated charging space.</p>
+          </div>
+
+          <div class="journey-step-node">
+            <div class="journey-step-circle">02</div>
+            <h3 class="journey-step-title">Session Starts</h3>
+            <p class="journey-step-desc">Driver scans QR and pays standard rate to initiate charging.</p>
+          </div>
+
+          <div class="journey-step-node">
+            <div class="journey-step-circle">03</div>
+            <h3 class="journey-step-title">Payment Collected</h3>
+            <p class="journey-step-desc">EBEE secure gateway gathers card/UPI funds instantly.</p>
+          </div>
+
+          <div class="journey-step-node">
+            <div class="journey-step-circle">04</div>
+            <h3 class="journey-step-title">Revenue Split</h3>
+            <p class="journey-step-desc">Gateway distributes split payout automatically on predefined margins.</p>
+          </div>
+
+          <div class="journey-step-node">
+            <div class="journey-step-circle">05</div>
+            <h3 class="journey-step-title">Developer Earns</h3>
+            <p class="journey-step-desc">Net profits route directly to the developer's bank statement ledger.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Animated SVG flow -->
+      <div class="flow-diagram-wrapper">
+        <svg class="flow-svg" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="100" x2="720" y2="100" stroke="rgba(15, 23, 42, 0.04)" stroke-width="1" />
+          
+          <path d="M 50 100 L 250 100" stroke="#5B5FEF" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M 50 100 L 250 100" stroke="#B6B9FF" stroke-width="3" stroke-dasharray="8 15" class="flow-path" stroke-linecap="round" fill="none" />
+          
+          <path d="M 250 100 C 350 100, 350 50, 450 50 L 620 50" stroke="#5B5FEF" stroke-width="3" stroke-linecap="round" fill="none" />
+          <path d="M 250 100 C 350 100, 350 50, 450 50 L 620 50" stroke="#B6B9FF" stroke-width="3" stroke-dasharray="8 15" class="flow-path" stroke-linecap="round" fill="none" />
+          
+          <path d="M 250 100 C 350 100, 350 150, 450 150 L 620 150" stroke="rgba(19, 23, 34, 0.15)" stroke-width="2" stroke-linecap="round" fill="none" />
+          <path d="M 250 100 C 350 100, 350 150, 450 150 L 620 150" stroke="#B6B9FF" stroke-width="2" stroke-dasharray="6 12" class="flow-path" stroke-linecap="round" fill="none" />
+          
+          <circle cx="50" cy="100" r="7" fill="#5B5FEF" />
+          <circle cx="250" cy="100" r="9" fill="#5B5FEF" />
+          <circle cx="620" cy="50" r="9" fill="#22C55E" />
+          <circle cx="620" cy="150" r="7" fill="#131722" />
+          
+          <text x="50" y="75" text-anchor="middle" class="flow-label" font-size="12">Driver Session Payment</text>
+          <text x="250" y="75" text-anchor="middle" class="flow-label" font-size="12">EBEE Split Engine</text>
+          <text x="635" y="54" text-anchor="left" class="flow-label" font-size="12" font-weight="700" style="fill: #22C55E;">Developer Ledger Payout (70%)</text>
+          <text x="635" y="154" text-anchor="left" class="flow-label" font-size="12" style="fill: var(--text-dark-muted);">EBEE Service split (30%)</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5: Movable Charger - Flagship (Deep Navy Contrast) -->
+  <section class="chapter-section sec-dark" style="padding-top: 140px; padding-bottom: 140px;">
+    <div class="container split-story">
+      <div class="story-details" style="max-width: 480px;">
+        <span class="chapter-num-badge">Chapter 05</span>
+        <h2 class="chapter-title-text" style="color: var(--text-light); margin-bottom: 1.5rem;">Flagship Innovation:<br>Movable Charger</h2>
+        <p class="subheadline" style="color: var(--text-light-muted); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.7;">
+          Our wheeled charging gear is the ultimate asset optimization layer. Instead of trenching cables and blocking premium slots with stationary chargers, valets move the Movable Charger dynamically, increasing daily session throughput by 3x on the same power footprint.
+        </p>
+        <div style="display: flex; gap: 2rem;">
+          <a href="/products/movable-charger/" class="btn btn-primary">See Mobility Tech Details</a>
+        </div>
+      </div>
+      <div class="story-visual" style="box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+        <img src="/assets/movable_charger-CZkOemFY.png" alt="EBEE Movable Charger on wheels flagship unit">
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6: Commercial Analytics (Deep Navy Contrast) -->
+  <section class="chapter-section sec-dark" style="border-top: 1px solid rgba(248, 250, 252, 0.05);">
+    <div class="container">
+      <div class="text-center max-w-800" style="margin-bottom: 5rem;">
+        <span class="chapter-num-badge">Chapter 06</span>
+        <h2 class="chapter-title-text" style="color: var(--text-light); margin-bottom: 1.5rem;">Commercial Analytics</h2>
+        <p class="subheadline" style="color: var(--text-light-muted);">
+          Track returns on investment, monitor peak occupancy hours, and manage tariffs across multiple locations from one centralized dashboard.
+        </p>
+      </div>
+
+      <div class="dashboard-mockup" style="width: 100%; margin-top: 0;">
+        <div class="db-chrome">
+          <div class="db-dots">
+            <span class="db-dot db-dot-red"></span>
+            <span class="db-dot db-dot-yellow"></span>
+            <span class="db-dot db-dot-green"></span>
+          </div>
+          <div class="db-url">console.ebeecharge.com/developer/dashboard</div>
+        </div>
+        
+        <div class="db-layout">
+          <div class="db-sidebar">
+            <div class="db-logo">EBEE Corp</div>
+            <div class="db-nav-item active" data-tab="overview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Portfolio Overview
+            </div>
+            <div class="db-nav-item" data-tab="sessions">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Live Chargers
+            </div>
+            <div class="db-nav-item" data-tab="billing">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+              Payout Logs
+            </div>
+          </div>
+          
+          <div class="db-content">
+            <div class="db-header-row">
+              <h3 class="db-title">Portfolio Yield Console</h3>
+              <div class="db-user-pill">
+                <span style="width: 8px; height: 8px; border-radius:50%; background-color:#22C55E;"></span>
+                Payouts Settled
+              </div>
+            </div>
+            
+            <div class="db-metrics">
+              <div class="db-metric-card">
+                <div class="db-metric-label">Total Net Revenue</div>
+                <div class="db-metric-val">₹4,82,600</div>
+                <div class="db-metric-change">
+                  +18.2% MoM
+                </div>
+              </div>
+              <div class="db-metric-card">
+                <div class="db-metric-label">Charger Utilization</div>
+                <div class="db-metric-val">64% Avg</div>
+                <div class="db-metric-change">
+                  Peak hours: 1 PM - 8 PM
+                </div>
+              </div>
+              <div class="db-metric-card">
+                <div class="db-metric-label">Active Terminals</div>
+                <div class="db-metric-val">15 Units</div>
+                <div class="db-metric-change">
+                  No fault flags reported
+                </div>
+              </div>
+            </div>
+            
+            <div class="db-chart-placeholder">
+              <div class="db-chart-bar" style="height: 15%;"></div>
+              <div class="db-chart-bar" style="height: 20%;"></div>
+              <div class="db-chart-bar" style="height: 25%;"></div>
+              <div class="db-chart-bar" style="height: 40%;"></div>
+              <div class="db-chart-bar" style="height: 60%;"></div>
+              <div class="db-chart-bar" style="height: 70%;"></div>
+              <div class="db-chart-bar db-chart-bar-active" style="height: 85%;"></div>
+              <div class="db-chart-bar db-chart-bar-active" style="height: 90%;"></div>
+              <div class="db-chart-bar db-chart-bar-active" style="height: 75%;"></div>
+              <div class="db-chart-bar" style="height: 50%;"></div>
+              <div class="db-chart-bar" style="height: 40%;"></div>
+              <div class="db-chart-bar" style="height: 30%;"></div>
+            </div>
+            
+            <div class="db-table-card">
+              <table class="db-table">
+                <thead>
+                  <tr>
+                    <th>Terminal ID</th>
+                    <th>Property Name</th>
+                    <th>Sessions Today</th>
+                    <th>Revenue Today</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DEV-MALL-01</td>
+                    <td>Nexus Mall (West Wing)</td>
+                    <td>42 Sessions</td>
+                    <td>₹14,700.00</td>
+                    <td><span class="db-status-pill db-status-success">Online</span></td>
+                  </tr>
+                  <tr>
+                    <td>DEV-OFFICE-03</td>
+                    <td>Techpark Block C</td>
+                    <td>28 Sessions</td>
+                    <td>₹9,800.00</td>
+                    <td><span class="db-status-pill db-status-success">Online</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator Section (Inside chapter 6 context) -->
+  <section class="sec-light" style="padding-top: 100px; padding-bottom: 100px; border-bottom: 1px solid rgba(15,23,42,0.06);">
+    <div class="container">
+      <div class="text-center max-w-600">
+        <h2>Estimate your property returns.</h2>
+        <p>Adjust variables below to estimate dynamic payout timelines based on a standard 30% net margin split model.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calculator-layout">
+          <!-- Inputs -->
+          <div class="calc-inputs">
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Number of Chargers Deployed</span>
+                <span class="calc-val-display" id="calc-chargers-val">5</span>
+              </div>
+              <input type="range" class="calc-slider" id="calc-chargers" min="1" max="50" value="5">
+            </div>
+
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Average Daily Sessions (per charger)</span>
+                <span class="calc-val-display" id="calc-sessions-val">4</span>
+              </div>
+              <input type="range" class="calc-slider" id="calc-sessions" min="1" max="15" value="4">
+            </div>
+
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Average Session Value (INR)</span>
+                <span class="calc-val-display" id="calc-value-val">₹350</span>
+              </div>
+              <input type="range" class="calc-slider" id="calc-value" min="100" max="1000" step="50" value="350">
+            </div>
+            
+            <p class="calc-disclaimer">Estimates based on typical usage patterns and a 30% net margin split structure. Actual results may vary depending on local tariff rates and grid limits.</p>
+          </div>
+
+          <!-- Outputs -->
+          <div class="calc-outputs">
+            <div class="calc-out-item">
+              <div class="calc-out-label">Estimated Monthly profit</div>
+              <div class="calc-out-val" id="calc-monthly-rev">₹63,000</div>
+            </div>
+            <div class="calc-out-item">
+              <div class="calc-out-label">Estimated Annual profit</div>
+              <div class="calc-out-val" id="calc-annual-rev">₹7,56,000</div>
+            </div>
+            <div class="calc-out-item">
+              <div class="calc-out-label">Estimated ROI timeline</div>
+              <div class="calc-out-val" id="calc-roi-timeline" style="color: var(--accent);">6 Months</div>
+            </div>
+            <a href="/demo/?type=developer" class="btn btn-white" style="margin-top: 1.5rem; width: 100%;">Get Custom Revenue Proposal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 7: Property Value Enhancement (Warm White) -->
+  <section class="chapter-section sec-light">
+    <div class="container text-center">
+      <span class="chapter-num-badge">Chapter 07</span>
+      <h2 class="chapter-title-text" style="color: var(--text-dark); max-width: 800px; margin: 0 auto 1.5rem;">Property Value Enhancement</h2>
+      <p style="max-width: 600px; margin: 0 auto 3rem; color: var(--text-dark-muted);">A future-ready development commands higher premiums, attracts top-tier tenants, and secures long-term values.</p>
+
+      <div class="val-enh-grid">
+        <div class="val-enh-card">
+          <span class="val-enh-num">01</span>
+          <h3 class="val-enh-title">Attract High-Value Occupiers</h3>
+          <p class="val-enh-desc">EV owners represent a premium consumer demographic. Providing reliable charging boosts footfalls at retail locations and draws top office park lessees.</p>
+        </div>
+        <div class="val-enh-card">
+          <span class="val-enh-num">02</span>
+          <h3 class="val-enh-title">Future-Ready Yields</h3>
+          <p class="val-enh-desc">Avoid expensive structural retrofit CapEx in the future. Integrating load-balanced systems during build cycles secures asset adaptability.</p>
+        </div>
+        <div class="val-enh-card">
+          <span class="val-enh-num">03</span>
+          <h3 class="val-enh-title">Green Rating Compliance</h3>
+          <p class="val-enh-desc">Improve your property portfolio sustainability metrics, earning gold and platinum LEED environmental compliance classifications.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 6rem; background: var(--bg-dark); padding: 5rem 4rem; border-radius: var(--border-radius-lg); color: var(--text-light); text-align: left;" class="split-story">
+        <div>
+          <h3 style="color: var(--text-light); font-size: 2rem; margin-bottom: 1rem;">Let's model your property returns.</h3>
+          <p style="color: var(--text-light-muted); margin-bottom: 0;">Our parking consultants will prepare a capacity mapping report and custom financial split model for your asset.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-end;">
+          <a href="/demo/?type=developer" class="btn btn-primary" style="width: 100%; text-align: center;">Get Proposal Consultation</a>
+          <p style="font-size: 0.8rem; color: var(--text-light-muted); margin-bottom: 0; text-align: right;">30-minute overview. We supply calculations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="margin-bottom: 1rem;">
+            <img src="/assets/logo-Bb8I47uc.svg" alt="EBEECHARGE" class="logo-img">
+          </a>
+          <p>End-to-end, intelligent charging ecosystem designed around your residential and commercial properties.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/rwa/">Housing Societies</a></li>
+            <li><a href="/commercial-properties/">Commercial Properties</a></li>
+            <li><a href="/developers/">Developers</a></li>
+            <li><a href="/public-infrastructure/">Public Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/smart-db/">Smart DB</a></li>
+            <li><a href="/products/movable-charger/">Movable Charger</a></li>
+            <li><a href="/products/ebee-dashboard/">EBEE Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">sales@ebeecharge.com</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">+91-98765-43210</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">Mumbai, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 EBEECHARGE. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+</body>
+</html>

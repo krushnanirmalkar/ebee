@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Metadata -->
+  <title>Public Infrastructure EV Charging Networks | EBEECHARGE</title>
+  <meta name="description" content="Build stable public charging networks for municipalities, highway corridors, and transit hubs. Weatherproof hardware and PCI-compliant billing with EBEECHARGE.">
+  <link rel="canonical" href="http://localhost:5173/public-infrastructure/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Public Infrastructure EV Charging Networks | EBEECHARGE">
+  <meta property="og:description" content="High-availability EV charging infrastructure designed for municipalities, highways, and public transit nodes.">
+  <meta property="og:image" content="/assets/images/rwa_hero.png">
+  <meta property="og:url" content="http://localhost:5173/public-infrastructure/">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .infrastructure-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+      margin-top: 5rem;
+    }
+    
+    .infra-card {
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding-top: 2rem;
+      text-align: left;
+    }
+    
+    .infra-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .infra-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    
+    .infra-desc {
+      font-size: 0.95rem;
+      color: var(--text-dark-muted);
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 1024px) {
+      .infrastructure-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Solutions
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/rwa/" class="dropdown-item">
+                <div class="dropdown-title">Housing Societies</div>
+                <div class="dropdown-desc">Simplify resident charging and billing.</div>
+              </a>
+              <a href="/commercial-properties/" class="dropdown-item">
+                <div class="dropdown-title">Commercial Properties</div>
+                <div class="dropdown-desc">Attract tenants and support office park fleets.</div>
+              </a>
+              <a href="/developers/" class="dropdown-item">
+                <div class="dropdown-title">Developers</div>
+                <div class="dropdown-desc">Generate revenue and unlock asset value.</div>
+              </a>
+              <a href="/public-infrastructure/" class="dropdown-item">
+                <div class="dropdown-title">Public Infrastructure</div>
+                <div class="dropdown-desc">Scale transit hubs and highway depots.</div>
+              </a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Products
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/products/smart-db/" class="dropdown-item">
+                <div class="dropdown-title">Smart DB</div>
+                <div class="dropdown-desc">The Foundation: Grid-aware balancing.</div>
+              </a>
+              <a href="/products/movable-charger/" class="dropdown-item">
+                <div class="dropdown-title">Movable Charger</div>
+                <div class="dropdown-desc">The Flexibility Layer: Wheeled charging nodes.</div>
+              </a>
+              <a href="/products/ebee-dashboard/" class="dropdown-item">
+                <div class="dropdown-title">EBEE Dashboard</div>
+                <div class="dropdown-desc">The Intelligence Layer: Central controls.</div>
+              </a>
+            </div>
+          </li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/demo/" class="btn btn-primary" style="padding: 0.5rem 1.25rem; border: none;">Request Demo</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero hero-dark sec-dark" style="height: 80vh; min-height: 550px;">
+    <div class="hero-bg-grid"></div>
+    
+    <div class="container split-story">
+      <div class="story-details">
+        <span class="section-subtitle">Solutions for Public Infrastructure</span>
+        <h1>Robust charging hubs for public transit.</h1>
+        <p class="hero-subheadline" style="color: var(--text-light-muted); margin-bottom: 3rem; margin-top: 1.5rem;">
+          Build high-availability, weatherproof charging networks for highway corridors, municipality parking, and delivery fleets.
+        </p>
+        <a href="/demo/?type=public" class="btn btn-primary">Scale Public Infrastructure</a>
+      </div>
+      
+      <div class="story-visual" style="box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
+        <img src="/assets/images/rwa_hero.png" alt="Highway corridors EV charging station mockup" style="opacity: 0.95;">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Overview (Warm White) -->
+  <section class="sec-light" style="padding: 120px 0;">
+    <div class="container split-story">
+      <div class="story-visual">
+        <img src="/assets/images/smart_db.png" alt="EBEE Smart DB rugged panel">
+      </div>
+      <div class="story-details">
+        <span class="section-subtitle">Outage-Free Operations</span>
+        <h2 style="color: var(--text-dark); margin-bottom: 1.5rem;">High Availability. Rugged Engineering.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Public infrastructure hubs demand massive uptime under rugged conditions. Mud, dust, heavy rains, and summer grid spikes threaten sensitive circuitry. EBEECHARGE handles public charging planning and deployment end-to-end, providing Class II surge protection, IK10 shock resistance casings, and integrated eSIM cell telemetry to ensure nodes stay online 24/7.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Pillars of Public Network (Warm White) -->
+  <section class="sec-light" style="background-color: rgba(182, 185, 255, 0.04); padding: 120px 0;">
+    <div class="container text-center">
+      <span class="section-subtitle">Network Specifications</span>
+      <h2 style="color: var(--text-dark); margin-bottom: 1.5rem;">Built for municipalities, fleets, and highways</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: var(--text-dark-muted);">Our ecosystem delivers high stability, safety protection, and OCPP-compliant connectivity.</p>
+      
+      <div class="infrastructure-grid">
+        <div class="infra-card">
+          <span class="infra-num">01</span>
+          <h3 class="infra-title">Highway Corridor Depots</h3>
+          <p class="infra-desc">Coordinated layout panels supporting multiple high-capacity fast chargers without destabilizing regional feeder grids.</p>
+        </div>
+        <div class="infra-card">
+          <span class="infra-num">02</span>
+          <h3 class="infra-title">OCPP Compliance</h3>
+          <p class="infra-desc">OCPP 1.6J and 2.0.1 compliance ensures seamless cross-support and telemetry mapping with third-party billing networks.</p>
+        </div>
+        <div class="infra-card">
+          <span class="infra-num">03</span>
+          <h3 class="infra-title">Weatherproof Enclosures</h3>
+          <p class="infra-desc">IP65 casings protect interior electrical components from high temperatures, torrential rain, and dust storms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: CTA -->
+  <section class="sec-dark" style="background-color: var(--primary); padding: 120px 0;">
+    <div class="container text-center max-w-800">
+      <h2 style="color: var(--text-light); margin-bottom: 1rem;">Scale public charging infrastructure.</h2>
+      <p style="color: rgba(248, 250, 252, 0.85); font-size: 1.2rem; margin-bottom: 3rem;">Discuss municipal deployments and fleet depot setups with our engineering consultants.</p>
+      <a href="/demo/?type=public" class="btn btn-white" style="font-size: 1.05rem;">Request Infrastructure Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="margin-bottom: 1rem;">
+            <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
+          </a>
+          <p>End-to-end, intelligent charging ecosystem designed around your residential and commercial properties.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/rwa/">Housing Societies</a></li>
+            <li><a href="/commercial-properties/">Commercial Properties</a></li>
+            <li><a href="/developers/">Developers</a></li>
+            <li><a href="/public-infrastructure/">Public Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/smart-db/">Smart DB</a></li>
+            <li><a href="/products/movable-charger/">Movable Charger</a></li>
+            <li><a href="/products/ebee-dashboard/">EBEE Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">sales@ebeecharge.com</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">+91-98765-43210</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">Mumbai, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 EBEECHARGE. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

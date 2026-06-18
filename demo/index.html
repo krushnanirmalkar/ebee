@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Metadata -->
+  <title>Request a Demo | EBEECHARGE</title>
+  <meta name="description" content="Book a demo of the EBEECHARGE EV charging system. See how our smart hardware and software can serve your housing society or commercial property.">
+  <link rel="canonical" href="http://localhost:5173/demo/">
+  
+  <!-- Fonts & Stylesheets -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dark-theme">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Solutions
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/rwa/" class="dropdown-item">
+                <div class="dropdown-title">Housing Societies</div>
+                <div class="dropdown-desc">Simplify resident charging and billing.</div>
+              </a>
+              <a href="/commercial-properties/" class="dropdown-item">
+                <div class="dropdown-title">Commercial Properties</div>
+                <div class="dropdown-desc">Attract tenants and support office park fleets.</div>
+              </a>
+              <a href="/developers/" class="dropdown-item">
+                <div class="dropdown-title">Developers</div>
+                <div class="dropdown-desc">Generate revenue and unlock asset value.</div>
+              </a>
+              <a href="/public-infrastructure/" class="dropdown-item">
+                <div class="dropdown-title">Public Infrastructure</div>
+                <div class="dropdown-desc">Scale transit hubs and highway depots.</div>
+              </a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <span class="dropdown-trigger">
+              Products
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </span>
+            <div class="dropdown-menu">
+              <a href="/products/smart-db/" class="dropdown-item">
+                <div class="dropdown-title">Smart DB</div>
+                <div class="dropdown-desc">The Foundation: Grid-aware balancing.</div>
+              </a>
+              <a href="/products/movable-charger/" class="dropdown-item">
+                <div class="dropdown-title">Movable Charger</div>
+                <div class="dropdown-desc">The Flexibility Layer: Wheeled charging nodes.</div>
+              </a>
+              <a href="/products/ebee-dashboard/" class="dropdown-item">
+                <div class="dropdown-title">EBEE Dashboard</div>
+                <div class="dropdown-desc">The Intelligence Layer: Central controls.</div>
+              </a>
+            </div>
+          </li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/demo/" class="btn btn-primary" style="padding: 0.5rem 1.25rem;">Request Demo</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- FORM SECTION -->
+  <section class="hero hero-dark">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-glow"></div>
+    
+    <div class="container contact-section">
+      <div class="contact-info" style="align-self: center;">
+        <span class="hero-tagline">Request a Demo</span>
+        <h2 style="color: var(--text-light); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-top: 0.5rem;">See how EBEECHARGE transforms EV charging for your property.</h2>
+        <p style="color: var(--text-light-muted); font-size: 1.1rem; margin-top: 1rem;">Whether you need an automated charging grid for an apartment building, or a profitable valet ecosystem for a retail complex, our experts will build a custom layout proposition.</p>
+        
+        <ul class="contact-info-list">
+          <li class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <h4 style="color: var(--text-light);">20-Minute Session</h4>
+              <p>Quick overview focused strictly on your property type. No fluff, no pressure.</p>
+            </div>
+          </li>
+          <li class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="contact-info-text">
+              <h4 style="color: var(--text-light);">WhatsApp Booking Validation</h4>
+              <p>We verify and coordinate timings over WhatsApp for speed and convenience.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Form Card -->
+      <div class="form-card" style="color: var(--text-dark); position: relative; z-index: 2;">
+        <form id="demo-request-form">
+          <div class="form-group">
+            <label class="form-label" for="form-name">Your Full Name</label>
+            <input type="text" id="form-name" class="form-control" placeholder="e.g. Rahul Sen" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-property">Society / Commercial Property Name</label>
+            <input type="text" id="form-property" class="form-control" placeholder="e.g. Skylark Apartment / Orion Mall" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-city">City</label>
+            <input type="text" id="form-city" class="form-control" placeholder="e.g. Bangalore" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-phone">Contact Number (WhatsApp Enabled)</label>
+            <input type="tel" id="form-phone" class="form-control" placeholder="e.g. +91 98765 43210" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-type">Property Type</label>
+            <select id="form-type" class="form-control form-control-select" required>
+              <option value="" disabled selected>Select property classification</option>
+              <option value="rwa">Housing Society / RWA</option>
+              <option value="developer">Developer / Commercial Property</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="form-message">Tell us about your needs (Optional)</label>
+            <textarea id="form-message" class="form-control" rows="3" placeholder="e.g. We are looking to deploy 5 chargers in our basement."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem;">Request Demo Appointment</button>
+        </form>
+
+        <!-- Form Success State -->
+        <div id="form-success" class="text-center" style="display: none; padding: 2rem 0;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background-color: var(--success-glow); color: var(--success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Request Submitted Successfully!</h3>
+          <p style="color: var(--text-dark-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Thank you. A calendar invite and WhatsApp booking confirmation has been sent to your contact number.</p>
+          <button class="btn btn-secondary" onclick="resetForm()">Submit Another Request</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="margin-bottom: 1rem;">
+            <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
+          </a>
+          <p>End-to-end, intelligent charging ecosystem designed around your residential and commercial properties.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/rwa/">Housing Societies</a></li>
+            <li><a href="/commercial-properties/">Commercial Properties</a></li>
+            <li><a href="/developers/">Developers</a></li>
+            <li><a href="/public-infrastructure/">Public Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/smart-db/">Smart DB</a></li>
+            <li><a href="/products/movable-charger/">Movable Charger</a></li>
+            <li><a href="/products/ebee-dashboard/">EBEE Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">sales@ebeecharge.com</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">+91-98765-43210</li>
+            <li style="color: var(--text-light-muted); font-size: 0.95rem;">Mumbai, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 EBEECHARGE. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/js/main.js"></script>
+  <script>
+    // Parse query parameters
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type');
+      const product = urlParams.get('product');
+
+      const selectType = document.getElementById('form-type');
+      const textMessage = document.getElementById('form-message');
+
+      if (type) {
+        selectType.value = type;
+      }
+      
+      if (product) {
+        if (product === 'smart-db') {
+          textMessage.value = "Interested in learning more about the Smart DB power panel.";
+        } else if (product === 'movable-charger') {
+          textMessage.value = "Interested in a demonstration of the Movable Charger unit.";
+          selectType.value = 'developer';
+        } else if (product === 'ebee-dashboard') {
+          textMessage.value = "Interested in a tour of the EBEE Dashboard management software.";
+        }
+      }
+    });
+
+    // Handle Form Submit
+    const form = document.getElementById('demo-request-form');
+    const successDiv = document.getElementById('form-success');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulate form submission
+      form.style.display = 'none';
+      successDiv.style.display = 'block';
+      
+      // Push event to console for dev validation
+      console.log('Demo request submitted:', {
+        name: document.getElementById('form-name').value,
+        property: document.getElementById('form-property').value,
+        city: document.getElementById('form-city').value,
+        phone: document.getElementById('form-phone').value,
+        type: document.getElementById('form-type').value,
+        message: document.getElementById('form-message').value
+      });
+    });
+
+    function resetForm() {
+      form.reset();
+      successDiv.style.display = 'none';
+      form.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
