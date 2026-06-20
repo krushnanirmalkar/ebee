@@ -2473,3 +2473,136 @@ footer {
     gap: 4rem;
   }
 }
+
+/* ==========================================================================
+   CHALLENGES HOVER SECTION (PRODUX.DESIGN EFFECT)
+   ========================================================================== */
+.challenges-hover-section {
+  position: relative;
+  overflow: visible;
+}
+
+.challenges-list-container {
+  max-width: 860px;
+  margin: 6rem auto 0 auto;
+  position: relative;
+}
+
+.challenge-list-item {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.challenge-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+  transition: transform var(--transition-normal);
+}
+
+.challenge-item-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 700;
+  color: #94A3B8; /* Muted Slate 400 */
+  margin: 0;
+  transition: color var(--transition-normal), transform var(--transition-normal);
+  letter-spacing: -0.02em;
+}
+
+.challenge-item-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+  color: #94A3B8;
+  opacity: 0.6;
+  transition: color var(--transition-normal);
+}
+
+.challenge-item-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(15, 23, 42, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-item-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover effects for Desktop */
+@media (min-width: 992px) {
+  .challenge-list-item:hover .challenge-item-title {
+    color: var(--text-dark);
+    transform: translateX(20px);
+  }
+  
+  .challenge-list-item:hover .challenge-item-num {
+    color: var(--primary);
+    opacity: 1;
+  }
+  
+  .challenge-list-item:hover .challenge-item-divider::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 991px) {
+  .challenge-item-content {
+    padding: 2.25rem 0 1rem 0;
+  }
+  .challenge-item-title {
+    color: var(--text-dark);
+    font-size: 1.6rem;
+  }
+  .challenge-item-num {
+    color: var(--text-dark-muted);
+    opacity: 0.8;
+  }
+  .challenge-mobile-img-wrapper {
+    display: block;
+    width: 100%;
+    height: clamp(200px, 40vh, 320px);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .challenge-mobile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 992px) {
+  .challenge-mobile-img-wrapper {
+    display: none;
+  }
+}
+
+/* Float Canvas overlay */
+.challenge-float-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}

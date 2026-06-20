@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
   setupHeroInteractions();
   setupLogoAnimation();
+  setupChallengesAnimations();
 });
 
 /**
@@ -256,4 +257,140 @@ function setupLogoAnimation() {
     duration: 0.3,
     ease: "none"
   }, 0.7);
+}
+
+/**
+ * Canvas cursor-following image reveal effect matching produx.design
+ */
+function setupChallengesAnimations() {
+  const section = document.querySelector('.challenges-hover-section');
+  const canvas = document.querySelector('.challenge-float-canvas');
+  if (!section || !canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  const items = document.querySelectorAll('.challenge-list-item');
+
+  // Preload challenge images
+  const imageUrls = [
+    '/assets/images/challenges/chl1.png',
+    '/assets/images/challenges/chl2.png',
+    '/assets/images/challenges/chl3.png',
+    '/assets/images/challenges/chl4.png'
+  ];
+
+  const images = imageUrls.map(url => {
+    const img = new Image();
+    img.src = url;
+    return img;
+  });
+
+  // Animation values
+  let activeIndex = -1;
+  let animState = { opacity: 0, scale: 0.8 };
+  let mouse = { x: 0, y: 0 };
+  let target = { x: 0, y: 0 };
+  let lastTarget = { x: 0, y: 0 };
+  let isHovered = false;
+
+  // Size details for drawn image (premium landscape proportion)
+  const imgWidth = 380;
+  const imgHeight = 250;
+
+  // Resize canvas
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  // Track mouse coordinates in fixed screen space
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  // Attach hover events to items
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      activeIndex = index;
+      isHovered = true;
+      
+      // Animate fade-in and scale-in using GSAP
+      gsap.killTweensOf(animState);
+      gsap.to(animState, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power3.out'
+      });
+    });
+
+    item.addEventListener('mouseleave', () => {
+      isHovered = false;
+      
+      // Animate fade-out and scale-down
+      gsap.killTweensOf(animState);
+      gsap.to(animState, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.4,
+        ease: 'power3.out',
+        onComplete: () => {
+          if (!isHovered) activeIndex = -1;
+        }
+      });
+    });
+  });
+
+  // Render loop
+  function render() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Apply easing to target coordinates (inertia delay)
+    const easeFactor = 0.08;
+    target.x += (mouse.x - target.x) * easeFactor;
+    target.y += (mouse.y - target.y) * easeFactor;
+
+    // Calculate velocities (speed and direction of translation)
+    const vx = target.x - lastTarget.x;
+    const vy = target.y - lastTarget.y;
+    lastTarget.x = target.x;
+    lastTarget.y = target.y;
+
+    if (activeIndex !== -1 && animState.opacity > 0.01) {
+      const activeImg = images[activeIndex];
+      
+      if (activeImg.complete) {
+        ctx.save();
+        
+        // Translate center to active position
+        ctx.translate(target.x, target.y);
+        
+        // Apply rotation (tilt in direction of X velocity)
+        const rotation = vx * 0.0018;
+        ctx.rotate(rotation);
+        
+        // Apply shear / skew mapping (jelly warp based on velocity)
+        const skewX = vx * 0.0012;
+        const skewY = vy * 0.0012;
+        ctx.transform(1, skewY, skewX, 1, 0, 0);
+        
+        // Apply scale & alpha transition values
+        ctx.scale(animState.scale, animState.scale);
+        ctx.globalAlpha = animState.opacity;
+        
+        // Draw the image centered
+        ctx.drawImage(activeImg, -imgWidth / 2, -imgHeight / 2, imgWidth, imgHeight);
+        
+        ctx.restore();
+      }
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  // Start the draw loop
+  render();
 }
