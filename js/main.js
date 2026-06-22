@@ -200,63 +200,67 @@ function setupLogoAnimation() {
     });
   }
 
+  // Set initial states to prevent flash of content
   initializeLogoTransform();
+  gsap.set([leftBg, rightBg], { opacity: 0 });
+  gsap.set(heroContent, {
+    opacity: 0,
+    y: 30
+  });
+  gsap.set([navContainer, navActions].filter(Boolean), {
+    opacity: 0
+  });
 
+  // Re-initialize on resize if animation is not finished
+  let animationCompleted = false;
+  const handleResize = () => {
+    if (!animationCompleted) {
+      initializeLogoTransform();
+    }
+  };
+  window.addEventListener('resize', handleResize);
+
+  // Create autoplaying timeline
   const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: scrollWrapper,
-      start: 'top top',
-      end: '+=1000', 
-      pin: premiumHero,
-      scrub: true,
-      invalidateOnRefresh: true,
-      onRefresh: () => {
-        gsap.set(brandLogo, { clearProps: "all" });
-        initializeLogoTransform();
-      }
+    delay: 0.6, // Short elegant pause on load
+    onComplete: () => {
+      animationCompleted = true;
+      window.removeEventListener('resize', handleResize);
+      // Only clear GSAP properties on the logo so it aligns correctly with normal CSS slots on window resize
+      gsap.set(brandLogo, { clearProps: "all" });
     }
   });
 
-  // 1. Scroll hint disappears immediately
-  tl.to(scrollDownHint, {
-    opacity: 0,
-    y: 20,
-    duration: 0.1,
-    ease: "none"
-  }, 0);
-
-  // 2. Logo Animation Stage 1 (0-25%): Shrink to 65% of huge size
-  tl.to(brandLogo, {
-    x: () => initialTransform.x * 0.65,
-    y: () => initialTransform.y * 0.65,
-    scale: () => initialTransform.scale * 0.65,
-    duration: 0.25,
-    ease: "none"
-  }, 0);
-
-  // 3. Logo Animation Stage 2 (25-70%): Shrink into navbar slot
+  // 1. Logo Animation: Smoothly shrink and move into navbar slot
   tl.to(brandLogo, {
     x: 0,
     y: 0,
     scale: 1,
-    duration: 0.45,
-    ease: "none"
-  }, 0.25);
+    duration: 1.4,
+    ease: "power4.inOut"
+  }, 0);
 
-  // 4. Content Fade In (70-100%): Fade in hero content, backgrounds, and navbar elements
+  // 2. Background split halves fade in
   tl.to([leftBg, rightBg], {
     opacity: 0.4,
-    pointerEvents: 'auto',
-    duration: 0.3,
-    ease: "none"
+    duration: 1.0,
+    ease: "power2.out"
+  }, 0.5);
+
+  // 3. Hero content (What best describes you?, selection cards) slides up and fades in
+  tl.to(heroContent, {
+    opacity: 1,
+    y: 0,
+    duration: 1.0,
+    ease: "power3.out"
   }, 0.7);
 
-  tl.to([heroContent, navContainer, navActions], {
+  // 4. Navbar links fade in
+  tl.to([navContainer, navActions].filter(Boolean), {
     opacity: 1,
-    pointerEvents: 'auto',
-    duration: 0.3,
-    ease: "none"
-  }, 0.7);
+    duration: 0.8,
+    ease: "power2.out"
+  }, 0.9);
 }
 
 /**
