@@ -419,20 +419,13 @@
   <!-- Inline styling for the Kempower-like sticky storytelling section -->
   <style>
     .challenges-sticky-wrapper {
-      height: 600vh; /* scroll track height - 100vh per slide */
       position: relative;
       background-color: var(--bg-light);
+      padding: 100px 0; /* Add proper padding for natural spacing */
     }
 
     .challenges-sticky-container {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      padding-top: 64px; /* site header offset */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      overflow: hidden;
+      position: relative;
       width: 100%;
       border-top: 1px solid rgba(15, 23, 42, 0.03);
     }
@@ -443,10 +436,12 @@
       gap: 6rem;
       align-items: flex-start;
       position: relative;
-      height: 68vh;
     }
 
     .challenges-nav-col {
+      position: sticky;
+      top: 120px; /* Header offset spacing */
+      align-self: start;
       z-index: 10;
     }
 
@@ -492,28 +487,26 @@
     .challenges-content-col {
       position: relative;
       width: 100%;
-      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 140px; /* Premium spacing between content slides */
     }
 
     .property-slide-block {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1;
+      opacity: 0.25; /* Subtle mute for off-screen items */
+      transform: translateY(30px); /* Framer Motion-style slide entrance */
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
     .property-slide-block.active {
       opacity: 1;
-      pointer-events: auto;
-      z-index: 2;
+      transform: translateY(0);
     }
 
     .property-title {
@@ -597,6 +590,7 @@
       
       .challenges-sticky-wrapper {
         height: auto;
+        padding: 40px 0;
       }
 
       .challenges-editorial-layout {
@@ -617,6 +611,7 @@
         padding-left: 2rem;
         padding-right: 2rem;
         border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        z-index: 100; /* Layer on top of scrolling slides */
       }
 
       .challenges-nav-list {
@@ -646,7 +641,10 @@
 
       .challenges-content-col {
         position: relative;
-        height: 650px; /* fixed container height for stacked absolute items on mobile */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem; /* Spacing for stacked absolute items on mobile */
       }
 
       .property-image-frame {
@@ -663,16 +661,15 @@
     }
   </style>
 
-  <!-- Script to handle scroll-linked active states and click navigation in sticky wrapper -->
+  <!-- Script to handle scrollspy highlighting and smooth scroll navigation -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const wrapper = document.querySelector('.challenges-sticky-wrapper');
-      const container = document.querySelector('.challenges-sticky-container');
       const navBtns = document.querySelectorAll('.challenge-nav-item-btn');
       const slides = document.querySelectorAll('.property-slide-block');
       const navList = document.querySelector('.challenges-nav-list');
 
-      if (!wrapper || !container || navBtns.length === 0 || slides.length === 0) return;
+      if (!wrapper || navBtns.length === 0 || slides.length === 0) return;
 
       const totalSegments = navBtns.length;
 
@@ -708,48 +705,32 @@
         }
       };
 
-      // Scroll listener for sticky wrapper tracking
+      // Unified scroll listener for scrollspy tracking
       const onScroll = () => {
-        if (window.innerWidth <= 1024) {
-          // On mobile, fall back to standard viewport distance tracking since sticky tracking is disabled
-          let activeIndex = 0;
-          let minDistance = Infinity;
-          const targetY = window.innerHeight * 0.4;
-
-          slides.forEach((slide, index) => {
-            const rect = slide.getBoundingClientRect();
-            const distance = Math.abs(rect.top - targetY);
-            if (distance < minDistance) {
-              minDistance = distance;
-              activeIndex = index;
-            }
-          });
-          updateActiveSegment(activeIndex);
+        // If we are at the very bottom of the page, activate the last segment
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 30) {
+          updateActiveSegment(totalSegments - 1);
           return;
         }
 
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const wrapperTop = wrapperRect.top + window.scrollY;
-        const wrapperHeight = wrapperRect.height;
-        const viewportHeight = window.innerHeight;
+        let activeIndex = 0;
+        let minDistance = Infinity;
+        // Check relative to 35% of viewport height (comfort zone for scrolling)
+        const targetY = window.innerHeight * 0.35;
 
-        const scrollStart = wrapperTop;
-        const scrollEnd = wrapperTop + wrapperHeight - viewportHeight;
-        const currentScroll = window.scrollY;
-
-        let progress = 0;
-        if (currentScroll >= scrollStart && currentScroll <= scrollEnd) {
-          progress = (currentScroll - scrollStart) / (scrollEnd - scrollStart);
-        } else if (currentScroll > scrollEnd) {
-          progress = 1;
-        } else {
-          progress = 0;
-        }
-
-        // Convert progress (0 to 1) into active index (0 to 5)
-        let activeIndex = Math.floor(progress * totalSegments);
-        if (activeIndex >= totalSegments) activeIndex = totalSegments - 1;
-        if (activeIndex < 0) activeIndex = 0;
+        slides.forEach((slide, index) => {
+          const rect = slide.getBoundingClientRect();
+          const distance = Math.abs(rect.top - targetY);
+          
+          // If the slide covers the target line, it is the active slide
+          if (rect.top <= targetY && rect.bottom >= targetY) {
+            activeIndex = index;
+            minDistance = -1;
+          } else if (distance < minDistance && minDistance !== -1) {
+            minDistance = distance;
+            activeIndex = index;
+          }
+        });
 
         updateActiveSegment(activeIndex);
       };
@@ -757,37 +738,31 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll(); // initial run
 
-      // Click nav item to scroll to exact position in the track
+      // Click nav item to scroll to exact position
       navBtns.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          if (window.innerWidth <= 1024) {
-            // Mobile scrolling fallback
-            const targetSlide = slides[index];
-            if (targetSlide) {
-              const headerOffset = 140;
-              const elementPosition = targetSlide.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.scrollY - headerOffset;
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-              });
-            }
-            return;
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetSlide = slides[index];
+          if (targetSlide) {
+            // Find scroll position that puts the slide in the target view area
+            const headerOffset = window.innerWidth <= 1024 ? 140 : 120; // site header offset
+            const elementPosition = targetSlide.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            
+            // Temporarily remove scroll listener to avoid active toggling jumpiness during smooth scroll
+            window.removeEventListener('scroll', onScroll);
+            updateActiveSegment(index);
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Re-enable scroll listener after scroll completes
+            setTimeout(() => {
+              window.addEventListener('scroll', onScroll, { passive: true });
+            }, 800);
           }
-
-          const wrapperRect = wrapper.getBoundingClientRect();
-          const wrapperTop = wrapperRect.top + window.scrollY;
-          const wrapperHeight = wrapperRect.height;
-          const viewportHeight = window.innerHeight;
-
-          const scrollRange = wrapperHeight - viewportHeight;
-          const segmentSize = scrollRange / totalSegments;
-          const scrollTarget = wrapperTop + (index * segmentSize) + (segmentSize / 2);
-
-          window.scrollTo({
-            top: scrollTarget,
-            behavior: 'smooth'
-          });
         });
       });
     });
