@@ -11,7 +11,7 @@ export default defineConfig({
         commercialProperties: resolve(__dirname, 'commercial-properties/index.html'),
         publicInfrastructure: resolve(__dirname, 'public-infrastructure/index.html'),
         smartDb: resolve(__dirname, 'products/smart-db/index.html'),
-        movableCharger: resolve(__dirname, 'products/movable-charger/index.html'),
+        juicer: resolve(__dirname, 'products/juicer/index.html'),
         ebeeDashboard: resolve(__dirname, 'products/ebee-dashboard/index.html'),
         about: resolve(__dirname, 'about/index.html'),
         contact: resolve(__dirname, 'contact/index.html'),

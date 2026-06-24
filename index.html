@@ -40,127 +40,45 @@
   <!-- Inline styling for special homepage elements -->
   <style>
     /* Custom CSS for home-specific positioning elements */
-    .hero-headline-overlay {
-      position: absolute;
-      top: 15%;
-      left: 0;
+    .hero-scroll-wrapper {
+      position: relative;
       width: 100%;
-      pointer-events: none;
+      height: 100vh;
+      min-height: 750px;
+    }
+    .premium-hero {
+      position: relative;
+      height: 100vh !important;
+      min-height: 750px !important;
+      width: 100%;
+      overflow: hidden;
+      background-color: #080a11;
+      display: flex;
+      flex-direction: column;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 0 !important;
       z-index: 10;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 1.5rem;
     }
     
-    .hero-subheadline {
-      color: var(--text-light-muted);
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      max-width: 760px;
-      margin: 1.5rem auto 2.5rem;
-      line-height: 1.7;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-      pointer-events: auto;
+    .hero-explore-heading {
+      margin-top: 2rem;
     }
-    
-    .hero-prompt-container {
-      background: rgba(19, 23, 34, 0.85);
-      border: 1px solid rgba(248, 250, 252, 0.1);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: var(--border-radius-lg);
-      padding: 2.5rem 3.5rem;
-      max-width: 700px;
-      width: 100%;
-      pointer-events: auto;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    /* Segment Cards Hover */
+    .segment-challenge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+      border-color: rgba(91, 95, 239, 0.2) !important;
     }
-    
-    .hero-prompt-label {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
-    }
-    
-    .hero-prompt-buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      width: 100%;
-    }
-    
-    .hero-prompt-btn {
-      padding: 1.1rem 1.5rem;
-      font-size: 0.95rem;
-      border-radius: var(--border-radius-md);
-      font-weight: 700;
-      text-transform: none;
-      transition: all var(--transition-fast);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    
-    .hero-prompt-btn span {
-      font-size: 0.75rem;
-      font-weight: 500;
-      opacity: 0.8;
-      margin-top: 4px;
-    }
-    
-    .btn-residential {
-      background: var(--text-light);
-      color: var(--bg-dark);
-      border: 1px solid var(--text-light);
-    }
-    
-    .btn-residential:hover {
-      background: var(--bg-light);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(248, 250, 252, 0.2);
-    }
-    
-    .btn-commercial {
-      background: var(--primary);
-      color: var(--text-light);
-      border: 1px solid var(--primary);
-    }
-    
-    .btn-commercial:hover {
-      background: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(91, 95, 239, 0.3);
-    }
-    
-    /* Ecosystem Layers CSS */
-    .ecosystem-container {
-      margin-top: 5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-    
+
+    /* Ecosystem Rows spacing for teasers */
     .ecosystem-row {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 6rem;
       align-items: center;
-      padding: 4rem 0;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    }
-    
-    .ecosystem-row:last-child {
-      border-bottom: none;
+      padding: 2rem 0;
     }
     
     .ecosystem-row.reverse {
@@ -216,123 +134,6 @@
       margin-bottom: 1.5rem;
       font-weight: 600;
     }
-    
-    /* Editorial Layout for 7 Pillars */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3rem;
-      margin-top: 5rem;
-    }
-    
-    .pillar-card {
-      border-top: 1px solid rgba(15, 23, 42, 0.08);
-      padding-top: 2rem;
-      text-align: left;
-    }
-    
-    .pillar-num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 300;
-      color: var(--primary);
-      display: block;
-      margin-bottom: 1rem;
-    }
-    
-    .pillar-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    
-    .pillar-desc {
-      font-size: 0.95rem;
-      color: var(--text-dark-muted);
-      line-height: 1.6;
-    }
-    
-    /* Solutions Showcase */
-    .solutions-cards-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      margin-top: 4rem;
-    }
-    
-    .solution-showcase-card {
-      position: relative;
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      height: 380px;
-      display: flex;
-      align-items: flex-end;
-      padding: 3rem;
-      border: 1px solid rgba(248, 250, 252, 0.05);
-      text-decoration: none;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-    }
-    
-    .solution-card-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: transform var(--transition-slow);
-      z-index: 1;
-    }
-    
-    .solution-card-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(19, 23, 34, 0.95) 0%, rgba(19, 23, 34, 0.4) 60%, transparent 100%);
-      z-index: 2;
-      transition: background var(--transition-normal);
-    }
-    
-    .solution-card-content {
-      position: relative;
-      z-index: 3;
-      color: var(--text-light);
-      text-align: left;
-    }
-    
-    .solution-card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    
-    .solution-card-title {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    
-    .solution-card-desc {
-      font-size: 0.95rem;
-      color: var(--text-light-muted);
-      margin-bottom: 0;
-      line-height: 1.6;
-    }
-    
-    .solution-showcase-card:hover .solution-card-bg {
-      transform: scale(1.05);
-    }
-    
-    .solution-showcase-card:hover .solution-card-overlay {
-      background: linear-gradient(to top, rgba(91, 95, 239, 0.85) 0%, rgba(19, 23, 34, 0.4) 70%, transparent 100%);
-    }
 
     @keyframes fadeInUp {
       from {
@@ -346,35 +147,38 @@
     }
     
     @media (max-width: 1024px) {
-      .pillars-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .solutions-cards-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
       .ecosystem-row, .ecosystem-row.reverse {
         grid-template-columns: 1fr;
         gap: 4rem;
       }
-      .ecosystem-row .story-visual {
+      .ecosystem-row.reverse .ecosystem-visual {
         order: -1;
       }
     }
     
     @media (max-width: 768px) {
-      .hero-prompt-container {
-        padding: 2rem;
+      .hero-scroll-wrapper {
+        min-height: auto;
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 80px;
       }
-      .hero-prompt-buttons {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      .premium-hero {
+        height: auto;
+        padding-top: 2rem;
       }
-      .hero-headline-overlay {
-        top: 12%;
+      .hero-content-wrapper {
+        width: 100%;
+        padding: 0 1.5rem;
       }
-      .hero-main-title {
-        font-size: clamp(2rem, 4vw, 3.25rem);
+      .hero-title {
+        font-size: 2.25rem !important;
+      }
+      .hero-header-text {
+        margin-bottom: 1.5rem !important;
+      }
+      .hero-explore-heading {
+        display: none;
       }
     }
   </style>
@@ -426,8 +230,8 @@
                 <div class="dropdown-title">Smart DB</div>
                 <div class="dropdown-desc">The Foundation: Grid-aware balancing.</div>
               </a>
-              <a href="/products/movable-charger/" class="dropdown-item">
-                <div class="dropdown-title">Movable Charger</div>
+              <a href="/products/juicer/" class="dropdown-item">
+                <div class="dropdown-title">Juicer</div>
                 <div class="dropdown-desc">The Flexibility Layer: Wheeled charging nodes.</div>
               </a>
               <a href="/products/ebee-dashboard/" class="dropdown-item">
@@ -450,381 +254,783 @@
     </div>
   </header>
 
-  <!-- Sticky Scroll Wrapper for Morphing Logo -->
+  <!-- SECTION 1: Hero (with animation wrapper preserved) -->
   <div class="hero-scroll-wrapper">
-    <!-- CINEMATIC PREMIUM HERO -->
     <section class="premium-hero">
-    <!-- Hero Background Split -->
-    <div class="hero-bg-container">
-      <div class="hero-bg-solid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; z-index: 1;"></div>
-      <div class="hero-bg-grid"></div>
-      <div class="neon-glow-left"></div>
-      <div class="neon-glow-right"></div>
-      
-      <div class="hero-bg-half left" style="opacity: 0; will-change: opacity;">
-        <div class="hero-bg-img" style="background-image: url('./assets/images/rwa_hero_new.jpg');"></div>
-        <div class="hero-bg-overlay"></div>
-      </div>
-      <div class="hero-bg-half right" style="opacity: 0; will-change: opacity;">
-        <div class="hero-bg-img" style="background-image: url('./assets/images/developer_hero_new.jpg');"></div>
-        <div class="hero-bg-overlay"></div>
-      </div>
-    </div>
-    <!-- INVISIBLE TARGET FOR JS MEASUREMENT -->
-    <div id="logo-measure-target" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(300px, 48vw, 700px); height: 0; padding-bottom: calc(clamp(300px, 48vw, 700px) * (553.86 / 841.89)); z-index: 10; pointer-events: none; visibility: hidden;"></div>
- 
- 
-    <div class="hero-content-wrapper" style="opacity: 0; z-index: 10; position: relative; will-change: opacity;">
- 
-      <div class="hero-header-text" style="animation: none;">
-        <h1 class="hero-title">What best describes you?</h1>
-      </div>
- 
-      <!-- Main Interaction: Two Glassmorphism Cards -->
-      <div class="hero-cards-container">
-        <!-- Left Card: Housing Society -->
-        <a href="/rwa/" class="selection-card left-card">
-          <div class="card-glow-effect"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <!-- Home SVG Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <div class="card-text-wrapper">
-              <h2 class="card-title">Housing Society</h2>
-              <p class="card-text">Simplify charging for residents. Automate billing and monitor with ease.</p>
-            </div>
-            <div class="card-cta-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-
-        <!-- Right Card: Developer / Commercial -->
-        <a href="/developers/" class="selection-card right-card">
-          <div class="card-glow-effect"></div>
-          <div class="card-content">
-            <div class="card-icon">
-              <!-- Building SVG Icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-                <line x1="9" y1="22" x2="9" y2="16"/>
-                <line x1="15" y1="22" x2="15" y2="16"/>
-                <line x1="9" y1="16" x2="15" y2="16"/>
-                <path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M12 6h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/>
-              </svg>
-            </div>
-            <div class="card-text-wrapper">
-              <h2 class="card-title">Developer / Commercial</h2>
-              <p class="card-text">Unlock new revenue streams and build future-ready infrastructure.</p>
-            </div>
-            <div class="card-cta-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Scroll Down Explore Heading -->
-      <div class="hero-explore-heading">
-        <h3 class="explore-heading-title">Just want to explore? Scroll down</h3>
-        <a href="#positioning" class="explore-scroll-arrow-btn" aria-label="Scroll Down">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="explore-arrow-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
-
-  <!-- SECTION 2: Positioning (Warm White) -->
-  <section id="positioning" class="sec-light" style="padding-top: 160px; padding-bottom: 160px;">
-    <div class="container">
-      <div class="max-w-800 text-center" style="margin-bottom: 8rem;">
-        <span class="section-subtitle">Our Positioning</span>
-        <h2 style="margin-bottom: 1.5rem; color: var(--text-dark);">We help properties become EV-ready.</h2>
-        <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-dark-muted); max-width: 700px; margin: 0 auto;">
-          We are not a charger hardware vendor. EBEECHARGE is an enabler and facilitator in the emobility ecosystem. We coordinate the full lifecycle of property electrification so you can focus on your residents and tenants.
-        </p>
-      </div>
-
-      <!-- 7 Core Pillars of the Complete Ecosystem -->
-      <div class="text-center" style="margin-top: 6rem;">
-        <h3 style="color: var(--text-dark); margin-bottom: 1rem;">The Complete EBEE Infrastructure Lifecycle</h3>
-        <p style="max-width: 600px; margin: 0 auto 4rem; font-size: 1.05rem;">From initial site assessment to continuous revenue payouts, we handle the technical complexity end-to-end.</p>
+      <!-- Hero Background Split -->
+      <div class="hero-bg-container">
+        <div class="hero-bg-solid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000000; z-index: 1;"></div>
+        <div class="hero-bg-grid"></div>
+        <div class="neon-glow-left"></div>
+        <div class="neon-glow-right"></div>
         
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <span class="pillar-num">01</span>
-            <h4 class="pillar-title">Planning</h4>
-            <p class="pillar-desc">Grid analysis, localized load capacity mapping, and custom layout drawings prepared by expert electrical engineers.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">02</span>
-            <h4 class="pillar-title">Infrastructure</h4>
-            <p class="pillar-desc">Smart distribution panel backbones that integrate seamlessly with your building's existing transformer feeds.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">03</span>
-            <h4 class="pillar-title">Deployment</h4>
-            <p class="pillar-desc">Safety-verified physical installation, load checks, protective grounding, and localized network activation.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">04</span>
-            <h4 class="pillar-title">Management</h4>
-            <p class="pillar-desc">Granular access controls, dynamic pricing schedules, and resident/valet priority queuing management options.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">05</span>
-            <h4 class="pillar-title">Monitoring</h4>
-            <p class="pillar-desc">24/7 cloud sync reporting diagnostic alerts, kW load cycles, and live session health audits automatically.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">06</span>
-            <h4 class="pillar-title">Revenue Enablement</h4>
-            <p class="pillar-desc">Integrated UPI, cards, and mobile wallets payment collections with automated developer split payouts.</p>
-          </div>
-          <div class="pillar-card">
-            <span class="pillar-num">07</span>
-            <h4 class="pillar-title">Scalability</h4>
-            <p class="pillar-desc">An expandable architecture that lets you scale from 2 to 50+ bays seamlessly without expensive power upgrades.</p>
-          </div>
-          <div class="pillar-card" style="border-top-color: var(--primary); background: rgba(91,95,239,0.03); border-radius: var(--border-radius-md); padding: 2rem 1.5rem 1.5rem;">
-            <span class="pillar-num" style="color: var(--primary);">✓</span>
-            <h4 class="pillar-title" style="color: var(--primary);">Outcome</h4>
-            <p class="pillar-desc" style="font-weight: 600; color: var(--text-dark);">A fully automated, grid-safe EV property requiring zero daily management overhead.</p>
-          </div>
+        <div class="hero-bg-half left" style="opacity: 0; will-change: opacity;">
+          <div class="hero-bg-img" style="background-image: url('./assets/images/rwa_hero_new.jpg');"></div>
+          <div class="hero-bg-overlay"></div>
+        </div>
+        <div class="hero-bg-half right" style="opacity: 0; will-change: opacity;">
+          <div class="hero-bg-img" style="background-image: url('./assets/images/developer_hero_new.jpg');"></div>
+          <div class="hero-bg-overlay"></div>
         </div>
       </div>
-    </div>
-  </section>
+      
+      <!-- INVISIBLE TARGET FOR GSAP LOGO MEASUREMENT -->
+      <div id="logo-measure-target" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(300px, 48vw, 700px); height: 0; padding-bottom: calc(clamp(300px, 48vw, 700px) * (553.86 / 841.89)); z-index: 10; pointer-events: none; visibility: hidden;"></div>
 
-  <!-- SECTION 3: The Unified Ecosystem (Deep Navy) -->
-  <section class="sec-dark" style="padding-top: 160px; padding-bottom: 160px; border-top: 1px solid rgba(248, 250, 252, 0.05);">
+      <div class="hero-content-wrapper" style="opacity: 0; z-index: 10; position: relative; will-change: opacity;">
+        <div class="hero-header-text" style="animation: none; max-width: 900px; margin-bottom: 2.5rem;">
+          <h1 class="hero-title" style="font-size: clamp(2.25rem, 5.5vw, 4.25rem); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 800;">The Future Of Every Property Is Electric.</h1>
+          <p class="hero-subtitle" style="font-size: clamp(1rem, 1.8vw, 1.25rem); max-width: 780px; line-height: 1.6; color: var(--text-light-muted); margin: 0 auto;">EV charging infrastructure designed for residential communities, commercial properties and modern developments.</p>
+        </div>
+
+        <!-- Hero Action Buttons -->
+        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 5rem; pointer-events: auto; z-index: 12;">
+          <a href="#challenges" class="btn btn-white" style="text-decoration: none;">Explore Solutions</a>
+          <a href="/demo/" class="btn btn-outline-white" style="text-decoration: none;">Request Demo</a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- SECTION 2: Property Challenges (Warm White) - Pinned Scroll Storytelling Track -->
+  <div class="challenges-sticky-wrapper">
+    <section id="challenges" class="challenges-sticky-container">
+      <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        
+        <!-- Section Heading & Intro -->
+        <div class="challenges-intro" style="margin-bottom: 4rem; max-width: 800px; text-align: left;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--text-dark); margin-bottom: 1rem; letter-spacing: -0.02em;">
+            EV Readiness Looks Different For Every Property.
+          </h2>
+          <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.6; color: var(--text-dark-muted); font-weight: 400; opacity: 0.9;">
+            Whether you're operating a shopping mall, managing a hotel, developing a residential community, or running a commercial destination, every property faces unique challenges on the path to EV readiness.
+          </p>
+        </div>
+
+        <div class="challenges-editorial-layout">
+          
+          <!-- Left Side: Sticky List Navigation -->
+          <div class="challenges-nav-col">
+            <ul class="challenges-nav-list">
+              <li><button class="challenge-nav-item-btn active" data-target="0">Mall Owners</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="1">Hotel Owners</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="2">Office Complex Owners</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="3">Residential Builders</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="4">Housing Societies</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="5">Exhibition Centres</button></li>
+            </ul>
+          </div>
+
+          <!-- Right Side: Pinned/Cross-fading Content Slides -->
+          <div class="challenges-content-col">
+            
+            <!-- Mall Owners -->
+            <div class="property-slide-block active" data-index="0">
+              <div class="property-slide-text">
+                <h3 class="property-title">Mall Owners</h3>
+                <p class="property-challenge-statement">Visitors increasingly expect EV charging while they shop.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/mall_parking_ev.jpg" alt="Mall Owners EV Charging">
+              </div>
+            </div>
+
+            <!-- Hotel Owners -->
+            <div class="property-slide-block" data-index="1">
+              <div class="property-slide-text">
+                <h3 class="property-title">Hotel Owners</h3>
+                <p class="property-challenge-statement">Charging is becoming a guest expectation.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/hotel_entrance_ev.jpg" alt="Hotel Owners EV Charging">
+              </div>
+            </div>
+
+            <!-- Office Complex Owners -->
+            <div class="property-slide-block" data-index="2">
+              <div class="property-slide-text">
+                <h3 class="property-title">Office Complex Owners</h3>
+                <p class="property-challenge-statement">Modern tenants expect EV-ready workplaces.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/office_campus_ev.jpg" alt="Office Complex Owners EV Charging">
+              </div>
+            </div>
+
+            <!-- Residential Builders -->
+            <div class="property-slide-block" data-index="3">
+              <div class="property-slide-text">
+                <h3 class="property-title">Residential Builders</h3>
+                <p class="property-challenge-statement">Future residents expect EV infrastructure from day one.</p>
+                <a href="/developers/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/residential_builder_ev.jpg" alt="Residential Builders EV Charging">
+              </div>
+            </div>
+
+            <!-- Housing Societies -->
+            <div class="property-slide-block" data-index="4">
+              <div class="property-slide-text">
+                <h3 class="property-title">Housing Societies</h3>
+                <p class="property-challenge-statement">Support EV adoption without overloading existing infrastructure.</p>
+                <a href="/rwa/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/housing_society_ev.jpg" alt="Housing Societies EV Charging">
+              </div>
+            </div>
+
+            <!-- Exhibition Centres -->
+            <div class="property-slide-block" data-index="5">
+              <div class="property-slide-text">
+                <h3 class="property-title">Exhibition Centres</h3>
+                <p class="property-challenge-statement">Handle charging demand during large events.</p>
+                <a href="/public-infrastructure/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/exhibition_centre_ev.jpg" alt="Exhibition Centres EV Charging">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Inline styling for the Kempower-like sticky storytelling section -->
+  <style>
+    .challenges-sticky-wrapper {
+      height: 600vh; /* scroll track height - 100vh per slide */
+      position: relative;
+      background-color: var(--bg-light);
+    }
+
+    .challenges-sticky-container {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding-top: 64px; /* site header offset */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      width: 100%;
+      border-top: 1px solid rgba(15, 23, 42, 0.03);
+    }
+
+    .challenges-editorial-layout {
+      display: grid;
+      grid-template-columns: 0.22fr 0.78fr;
+      gap: 6rem;
+      align-items: flex-start;
+      position: relative;
+      height: 68vh;
+    }
+
+    .challenges-nav-col {
+      z-index: 10;
+    }
+
+    .challenges-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      align-items: flex-start;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .challenge-nav-item-btn {
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.25rem 0;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      opacity: 0.3;
+      cursor: pointer;
+      transition: opacity 0.4s var(--transition-fast), color 0.4s var(--transition-fast), padding-left 0.4s var(--transition-fast);
+      display: block;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .challenge-nav-item-btn:hover {
+      opacity: 0.7;
+    }
+
+    .challenge-nav-item-btn.active {
+      opacity: 1;
+      font-weight: 600;
+      color: var(--primary);
+      padding-left: 0.5rem;
+    }
+
+    .challenges-content-col {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .property-slide-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+
+    .property-slide-block.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .property-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.35rem; /* Reduced size */
+      font-weight: 500; /* Reduced weight */
+      line-height: 1.3;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .property-challenge-statement {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem; /* Reduced size */
+      font-weight: 400; /* Light weight */
+      line-height: 1.5;
+      color: var(--text-dark-muted);
+      opacity: 0.8; /* Reduced prominence */
+      margin-bottom: 0.75rem;
+      max-width: 700px;
+    }
+
+    .property-cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem; /* Reduced size */
+      font-weight: 500;
+      color: var(--primary);
+      opacity: 0.85; /* Reduced prominence */
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 1.75rem; /* Space above image */
+      transition: opacity 0.3s var(--transition-fast), color 0.3s var(--transition-fast);
+    }
+
+    .property-cta:hover {
+      opacity: 1;
+      color: var(--primary-hover);
+    }
+
+    .property-cta .arrow-symbol {
+      margin-left: 6px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-block;
+    }
+
+    .property-cta:hover .arrow-symbol {
+      transform: translateX(4px);
+    }
+
+    .property-image-frame {
+      width: 100%;
+      height: 52vh; /* Large image dominating height */
+      overflow: hidden;
+      background-color: #e2e8f0;
+      border-radius: var(--border-radius-md);
+    }
+
+    .property-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.04);
+      transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .property-slide-block.active .property-image-frame img {
+      transform: scale(1);
+    }
+
+    /* Mobile and Tablet optimization */
+    @media (max-width: 1024px) {
+      .challenges-sticky-container {
+        position: relative;
+        height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      
+      .challenges-sticky-wrapper {
+        height: auto;
+      }
+
+      .challenges-editorial-layout {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+      }
+
+      .challenges-nav-col {
+        position: sticky;
+        top: 64px;
+        background-color: var(--bg-light);
+        padding: 1rem 0;
+        width: 100vw;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+      }
+
+      .challenges-nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 1.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .challenges-nav-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .challenge-nav-item-btn {
+        width: auto;
+        display: inline-block;
+        font-size: 1.1rem;
+        padding: 0.25rem 0;
+      }
+
+      .challenge-nav-item-btn.active {
+        padding-left: 0;
+        border-bottom: 2px solid var(--primary);
+      }
+
+      .challenges-content-col {
+        position: relative;
+        height: 650px; /* fixed container height for stacked absolute items on mobile */
+      }
+
+      .property-image-frame {
+        height: 380px;
+      }
+
+      .property-title {
+        font-size: 1.3rem;
+      }
+
+      .property-challenge-statement {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Script to handle scroll-linked active states and click navigation in sticky wrapper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.querySelector('.challenges-sticky-wrapper');
+      const container = document.querySelector('.challenges-sticky-container');
+      const navBtns = document.querySelectorAll('.challenge-nav-item-btn');
+      const slides = document.querySelectorAll('.property-slide-block');
+      const navList = document.querySelector('.challenges-nav-list');
+
+      if (!wrapper || !container || navBtns.length === 0 || slides.length === 0) return;
+
+      const totalSegments = navBtns.length;
+
+      // Function to set active tab & slide
+      const updateActiveSegment = (index) => {
+        navBtns.forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        // Scroll mobile horizontal nav to active item if needed
+        if (window.innerWidth <= 1024 && navList) {
+          const activeBtn = navBtns[index];
+          const navRect = navList.getBoundingClientRect();
+          const btnRect = activeBtn.getBoundingClientRect();
+          if (btnRect.left < navRect.left || btnRect.right > navRect.right) {
+            navList.scrollTo({
+              left: activeBtn.offsetLeft - 32,
+              behavior: 'smooth'
+            });
+          }
+        }
+      };
+
+      // Scroll listener for sticky wrapper tracking
+      const onScroll = () => {
+        if (window.innerWidth <= 1024) {
+          // On mobile, fall back to standard viewport distance tracking since sticky tracking is disabled
+          let activeIndex = 0;
+          let minDistance = Infinity;
+          const targetY = window.innerHeight * 0.4;
+
+          slides.forEach((slide, index) => {
+            const rect = slide.getBoundingClientRect();
+            const distance = Math.abs(rect.top - targetY);
+            if (distance < minDistance) {
+              minDistance = distance;
+              activeIndex = index;
+            }
+          });
+          updateActiveSegment(activeIndex);
+          return;
+        }
+
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const wrapperTop = wrapperRect.top + window.scrollY;
+        const wrapperHeight = wrapperRect.height;
+        const viewportHeight = window.innerHeight;
+
+        const scrollStart = wrapperTop;
+        const scrollEnd = wrapperTop + wrapperHeight - viewportHeight;
+        const currentScroll = window.scrollY;
+
+        let progress = 0;
+        if (currentScroll >= scrollStart && currentScroll <= scrollEnd) {
+          progress = (currentScroll - scrollStart) / (scrollEnd - scrollStart);
+        } else if (currentScroll > scrollEnd) {
+          progress = 1;
+        } else {
+          progress = 0;
+        }
+
+        // Convert progress (0 to 1) into active index (0 to 5)
+        let activeIndex = Math.floor(progress * totalSegments);
+        if (activeIndex >= totalSegments) activeIndex = totalSegments - 1;
+        if (activeIndex < 0) activeIndex = 0;
+
+        updateActiveSegment(activeIndex);
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // initial run
+
+      // Click nav item to scroll to exact position in the track
+      navBtns.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            // Mobile scrolling fallback
+            const targetSlide = slides[index];
+            if (targetSlide) {
+              const headerOffset = 140;
+              const elementPosition = targetSlide.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+            return;
+          }
+
+          const wrapperRect = wrapper.getBoundingClientRect();
+          const wrapperTop = wrapperRect.top + window.scrollY;
+          const wrapperHeight = wrapperRect.height;
+          const viewportHeight = window.innerHeight;
+
+          const scrollRange = wrapperHeight - viewportHeight;
+          const segmentSize = scrollRange / totalSegments;
+          const scrollTarget = wrapperTop + (index * segmentSize) + (segmentSize / 2);
+
+          window.scrollTo({
+            top: scrollTarget,
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- SECTION 3: Infrastructure Reality (Deep Navy) -->
+  <section id="reality" class="sec-dark" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-dark); color: var(--text-light); border-top: 1px solid rgba(248, 250, 252, 0.05);">
     <div class="container">
-      <div class="max-w-800 text-center" style="margin-bottom: 6rem;">
-        <span class="section-subtitle">The Ecosystem Concept</span>
-        <h2>Three Layers. One Unified Platform.</h2>
-        <p style="font-size: 1.15rem; color: var(--text-light-muted); margin-top: 1.5rem;">
-          Our products are not isolated charging devices. They are integrated layers of a single property operating system that coordinates power, hardware mobility, and billing intelligence.
+      <div class="max-w-800 text-center" style="margin-bottom: 5rem; margin-left: auto; margin-right: auto;">
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-light); line-height: 1.2;">Installing Chargers Is Easy.<br>Managing Power Intelligently Is The Real Challenge.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-light-muted); max-width: 680px; margin: 0 auto;">
+          The primary obstacle to scaling EV charging isn't physical hardware. It is grid constraints, power overload, and uncoordinated charging demand.
         </p>
       </div>
 
-      <div class="ecosystem-container">
-        <!-- Layer 1: Smart DB (The Foundation) -->
-        <div class="ecosystem-row">
-          <div class="ecosystem-visual">
-            <img src="/assets/images/smart_db.png" alt="EBEE Smart DB panel - The Foundation">
-          </div>
-          <div class="ecosystem-details">
-            <span class="ecosystem-badge">Layer 01</span>
-            <h3 class="ecosystem-title">Smart DB</h3>
-            <div class="ecosystem-subtitle">The Foundation</div>
-            <p>The grid-aware backbone. Installed directly inside the electrical room, the Smart DB manages power dynamic allocations, protecting properties from expensive transformer upgrades and main breaker trips during peak hours.</p>
-            <a href="/products/smart-db/" class="btn btn-secondary" style="margin-top: 1rem;">Explore the Foundation Layer →</a>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3.5rem; margin-top: 4rem;">
+        
+        <!-- Electrical Load -->
+        <div style="text-align: left; border-top: 1px solid rgba(248, 250, 252, 0.1); padding-top: 2rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-light);">Electrical Load Limits</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Adding multiple high-power chargers can easily exceed your property's transformer capacity, resulting in utility penalties or expensive hardware trips.
+          </p>
         </div>
 
-        <!-- Layer 2: Movable Charger (The Flexibility Layer) -->
-        <div class="ecosystem-row reverse">
-          <div class="ecosystem-details">
-            <span class="ecosystem-badge">Layer 02</span>
-            <h3 class="ecosystem-title">Movable Charger</h3>
-            <div class="ecosystem-subtitle">The Flexibility Layer</div>
-            <p>Wheeled charging nodes. Eliminate stationary bottlenecks and slot hogging. Movable Chargers slide between parking spaces dynamically, tripling daily charging capacity and reducing copper cable runs.</p>
-            <a href="/products/movable-charger/" class="btn btn-secondary" style="margin-top: 1rem;">Explore the Flexibility Layer →</a>
-          </div>
-          <div class="ecosystem-visual">
-            <img src="/assets/images/movable_charger.png" alt="EBEE Movable Charger - The Flexibility Layer">
-          </div>
+        <!-- Infrastructure Planning -->
+        <div style="text-align: left; border-top: 1px solid rgba(248, 250, 252, 0.1); padding-top: 2rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-light);">Infrastructure Planning</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Running individual thick copper cables for every single charger is prohibitively expensive. Scalable installations require pre-planned, shared power backbones.
+          </p>
         </div>
 
-        <!-- Layer 3: EBEE Dashboard (The Intelligence Layer) -->
-        <div class="ecosystem-row">
-          <div class="ecosystem-visual">
-            <img src="/assets/images/rwa_hero.png" alt="EBEE Dashboard software - The Intelligence Layer" style="opacity: 0.95;">
-          </div>
-          <div class="ecosystem-details">
-            <span class="ecosystem-badge">Layer 03</span>
-            <h3 class="ecosystem-title">EBEE Dashboard</h3>
-            <div class="ecosystem-subtitle">The Intelligence Layer</div>
-            <p>The central console. Manages resident utility splits, sets commercial dynamic tariffs, monitors localized grid health, and triggers automated revenue payouts from a single login.</p>
-            <a href="/products/ebee-dashboard/" class="btn btn-secondary" style="margin-top: 1rem;">Explore the Intelligence Layer →</a>
-          </div>
+        <!-- Scalability -->
+        <div style="text-align: left; border-top: 1px solid rgba(248, 250, 252, 0.1); padding-top: 2rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-light);">Scalability Constraints</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            A system that works for 2 chargers will fail when 20 residents want to charge simultaneously. Real scale requires intelligent load balancing algorithms.
+          </p>
         </div>
+
+        <!-- Future Demand -->
+        <div style="text-align: left; border-top: 1px solid rgba(248, 250, 252, 0.1); padding-top: 2rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-light);">Future Demand Readiness</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            EV adoption is compounding yearly. Properties must install grid-safe foundations today to handle tomorrow's charging volume without rewriting infrastructure.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: Explore Our Solutions (Warm White) -->
-  <section class="sec-light" style="padding-top: 160px; padding-bottom: 160px;">
-    <div class="container text-center">
-      <span class="section-subtitle">Property Solutions</span>
-      <h2 style="color: var(--text-dark); margin-bottom: 1.5rem;">Tailored Around Your Property.</h2>
-      <p style="max-width: 600px; margin: 0 auto 5rem; font-size: 1.1rem; color: var(--text-dark-muted);">We design custom EV deployment plans for different property typologies to yield the best functional outcome.</p>
-
-      <div class="solutions-cards-wrapper">
-        <!-- Solution 1: Housing Societies -->
-        <a href="/rwa/" class="solution-showcase-card">
-          <div class="solution-card-bg" style="background-image: url('/assets/images/rwa_hero.png');"></div>
-          <div class="solution-card-overlay"></div>
-          <div class="solution-card-content">
-            <span class="solution-card-tag">For RWAs</span>
-            <h3 class="solution-card-title">Housing Societies</h3>
-            <p class="solution-card-desc">Frictionless charging logs, automated resident slab billing splits, and safety balancing controls.</p>
-          </div>
-        </a>
-
-        <!-- Solution 2: Commercial Properties -->
-        <a href="/commercial-properties/" class="solution-showcase-card">
-          <div class="solution-card-bg" style="background-image: url('/assets/images/developer_hero.png');"></div>
-          <div class="solution-card-overlay"></div>
-          <div class="solution-card-content">
-            <span class="solution-card-tag">For Corporate Landlords</span>
-            <h3 class="solution-card-title">Commercial Properties</h3>
-            <p class="solution-card-desc">Electrify office parks, tech hubs, and corporate assets to attract high-value tenants and support fleets.</p>
-          </div>
-        </a>
-
-        <!-- Solution 3: Developers -->
-        <a href="/developers/" class="solution-showcase-card">
-          <div class="solution-card-bg" style="background-image: url('/assets/images/developer_hero.png');"></div>
-          <div class="solution-card-overlay"></div>
-          <div class="solution-card-content">
-            <span class="solution-card-tag">For Builders & Malls</span>
-            <h3 class="solution-card-title">Developers</h3>
-            <p class="solution-card-desc">Unlock monetization from unused parking spaces, manage yields, and model returns with our ROI engine.</p>
-          </div>
-        </a>
-
-        <!-- Solution 4: Public Infrastructure -->
-        <a href="/public-infrastructure/" class="solution-showcase-card">
-          <div class="solution-card-bg" style="background-image: url('/assets/images/rwa_hero.png');"></div>
-          <div class="solution-card-overlay"></div>
-          <div class="solution-card-content">
-            <span class="solution-card-tag">For Cities & Municipalities</span>
-            <h3 class="solution-card-title">Public Infrastructure</h3>
-            <p class="solution-card-desc">Robust outdoor panels, municipal fleet depots, and public transit highway hubs built for high-throughput.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: Trust stats and Editorial Testimonials -->
-  <section class="sec-dark" style="padding-top: 160px; padding-bottom: 160px; border-top: 1px solid rgba(248, 250, 252, 0.05);">
-    <div class="container text-center">
-      <span class="section-subtitle">Ecosystem Scale</span>
-      <h2 style="margin-bottom: 5rem;">Powering India's Premium Real Estate</h2>
-
-      <div class="pitch-stats-row">
-        <div class="pitch-stat-col">
-          <div class="pitch-stat-num">450+</div>
-          <div class="pitch-stat-label">Properties Partnered</div>
-        </div>
-        <div class="pitch-stat-col">
-          <div class="pitch-stat-num">2.5M</div>
-          <div class="pitch-stat-label">Charging Hours Logged</div>
-        </div>
-        <div class="pitch-stat-col">
-          <div class="pitch-stat-num">24+</div>
-          <div class="pitch-stat-label">Cities EV-Ready</div>
-        </div>
-        <div class="pitch-stat-col">
-          <div class="pitch-stat-num">3.8K</div>
-          <div class="pitch-stat-label">Smart Nodes Managed</div>
-        </div>
-      </div>
-
-      <div class="max-w-800" style="margin-top: 6rem;">
-        <div class="editorial-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 5rem; text-align: left;">
-          <div class="editorial-col" style="border-top-color: rgba(248, 250, 252, 0.1);">
-            <p style="font-size: 1.15rem; font-style: italic; line-height: 1.8; color: var(--text-light-muted);">
-              "Managing EV charging was a major RWA hurdle. Settle billing disputes, parse slab splits, verify safety. EBEECHARGE deployed their panels and software, taking over the complete administration. Zero disputes since."
-            </p>
-            <p style="font-weight: 700; margin-top: 1.5rem; margin-bottom: 0; color: var(--accent);">K. P. Rao</p>
-            <p style="font-size: 0.85rem; color: var(--text-light-muted); margin-bottom: 0;">RWA President, Skyheights Society</p>
-          </div>
-          <div class="editorial-col" style="border-top-color: rgba(248, 250, 252, 0.1);">
-            <p style="font-size: 1.15rem; font-style: italic; line-height: 1.8; color: var(--text-light-muted);">
-              "Rather than blocking premium slots with stationary chargers, we deployed the EBEE Movable Charger. Our valet staff moves units sequence-wise between vehicles. We tripled charging yield sessions on the same power budget."
-            </p>
-            <p style="font-weight: 700; margin-top: 1.5rem; margin-bottom: 0; color: var(--accent);">N. Murthy</p>
-            <p style="font-size: 0.85rem; color: var(--text-light-muted); margin-bottom: 0;">VP Operations, Nexus Commercial Developers</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: The Challenges We Solve -->
-  <section class="sec-light challenges-hover-section" style="padding-top: 160px; padding-bottom: 160px; border-top: 1px solid rgba(15, 23, 42, 0.05);">
-    <!-- Canvas for floating follow-image reveal -->
-    <canvas class="challenge-float-canvas max-lg:hidden"></canvas>
-
+  <!-- SECTION 4: SmartDB Teaser (Warm White) -->
+  <section class="sec-light" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05);">
     <div class="container">
-      <div class="text-center">
-        <span class="section-subtitle">Infrastructure Issues</span>
-        <h2>The Challenges We Solve</h2>
+      <div class="ecosystem-row" style="border: none; padding: 0;">
+        <div class="ecosystem-visual">
+          <img src="/assets/images/smart_db.png" alt="EBEE Smart DB panel - The Foundation">
+        </div>
+        <div class="ecosystem-details">
+          <h2 class="ecosystem-title" style="color: var(--text-dark); font-size: clamp(2rem, 3.5vw, 2.5rem);">Meet SmartDB.</h2>
+          <div class="ecosystem-subtitle" style="color: var(--primary); font-size: 1.15rem; margin-bottom: 2rem; font-weight: 600;">The intelligence layer behind modern EV infrastructure.</div>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-dark-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Optimize Load:</strong> Dynamic real-time balancing prevents building power trips.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-dark-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Reduce Infrastructure Cost:</strong> Avoid expensive transformer upgrades.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-dark-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Scale With Confidence:</strong> Expand from 2 to 50+ charging bays easily.</span>
+            </li>
+          </ul>
+          
+          <a href="/products/smart-db/" class="btn btn-primary" style="text-decoration: none;">Explore SmartDB &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Juicer Teaser (Deep Navy) -->
+  <section class="sec-dark" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-dark); color: var(--text-light); border-top: 1px solid rgba(248, 250, 252, 0.05);">
+    <div class="container">
+      <div class="ecosystem-row reverse" style="border: none; padding: 0;">
+        <div class="ecosystem-details">
+          <h2 class="ecosystem-title" style="color: var(--text-light); font-size: clamp(2rem, 3.5vw, 2.5rem);">Meet Juicer.</h2>
+          <div class="ecosystem-subtitle" style="color: var(--accent); font-size: 1.15rem; margin-bottom: 2rem; font-weight: 600;">A seamless charging experience for modern properties.</div>
+          
+          <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-light-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Easy To Use:</strong> Frictionless tap-and-charge or mobile-activated session starts.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-light-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Reliable Charging:</strong> Continuous diagnostic monitoring ensures 99.9% uptime.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 1rem; color: var(--text-light-muted);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Property Ready:</strong> Specifically designed to handle the heavy demands of commercial settings.</span>
+            </li>
+          </ul>
+          
+          <a href="/products/juicer/" class="btn btn-outline-white" style="text-decoration: none;">Explore Juicer &rarr;</a>
+        </div>
+        <div class="ecosystem-visual">
+          <img src="/assets/images/movable_charger.png" alt="EBEE Juicer mobile unit - The Flexibility Layer">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Real World Use Cases (Warm White) -->
+  <section id="use-cases" class="sec-light" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05);">
+    <div class="container">
+      <div class="max-w-800 text-center" style="margin-bottom: 5rem; margin-left: auto; margin-right: auto;">
+        <span class="section-subtitle">Real World Deployment</span>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-dark);">EBEE in Action.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-dark-muted); max-width: 680px; margin: 0 auto;">
+          See how our intelligent infrastructure adapts to different real-world property configurations.
+        </p>
       </div>
 
-      <div class="challenges-list-container">
-        <!-- Item 1 -->
-        <div class="challenge-list-item" data-index="0">
-          <div class="challenge-item-content">
-            <h3 class="challenge-item-title">Expensive Charger Rollouts</h3>
-            <span class="challenge-item-num">01</span>
-          </div>
-          <div class="challenge-mobile-img-wrapper">
-            <img src="/assets/images/challenges/chl1.png" alt="Expensive Charger Rollouts" class="challenge-mobile-img">
-          </div>
-          <div class="challenge-item-divider"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3.5rem; margin-top: 4rem;">
+        
+        <!-- Malls -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Retail & Malls</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            Valet-assisted EV charging bays deployed at mall entryways. Valet staff shifts mobile charging nodes between parked cars, maximizing utilization and customer convenience without dedicating dozens of fixed spots.
+          </p>
         </div>
 
-        <!-- Item 2 -->
-        <div class="challenge-list-item" data-index="1">
-          <div class="challenge-item-content">
-            <h3 class="challenge-item-title">Connectivity Dependence</h3>
-            <span class="challenge-item-num">02</span>
-          </div>
-          <div class="challenge-mobile-img-wrapper">
-            <img src="/assets/images/challenges/chl2.png" alt="Connectivity Dependence" class="challenge-mobile-img">
-          </div>
-          <div class="challenge-item-divider"></div>
+        <!-- Hotels -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Hospitality & Hotels</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            Overnight guest parking bays electrified with smart grid panels. Guests wake up to fully charged vehicles, with billing seamlessly consolidated into their hotel check-out invoice.
+          </p>
         </div>
 
-        <!-- Item 3 -->
-        <div class="challenge-list-item" data-index="2">
-          <div class="challenge-item-content">
-            <h3 class="challenge-item-title">Load Capacity Constraints</h3>
-            <span class="challenge-item-num">03</span>
-          </div>
-          <div class="challenge-mobile-img-wrapper">
-            <img src="/assets/images/challenges/chl3.png" alt="Load Capacity Constraints" class="challenge-mobile-img">
-          </div>
-          <div class="challenge-item-divider"></div>
+        <!-- Offices -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Office Parks & Workplaces</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            Fleet charging pools and employee parking clusters configured with automated dynamic load limits. During business hours, power shifts between active sessions without tripping the corporate park's main breakers.
+          </p>
         </div>
 
-        <!-- Item 4 -->
-        <div class="challenge-list-item" data-index="3">
-          <div class="challenge-item-content">
-            <h3 class="challenge-item-title">Scalability Limitations</h3>
-            <span class="challenge-item-num">04</span>
-          </div>
-          <div class="challenge-mobile-img-wrapper">
-            <img src="/assets/images/challenges/chl4.png" alt="Scalability Limitations" class="challenge-mobile-img">
-          </div>
-          <div class="challenge-item-divider"></div>
+        <!-- Residential Communities -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Residential Communities</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            Greenfield township parking hubs equipped with pre-laid shared trunk lines. Real-estate developers offer EV-ready bays as a standard premium amenity to all new homeowners.
+          </p>
+        </div>
+
+        <!-- Housing Societies -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Housing Societies (RWA)</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            Common parking basements fitted with central smart panels. Individual residents scan custom keycards to charge, with the dashboard automatically calculating electricity bills against domestic slab tariffs.
+          </p>
+        </div>
+
+        <!-- Exhibition Centres -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Exhibition Centres & Arenas</h3>
+          <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
+            High-throughput temporary charging zones set up for conventions. The local grid buffers surges during peak event visitor arrival windows, maintaining stability across the entire complex.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Why EBEE (Deep Navy) -->
+  <section class="sec-dark" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-dark); color: var(--text-light); border-top: 1px solid rgba(248, 250, 252, 0.05);">
+    <div class="container">
+      <div class="max-w-800 text-center" style="margin-bottom: 5rem; margin-left: auto; margin-right: auto;">
+        <span class="section-subtitle" style="color: var(--accent);">Why Choose EBEE</span>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-light);">Built For The Next Generation Of Properties.</h2>
+        <p style="font-size: 1.15rem; line-height: 1.7; color: var(--text-light-muted); max-width: 680px; margin: 0 auto;">
+          We build integrated infrastructure systems that solve long-term energy and fleet challenges for estate managers.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3.5rem; margin-top: 4rem;">
+        
+        <!-- Future Ready -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-light);">Future Ready Infrastructure</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Central trunk architecture allows adding new charging points without digging up floors or rewriting wiring backbones.
+          </p>
+        </div>
+
+        <!-- Smarter Power Management -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-light);">Smarter Power Management</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Proprietary balancing controllers optimize power in real-time, matching building capacity to live charging demand.
+          </p>
+        </div>
+
+        <!-- Better Charging Experiences -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-light);">Better Charging Experiences</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Automated notifications, resident mobile apps, and clear dashboard billing take all manual labor out of charging administration.
+          </p>
+        </div>
+
+        <!-- Scalable EV Deployment -->
+        <div style="text-align: left;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-light);">Scalable EV Deployment</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light-muted); line-height: 1.6;">
+            Start small with key test points, then scale up as resident and tenant adoption increases over time.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Final CTA (Warm White) -->
+  <section class="sec-light" style="padding-top: 120px; padding-bottom: 120px; background-color: var(--bg-light); text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05);">
+    <div class="container">
+      <div class="max-w-800" style="margin: 0 auto;">
+        <h2 style="font-size: clamp(2rem, 4.5vw, 2.75rem); margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">Ready To Build An EV-Ready Property?</h2>
+        <p style="font-size: 1.15rem; color: var(--text-dark-muted); line-height: 1.6; max-width: 600px; margin: 0 auto 3rem;">
+          Get in touch with our experts to design a custom power and charging infrastructure layout for your building.
+        </p>
+        
+        <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center; z-index: 5;">
+          <a href="/demo/" class="btn btn-primary" style="text-decoration: none;">Schedule A Demo</a>
+          <a href="/contact/" class="btn btn-secondary" style="text-decoration: none;">Talk To Our Team</a>
         </div>
       </div>
     </div>
@@ -853,7 +1059,7 @@
           <h4>Products</h4>
           <ul>
             <li><a href="/products/smart-db/">Smart DB</a></li>
-            <li><a href="/products/movable-charger/">Movable Charger</a></li>
+            <li><a href="/products/juicer/">Juicer</a></li>
             <li><a href="/products/ebee-dashboard/">EBEE Dashboard</a></li>
           </ul>
         </div>

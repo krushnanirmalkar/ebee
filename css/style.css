@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* --- DESIGN SYSTEM TOKENS --- */
 :root {
@@ -45,7 +45,7 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.8;
@@ -55,7 +55,7 @@ body {
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3, h4 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 1.15;
   color: inherit;
@@ -151,7 +151,7 @@ section.compact {
 
 /* Section Subtitles */
 .section-subtitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--primary);
   font-weight: 600;
   text-transform: uppercase;
@@ -228,7 +228,7 @@ header.scrolled-light {
 
 .nav-links a:not(.btn),
 .nav-links .dropdown-trigger {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.5rem 0;
@@ -323,7 +323,7 @@ header.scrolled-light {
 }
 
 .dropdown-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 2px;
@@ -373,7 +373,7 @@ header.scrolled-light {
   justify-content: center;
   padding: 0.9rem 2rem;
   border-radius: var(--border-radius-md);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -614,7 +614,7 @@ header.scrolled-light {
 }
 
 .hero-tagline {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--accent);
@@ -963,7 +963,7 @@ header.scrolled-light {
 }
 
 .trust-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-light);
@@ -995,7 +995,7 @@ header.scrolled-light {
 }
 
 .explore-heading-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(0.78rem, 1.6vw, 0.88rem);
   font-weight: 600;
   text-transform: uppercase;
@@ -1137,7 +1137,7 @@ header.scrolled-light {
   bottom: 45px;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.25em;
@@ -1323,7 +1323,7 @@ header.scrolled-light {
 }
 
 .editorial-num {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 3.5rem;
   font-weight: 300;
   color: var(--primary);
@@ -1380,7 +1380,7 @@ header.scrolled-light {
   background-color: var(--bg-light);
   border: 1px solid rgba(15, 23, 42, 0.15);
   color: var(--text-dark-muted);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1514,7 +1514,7 @@ header.scrolled-light {
 }
 
 .flow-label {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   fill: var(--text-dark);
 }
@@ -1557,7 +1557,7 @@ header.scrolled-light {
   font-size: clamp(1.25rem, 2.5vw, 1.85rem);
   color: var(--primary);
   margin-bottom: 2.5rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
 }
 
@@ -1639,7 +1639,7 @@ header.scrolled-light {
 }
 
 .pitch-stat-num {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 700;
   color: var(--accent);
@@ -1689,7 +1689,7 @@ header.scrolled-light {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -1768,7 +1768,7 @@ header.scrolled-light {
 }
 
 .calc-out-val {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.25rem, 3.5vw, 3.25rem);
   font-weight: 800;
   color: var(--accent);
@@ -1848,7 +1848,7 @@ header.scrolled-light {
 }
 
 .db-logo {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--primary);
@@ -1931,7 +1931,7 @@ header.scrolled-light {
 }
 
 .db-metric-val {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-light);
@@ -2070,7 +2070,7 @@ header.scrolled-light {
 
 .form-label {
   display: block;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
@@ -2082,7 +2082,7 @@ header.scrolled-light {
   padding: 0.9rem 1.25rem;
   border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: var(--border-radius-sm);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   transition: all var(--transition-fast);
   background-color: transparent;
@@ -2140,7 +2140,7 @@ header.scrolled-light {
 
 .spec-table th {
   background-color: rgba(15, 23, 42, 0.02);
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   color: var(--text-dark);
 }
@@ -2207,7 +2207,7 @@ header.scrolled-light {
 }
 
 .sticky-cta-text {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--text-light);
   font-weight: 500;
   font-size: 1.1rem;
@@ -2569,7 +2569,7 @@ footer {
 }
 
 .challenge-item-num {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   font-weight: 500;
   color: #94A3B8;
