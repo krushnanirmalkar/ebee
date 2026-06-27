@@ -315,157 +315,271 @@
   </header>
 
   <!-- PRODUCT LAUNCH HERO -->
-  <section class="product-chapter sec-dark" style="min-height: 90vh; display: flex; align-items: center; padding-top: 140px;">
-    <div class="hero-glow-container">
+  <section class="product-chapter sec-dark" style="min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; background-image: url('/assets/juicer_hero_bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Vignette & Left Gradient Overlay for text legibility -->
+    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 20%, rgba(11, 14, 20, 0.7) 120%), linear-gradient(to right, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.5) 45%, transparent 100%); z-index: 1;"></div>
+    
+    <div class="hero-glow-container" style="z-index: 0; left: 10%; top: 50%;">
       <div class="hero-glow-radial"></div>
     </div>
     
-    <div class="container product-chapter-grid">
-      <div class="chapter-content">
-        <span class="section-subtitle">Ecosystem Layer 02</span>
-        <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 0.5rem; line-height: 1.1;">Juicer.</h1>
-        <p class="chapter-subtitle" style="font-size: 1.85rem; margin-bottom: 2rem;">The Flexibility Layer</p>
-        <p class="chapter-desc" style="color: var(--text-light-muted); line-height: 1.7;">
-          Wheeled mobile charging units. Rather than blocking premium parking spaces with stationary sockets, roll the Juicer directly to parked vehicles.
-        </p>
+    <div class="container" style="z-index: 2; position: relative; width: 100%;">
+      <div class="juicer-hero-content">
+        <span class="section-subtitle" style="color: var(--primary); font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 0.5rem;">Ecosystem Layer 02</span>
+        <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.1; text-align: left; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3.5rem, 7vw, 5rem); letter-spacing: -0.02em;">JUICER</h1>
         
-        <div class="hero-glass-card">
-          <div class="glass-metric">
-            <div class="glass-metric-val">22kW</div>
-            <div class="glass-metric-label">Fast AC Charging</div>
-          </div>
-          <div class="glass-metric">
-            <div class="glass-metric-val">5m</div>
-            <div class="glass-metric-label">Cable Retraction range</div>
-          </div>
-          <div class="glass-metric">
-            <div class="glass-metric-val">10kWh</div>
-            <div class="glass-metric-label">LFP buffer battery</div>
-          </div>
+        <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">The flexibility layer: wheeled mobile charging nodes.</p>
+        
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem;">
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">22kW Fast AC Charging</span>
+          <span style="color: var(--primary);">•</span>
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">5m Cable Retraction</span>
+          <span style="color: var(--primary);">•</span>
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">10kWh Buffer Battery</span>
         </div>
-        
-        <a href="/demo/?product=juicer" class="btn btn-primary" style="margin-top: 3rem;">Request Mobile Layout Proposal</a>
+
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="/demo/?product=juicer" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Demo</a>
+          <a href="#overview" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); color: white; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); transition: all 0.3s ease;">Learn More</a>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Key Features -->
+  <section class="sec-light" style="padding: 100px 0; background: #f8fafc; position: relative;">
+    <div class="container" style="max-width: 1100px; position: relative;">
       
-      <div class="chapter-visual">
-        <div style="position: relative; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.6); border: 1px solid rgba(248,250,252,0.06);">
-          <img src="/assets/images/movable_charger.png" alt="EBEE Juicer mobile unit on wheels" style="max-width: 100%; display: block;">
+      <!-- View Specifications Button -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; flex-wrap: wrap; gap: 1.5rem;">
+        <h2 style="color: #111827; font-size: 2.75rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; font-family: 'Inter', sans-serif;">
+          Key <span style="color: var(--primary);">Features</span>
+        </h2>
+        <button id="openSpecsModalBtn" class="btn btn-outline" style="border: 1px solid rgba(15, 23, 42, 0.15); color: #0f172a; background: #ffffff; padding: 0.8rem 1.75rem; font-size: 1.05rem; font-weight: 600; border-radius: var(--border-radius-sm); cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">View Specifications</button>
+      </div>
+
+      <style>
+        .kf-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+        .kf-card {
+          background: #ffffff;
+          border: 1px solid rgba(15, 23, 42, 0.08);
+          border-radius: 12px;
+          padding: 2.5rem 2rem;
+          text-align: left;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .kf-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+          border-color: rgba(91, 95, 239, 0.25);
+        }
+        .kf-title {
+          font-size: 1.35rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-top: 0;
+          margin-bottom: 0.75rem;
+          font-family: 'Inter', sans-serif;
+        }
+        .kf-desc {
+          font-size: 1.05rem;
+          color: #4b5563;
+          line-height: 1.6;
+          margin: 0;
+        }
+        @media (max-width: 768px) {
+          .kf-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+        }
+      </style>
+
+      <div class="kf-grid">
+        <!-- Feature 1 -->
+        <div class="kf-card">
+          <h3 class="kf-title">On the Go Charging</h3>
+          <p class="kf-desc">Park at your spot, no queuing for fast chargers. Mobile Chargers come to you.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="kf-card">
+          <h3 class="kf-title">Scalable System</h3>
+          <p class="kf-desc">Easily scale infrastructure and chargers as EV usage in your building increases.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="kf-card">
+          <h3 class="kf-title">Future Proof</h3>
+          <p class="kf-desc">Future proof your building with minimum capital expenditure.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="kf-card">
+          <h3 class="kf-title">Seamless UX</h3>
+          <p class="kf-desc">No apps, no wallets. Simple UPI-based payment with the same UI/UX as slow charging.</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- SECTION: Overview (Warm White Offset Grid) -->
-  <section class="sec-light" style="padding: 140px 0;">
-    <div class="container">
-      <div class="split-story" style="gap: 8rem;">
-        <div>
-          <span class="section-subtitle" style="color: var(--primary);">Maximum Asset Utilization</span>
-          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); max-width: 500px; color: var(--text-dark); line-height: 1.15;">Bring the plug to the vehicle, not the other way around.</h2>
-        </div>
-        <div>
-          <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark-muted);">
-            Fixed charger terminals cause a structural slot bottleneck: once a vehicle finishes charging, it continues to occupy the spot, blocking other users and creating parking disputes.
-          </p>
-          <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark-muted); margin-bottom: 0;">
-            The Juicer eliminates stationary space constraints. By allowing valets and parking attendants to slide units sequentially between parked vehicles, you charge three times as many cars daily using the same power capacity.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- SECTION: How it Works (Light Mode Wavy Flow) -->
+  <section style="padding: 100px 0 50px 0; background: #ffffff; overflow: hidden; position: relative;">
+    <style>
+      .hw-wavy-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 0;
+        gap: 1.5rem;
+      }
+      .hw-wavy-step {
+        flex: 1;
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hw-wavy-step:nth-child(even) {
+        margin-top: 60px;
+      }
+      .hw-wavy-icon {
+        width: 72px;
+        height: 72px;
+        background: rgba(167, 139, 250, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+        border: 2px solid #ffffff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+      .hw-wavy-title {
+        color: #111827;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+      .hw-wavy-desc {
+        color: #4b5563;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .hw-wavy-connector {
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        width: 100%;
+        height: 60px;
+        z-index: 1;
+        pointer-events: none;
+      }
+      @media (max-width: 1024px) {
+        .hw-wavy-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+          padding-top: 1rem;
+        }
+        .hw-wavy-step:nth-child(even) { margin-top: 0; }
+        .hw-wavy-connector { display: none; }
+      }
+    </style>
 
-  <!-- WORKFLOW LAYER: Mobile Charging Sequence (Deep Dark Mode Timeline) -->
-  <section class="sequence-section sec-dark">
-    <div class="container text-center">
-      <span class="section-subtitle">Workflow design</span>
-      <h2 style="margin-bottom: 1rem;">The Mobile Charging Sequence</h2>
-      <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">How property attendants slide mobile units sequentially between bays to maximize utilization yields.</p>
+    <div class="container text-center" style="margin-bottom: 2rem;">
+      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; text-transform: uppercase;">How Juicer <span style="color: var(--primary);">Works</span></h2>
+      <p style="color: #4b5563; font-size: 1.15rem; max-width: 800px; margin: 1.5rem auto 0; line-height: 1.6;">
+        Juicer is our mobile sequential charging layer.<br>Roll, plug, and sequentially charge multiple EVs on a single circuit.
+      </p>
+    </div>
+
+    <div class="hw-wavy-container">
       
-      <div class="sequence-flow">
-        <div class="sequence-step">
-          <div class="sequence-circle">01</div>
-          <h3 class="sequence-title">Slide Unit</h3>
-          <p class="sequence-desc">Valet unlocks the unit via app and rolls it behind the double-parked EV.</p>
+      <!-- Step 1 -->
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/></svg>
         </div>
-        
-        <div class="sequence-step">
-          <div class="sequence-circle">02</div>
-          <h3 class="sequence-title">Connect Plug</h3>
-          <p class="sequence-desc"> अटेंडेंट connects the Retractable Type-2 cable to start the session.</p>
-        </div>
-        
-        <div class="sequence-step">
-          <div class="sequence-circle">03</div>
-          <h3 class="sequence-title">Charge Sequential</h3>
-          <p class="sequence-desc">Fast 22kW charging initiates, managed safely by the Smart DB loop.</p>
-        </div>
-        
-        <div class="sequence-step">
-          <div class="sequence-circle">04</div>
-          <h3 class="sequence-title">Retract Cable</h3>
-          <p class="sequence-desc">At session end, internal balancer counter-weights pull the cable back.</p>
-        </div>
-        
-        <div class="sequence-step">
-          <div class="sequence-circle">05</div>
-          <h3 class="sequence-title">Secure Lock</h3>
-          <p class="sequence-desc">Attendant engages electromagnetic brakes to lock the unit in place.</p>
-        </div>
+        <h3 class="hw-wavy-title">Deploy Unit</h3>
+        <p class="hw-wavy-desc">Valet unlocks the Juicer mobile unit and rolls it to the parked EV's slot.</p>
       </div>
+
+      <!-- Step 2 -->
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="hw-wavy-title">Scan QR</h3>
+        <p class="hw-wavy-desc">Driver scans the QR code casing to launch the WhatsApp chat screen.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3 class="hw-wavy-title">Pay & Start</h3>
+        <p class="hw-wavy-desc">Driver selects their power bundle and pays directly inside the chat interface.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+        </div>
+        <h3 class="hw-wavy-title">Connect Cable</h3>
+        <p class="hw-wavy-desc">Valet plugs the retractable cable into the EV's actual side charging port.</p>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="hw-wavy-step">
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="hw-wavy-title">Session Active</h3>
+        <p class="hw-wavy-desc">Fast 22kW charging initiates under the Smart DB load management loop.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- SECTION: Field Cases (Warm White, Visual Splits) -->
-  <section class="sec-light" style="padding: 140px 0;">
-    <div class="container">
-      <div class="max-w-600" style="text-align: left; margin-bottom: 6rem;">
-        <span class="section-subtitle" style="color: var(--primary);">Case Studies</span>
-        <h2 style="color: var(--text-dark);">Optimizing commercial yields.</h2>
-      </div>
-
-      <!-- Case 1 -->
-      <div class="split-story" style="margin-bottom: 120px; gap: 6rem;">
-        <div class="story-visual" style="border: 1px solid rgba(15,23,42,0.05); box-shadow: 0 30px 60px rgba(0,0,0,0.06);">
-          <img src="/assets/images/developer_hero.png" alt="Mall retail parking spaces with mobile chargers">
-        </div>
-        <div class="story-details">
-          <span class="section-subtitle" style="color: var(--primary);">Case Study: Malls & Retail</span>
-          <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Grand Central Mall space bottlenecks</h3>
-          <p style="color: var(--text-dark-muted); line-height: 1.7;">
-            Grand Central Mall installed 4 fixed fast chargers. Shoppers left vehicles plugged in all afternoon while dining, creating queues. Replacing them with 2 Juicers operated by the valet team allowed staff to charge cars in sequence.
-          </p>
-          <p style="color: var(--text-dark-muted); line-height: 1.7; font-weight: 600;">
-            Outcome: Daily session throughput rose from 8 to 22. Shopping slots are kept fully clear.
-          </p>
-        </div>
-      </div>
-
-      <!-- Case 2 (Reverse) -->
-      <div class="split-story split-story-reverse" style="gap: 6rem;">
-        <div class="story-details">
-          <span class="section-subtitle" style="color: var(--primary);">Case Study: Workplace</span>
-          <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Tech Park Block C fleet setups</h3>
-          <p style="color: var(--text-dark-muted); line-height: 1.7;">
-            An office park basement parking needed to charge 40 tenant EVs. Upgrading individual slots required heavy cable trenching and power transformer capital. Deployed 4 Juicers sequentially operated by roaming valets.
-          </p>
-          <p style="color: var(--text-dark-muted); line-height: 1.7; font-weight: 600;">
-            Outcome: Trenching and transformer capital costs cut by 65%.
-          </p>
-        </div>
-        <div class="story-visual" style="border: 1px solid rgba(15,23,42,0.05); box-shadow: 0 30px 60px rgba(0,0,0,0.06);">
-          <img src="/assets/images/rwa_hero.png" alt="Office park basement parking slots setup">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: Specs (Deep Dark Premium Spec Cards) -->
-  <section class="sec-dark" style="padding: 140px 0; border-top: 1px solid rgba(248,250,252,0.05);">
-    <div class="container text-center">
-      <span class="section-subtitle">Technical Details</span>
-      <h2 style="margin-bottom: 1.5rem;">Juicer Specifications</h2>
-      <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">Comprehensive mobile charging hardware specifications.</p>
+  <!-- Specifications Modal -->
+  <div id="specsModal" style="display: none; position: fixed; inset: 0; background: rgba(11, 14, 20, 0.9); backdrop-filter: blur(8px); z-index: 1000; justify-content: center; align-items: center; padding: 2rem;">
+    <div class="sec-dark" style="background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; width: 100%; max-width: 1200px; max-height: 90vh; overflow-y: auto; padding: 3.5rem 2.5rem; position: relative; box-shadow: 0 50px 100px rgba(0,0,0,0.85); text-align: center;">
+      <!-- Close Button -->
+      <button id="closeSpecsModalBtn" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; width: 44px; height: 44px; color: var(--text-light-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 100;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <span class="section-subtitle" style="color: var(--primary); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1rem;">Technical Details</span>
+      <h2 style="color: #ffffff; font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">Juicer Specifications</h2>
+      <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 3.5rem; font-size: 1.05rem;">Comprehensive mobile charging hardware specifications.</p>
 
       <div class="spec-grid-premium">
         <!-- Card 1: Power & Battery -->
@@ -535,15 +649,579 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- SECTION: WhatsApp Charging Experience (Warm White) -->
+  <section class="whatsapp-charge-section" style="background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05); padding-top: 50px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="whatsapp-grid">
+        
+        <!-- Left Side: Content & Steps -->
+        <div class="whatsapp-content">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary); background: rgba(91, 95, 239, 0.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block;">User Experience</span>
+          <h2 class="whatsapp-title">Charge with WhatsApp</h2>
+          <p style="font-size: 1.1rem; color: var(--text-dark-muted); line-height: 1.6; margin-bottom: 2.5rem; max-width: 600px;">
+            No app downloads required. No registration barriers. Scan the QR code on the Juicer casing to initiate, pay, and monitor your charging session directly inside WhatsApp.
+          </p>
+          
+          <span class="whatsapp-subtitle-orange">Three Easy Steps</span>
+          
+          <div class="whatsapp-steps">
+            
+            <!-- Step 1 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">1</div>
+              <div>
+                <h4 class="whatsapp-step-title">open camera and scan qr</h4>
+                <p class="whatsapp-step-desc">Scan the QR code printed on the Juicer casing to open the WhatsApp chat screen.</p>
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">2</div>
+              <div>
+                <h4 class="whatsapp-step-title">select available port</h4>
+                <p class="whatsapp-step-desc">Confirm your Juicer charging unit port inside the chat interface to authorize the session.</p>
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">3</div>
+              <div>
+                <h4 class="whatsapp-step-title">plug, pay and go</h4>
+                <p class="whatsapp-step-desc">Complete your payment via UPI or card, plug in the connector, and monitor live charge progress directly.</p>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- See Stimulation Button -->
+          <div style="margin-top: 2rem;">
+            <button id="see-stimulation-btn" class="btn btn-primary" style="padding: 1rem 2.25rem; font-size: 1.05rem; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: var(--border-radius-md); background-color: var(--primary); color: white; transition: background-color var(--transition-fast);">
+              See Stimulation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Right Side: Phone Visuals -->
+        <div class="whatsapp-visual-wrapper">
+          <div class="whatsapp-bolt-bg"></div>
+          
+          <!-- iPhone Side Buttons Mockup -->
+          <div style="position: absolute; left: calc(50% - 158px); top: 110px; width: 3px; height: 18px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div style="position: absolute; left: calc(50% - 158px); top: 140px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div style="position: absolute; left: calc(50% - 158px); top: 182px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div style="position: absolute; left: calc(50% + 155px); top: 155px; width: 3px; height: 50px; background: #0f172a; border-radius: 0 2px 2px 0; z-index: 2; box-shadow: 1px 0 2px rgba(0,0,0,0.2);"></div>
+
+          <!-- Front Phone -->
+          <div class="whatsapp-phone-front">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%); pointer-events: none; z-index: 11;"></div>
+
+            <!-- Status Bar -->
+            <div style="background: #075E54; display: flex; flex-direction: column; flex-shrink: 0; position: relative; z-index: 10;">
+              <div style="height: 30px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; color: white; font-size: 0.62rem; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600;">
+                <span style="margin-top: 2px;">9:41</span>
+                <div style="width: 72px; height: 18px; visibility: hidden;"></div>
+                <div style="display: flex; gap: 4px; align-items: center; margin-top: 2px;">
+                  <svg width="12" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M2 22h20V2H2v20z" opacity="0.3"/><path d="M17 7L2 22h15V7z"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M12 21l-12-12c4-4 9-6 12-6s8 2 12 6l-12 12z"/></svg>
+                  <svg width="16" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-top: 1px; opacity: 0.95;"><rect x="1" y="4" width="18" height="16" rx="2"/><line x1="23" y1="10" x2="23" y2="14" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              
+              <!-- WhatsApp Header -->
+              <div class="whatsapp-chat-header" style="height: 56px; padding: 10px 12px 0px 12px; display: flex; align-items: center; gap: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: white; flex-shrink: 0;">EJ</div>
+                <div style="display: flex; flex-direction: column; text-align: left; flex-grow: 1;">
+                  <span style="font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; gap: 3px; line-height: 1.2;">
+                    EBEE Juicer
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="#22C55E"><circle cx="12" cy="12" r="10" fill="#22C55E"/><path d="M9 12l2 2 4-4" fill="none" stroke="white" stroke-width="3"/></svg>
+                  </span>
+                  <span style="font-size: 0.65rem; opacity: 0.8; line-height: 1;">online</span>
+                </div>
+                <div style="display: flex; gap: 12px; opacity: 0.85; align-items: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Chat Body -->
+            <div class="whatsapp-chat-body">
+              <div style="background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%;">
+                Messages are end-to-end encrypted.
+              </div>
+              
+              <!-- Message 1 -->
+              <div style="background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; position: relative;">
+                Welcome to <strong>EBEE Juicer</strong>! ⚡<br>Please select your Juicer charging unit to begin:
+                <span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41 AM</span>
+              </div>
+              
+              <!-- Quick Replies (Starting State) -->
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px;">
+                <div class="sim-bay-1" style="background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; font-size: 0.7rem;">
+                  Juicer Port 1 (Available)
+                </div>
+                <div class="sim-bay-2" style="background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;">
+                  Juicer Port 2 (Occupied)
+                </div>
+              </div>
+            </div>
+            
+            <!-- Input Bar -->
+            <div class="whatsapp-chat-input">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <div style="flex-grow: 1; background: white; height: 28px; border-radius: 14px; padding: 6px 12px; color: #999; font-size: 0.68rem; text-align: left;">Type a message...</div>
+              <div style="width: 28px; height: 28px; background: #00a884; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Juicer Advantages -->
+  <section class="advantages-section" data-juicer-benefits style="padding: 100px 0; background: #ffffff; text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05); overflow: hidden;">
+    <div class="container">
+      <span class="section-subtitle" style="color: var(--primary); font-size: 0.85rem; font-weight: 700; background: rgba(91, 95, 239, 0.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block;">Key Benefits</span>
+      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Advantages of Juicer</h2>
+      <p style="color: #4b5563; font-size: 1.15rem; max-width: 800px; margin: 0 auto 4rem; line-height: 1.6;">
+        Juicer brings flexibility, cost savings, and operational efficiency to residential and commercial properties.
+      </p>
+
+      <style>
+        .adv-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 1.25rem;
+          margin-top: 2rem;
+        }
+        @media (max-width: 1200px) {
+          .adv-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+          }
+          .adv-card {
+            flex: 1 1 300px;
+            max-width: 380px;
+          }
+        }
+        @media (max-width: 640px) {
+          .adv-grid .adv-card {
+            flex: 1 1 100%;
+            max-width: 100%;
+          }
+        }
+        .adv-card {
+          background: #ffffff;
+          border: 1px solid rgba(15, 23, 42, 0.06);
+          border-radius: var(--border-radius-lg);
+          padding: 0;
+          text-align: left;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .adv-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+          border-color: rgba(91, 95, 239, 0.3);
+        }
+        .adv-card-media {
+          position: relative;
+          height: 150px;
+          overflow: hidden;
+          background: #f8fafc;
+        }
+        .adv-card-media::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0));
+          pointer-events: none;
+        }
+        .adv-card-media img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .adv-card:hover .adv-card-media img {
+          transform: scale(1.06);
+        }
+        .adv-card-body {
+          padding: 0 2rem 2.25rem;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .adv-icon-wrapper {
+          width: 56px;
+          height: 56px;
+          border-radius: 12px;
+          background: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--primary);
+          margin: -28px 0 1.5rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+          position: relative;
+          z-index: 2;
+        }
+        .adv-card:hover .adv-icon-wrapper {
+          background: var(--primary);
+          color: #ffffff;
+          transform: scale(1.05);
+        }
+        .adv-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #111827;
+          margin-bottom: 0.75rem;
+        }
+        .adv-desc {
+          font-size: 0.95rem;
+          color: #4b5563;
+          line-height: 1.6;
+          margin: 0;
+        }
+      </style>
+
+      <div class="adv-grid">
+        <!-- Advantage 1 -->
+        <div class="adv-card">
+          <div class="adv-card-media">
+            <img src="/assets/images/movable_charger.png" alt="EBEE Juicer mobile charger ready for deployment">
+          </div>
+          <div class="adv-card-body">
+            <div class="adv-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="adv-title">Zero Installation Costs</h3>
+            <p class="adv-desc">Requires no cable trenching, civil digging, or building transformer upgrades. Simply deploy immediately.</p>
+          </div>
+        </div>
+
+        <!-- Advantage 2 -->
+        <div class="adv-card">
+          <div class="adv-card-media">
+            <img src="/assets/images/ev_car_top.png" alt="EV parking flow for sequential charging">
+          </div>
+          <div class="adv-card-body">
+            <div class="adv-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            </div>
+            <h3 class="adv-title">Sequential Charge Loop</h3>
+            <p class="adv-desc">Charges up to 10 vehicles in sequence on a single network circuit automatically.</p>
+          </div>
+        </div>
+
+        <!-- Advantage 3 -->
+        <div class="adv-card">
+          <div class="adv-card-media">
+            <img src="/assets/images/mall_parking_ev.jpg" alt="Shared parking area with EV charging access">
+          </div>
+          <div class="adv-card-body">
+            <div class="adv-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+            </div>
+            <h3 class="adv-title">No Dedicated EV Bays</h3>
+            <p class="adv-desc">Avoids converting valuable premium parking spaces into permanent, restricted EV-only designated zones.</p>
+          </div>
+        </div>
+
+        <!-- Advantage 4 -->
+        <div class="adv-card">
+          <div class="adv-card-media">
+            <img src="/assets/images/smart_db_garage.png" alt="Garage EV charging infrastructure with shared capacity">
+          </div>
+          <div class="adv-card-body">
+            <div class="adv-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+            </div>
+            <h3 class="adv-title">Reduced CapEx</h3>
+            <p class="adv-desc">Saves up to 70% on infrastructure capital compared to installing fixed charger sockets at every single bay.</p>
+          </div>
+        </div>
+
+        <!-- Advantage 5 -->
+        <div class="adv-card">
+          <div class="adv-card-media">
+            <img src="/assets/images/juicer_features_bg.png" alt="Durable Juicer charging unit for indoor and outdoor parking">
+          </div>
+          <div class="adv-card-body">
+            <div class="adv-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="adv-title">Weatherproof Chassis</h3>
+            <p class="adv-desc">IP54 dust/waterproof and IK10 impact-resistant chassis, perfect for indoor basements and outdoor open parking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SECTION: CTA -->
-  <section class="sec-dark" style="background-color: var(--primary); padding: 120px 0;">
-    <div class="container text-center max-w-800">
+  <section class="sec-dark" style="background-image: url('/assets/images/smart_db_cta_bg.JPG'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
+    <!-- Dark overlay for text legibility -->
+    <div style="position: absolute; inset: 0; background: rgba(11, 14, 20, 0.65); z-index: 1;"></div>
+    
+    <div class="container text-center max-w-800" style="position: relative; z-index: 2;">
       <h2 style="color: var(--text-light); margin-bottom: 1rem;">Maximize your asset utilization.</h2>
-      <p style="color: rgba(248, 250, 252, 0.85); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with our parking consultants to design your mobile layout proposal.</p>
-      <a href="/demo/?product=juicer" class="btn btn-white">Request Mobile Layout Consultation</a>
+      <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with our parking consultants to design your mobile layout proposal.</p>
+      <a href="/demo/?product=juicer" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Demo</a>
     </div>
+  </section>
+
+  <style>
+    /* WhatsApp Simulation Keyframes */
+    @keyframes sim-spin { 100% { transform: rotate(360deg); } }
+    @keyframes sim-bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1.0); }
+    }
+    @keyframes sim-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(79, 195, 247, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(79, 195, 247, 0); }
+    }
+  </style>
+
+  <script>
+    // WhatsApp Live Chat Simulation for Juicer
+    document.addEventListener('DOMContentLoaded', () => {
+      const seeStimulationBtn = document.getElementById('see-stimulation-btn');
+      const chatBody = document.querySelector('.whatsapp-chat-body');
+      
+      if (!chatBody) return;
+      
+      // Helper: System Message
+      const showSystemMsg = (text) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+        div.innerHTML = text;
+        chatBody.appendChild(div);
+        setTimeout(() => {
+          div.style.opacity = '1';
+          div.style.transform = 'translateY(0)';
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 50);
+      };
+      
+      // Helper: Typing indicator
+      const showTyping = () => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: white; padding: 10px 14px; border-radius: 0px 8px 8px 8px; max-width: 65px; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); display: flex; gap: 4px; align-items: center; justify-content: center; margin-bottom: 12px;';
+        const dotStyle = 'width: 6px; height: 6px; background: #999; border-radius: 50%; display: inline-block; animation: sim-bounce 1.4s infinite ease-in-out both;';
+        div.innerHTML = `
+          <span style="${dotStyle}"></span>
+          <span style="${dotStyle} animation-delay: 0.2s;"></span>
+          <span style="${dotStyle} animation-delay: 0.4s;"></span>
+        `;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        return div;
+      };
+      
+      // Helper: Incoming message
+      const showIncoming = (text, delay = 1000) => {
+        return new Promise((resolve) => {
+          const typing = showTyping();
+          setTimeout(() => {
+            typing.remove();
+            const div = document.createElement('div');
+            div.style.cssText = 'background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+            div.innerHTML = text + `<span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41 AM</span>`;
+            chatBody.appendChild(div);
+            setTimeout(() => {
+              div.style.opacity = '1';
+              div.style.transform = 'translateY(0)';
+              chatBody.scrollTop = chatBody.scrollHeight;
+              setTimeout(resolve, 500);
+            }, 50);
+          }, delay);
+        });
+      };
+      
+      // Helper: Outgoing message
+      const showOutgoing = (text, delay = 500) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            div.style.cssText = 'background: #dcf8c6; padding: 8px 10px; border-radius: 8px 0px 8px 8px; max-width: 80%; align-self: flex-end; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+            div.innerHTML = text + `<span style="display: block; text-align: right; font-size: 0.55rem; color: #58b05c; margin-top: 4px;">09:42 AM <span style="color: #34b7f1; margin-left: 2px;">✓✓</span></span>`;
+            chatBody.appendChild(div);
+            setTimeout(() => {
+              div.style.opacity = '1';
+              div.style.transform = 'translateY(0)';
+              chatBody.scrollTop = chatBody.scrollHeight;
+              setTimeout(resolve, 500);
+            }, 50);
+          }, delay);
+        });
+      };
+      
+      // Helper: Quick Replies creator
+      const showQuickReplies = () => {
+        return new Promise((resolve) => {
+          const container = document.createElement('div');
+          container.style.cssText = 'display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px; opacity: 0; transition: opacity 0.3s ease; margin-bottom: 12px;';
+          
+          const btn1 = document.createElement('div');
+          btn1.className = 'sim-bay-1';
+          btn1.style.cssText = 'background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; transition: all 0.2s; font-size: 0.7rem; animation: sim-pulse 2s infinite;';
+          btn1.innerText = 'Juicer Port 1 (Available)';
+          
+          const btn2 = document.createElement('div');
+          btn2.className = 'sim-bay-2';
+          btn2.style.cssText = 'background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;';
+          btn2.innerText = 'Juicer Port 2 (Occupied)';
+          
+          container.appendChild(btn1);
+          container.appendChild(btn2);
+          chatBody.appendChild(container);
+          
+          setTimeout(() => {
+            container.style.opacity = '1';
+            chatBody.scrollTop = chatBody.scrollHeight;
+            bindInteractiveListeners();
+            resolve();
+          }, 50);
+        });
+      };
+      
+      // Bind click events on quick replies
+      const bindInteractiveListeners = () => {
+        const bay1Btn = chatBody.querySelector('.sim-bay-1');
+        const bay2Btn = chatBody.querySelector('.sim-bay-2');
+        
+        if (bay1Btn) {
+          bay1Btn.addEventListener('click', async () => {
+            const container = bay1Btn.parentElement;
+            container.remove();
+            
+            await showOutgoing('Juicer Port 1 (Available)');
+            await showIncoming('You selected <strong>Juicer Port 1</strong>.<br>Connect your cable and pay below to start:<br>' + 
+              '<div style="margin-top: 6px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; border-radius: 6px; display: flex; flex-direction: column; gap: 4px; text-align:left;">' +
+                '<span style="font-weight: 700; color: var(--primary);">Power Bundle (22 kW AC Fast)</span>' +
+                '<span style="color: var(--text-dark-muted); font-size: 0.65rem;">Total Amount: ₹220</span>' +
+                '<div class="sim-pay-btn" style="background: #22C55E; color: white; font-weight: 700; text-align: center; padding: 6px; border-radius: 4px; margin-top: 4px; font-size: 0.7rem; cursor: pointer; transition: background 0.2s;">Pay & Start Charging</div>' +
+              '</div>');
+              
+            const payBtn = chatBody.querySelector('.sim-pay-btn');
+            if (payBtn) {
+              payBtn.addEventListener('click', () => {
+                if (payBtn.classList.contains('processing')) return;
+                payBtn.classList.add('processing');
+                
+                payBtn.style.background = '#8c959f';
+                payBtn.innerHTML = `Processing... <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite;">⚡</span>`;
+                
+                setTimeout(async () => {
+                  payBtn.style.background = '#15803d';
+                  payBtn.innerHTML = `Payment Successful! ✓`;
+                  
+                  await showIncoming('Payment confirmed! ⚡<br>Initiating charging on <strong>Juicer Port 1</strong>...');
+                  
+                  const batteryMsgDiv = document.createElement('div');
+                  batteryMsgDiv.style.cssText = 'background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; margin-bottom: 12px;';
+                  batteryMsgDiv.innerHTML = `<strong>Session Active:</strong><br>• Current Rate: 22 kW AC<br>• Energy Delivered: 0.1 kWh<br>• State of Charge: <span class="sim-battery-pct">15%</span> 🔋<span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:43 AM</span>`;
+                  chatBody.appendChild(batteryMsgDiv);
+                  chatBody.scrollTop = chatBody.scrollHeight;
+                  
+                  let batteryPct = 15;
+                  let energyDelivered = 0.1;
+                  const interval = setInterval(() => {
+                    if (!chatBody.contains(batteryMsgDiv)) {
+                      clearInterval(interval);
+                      return;
+                    }
+                    batteryPct += 1;
+                    energyDelivered += 0.3;
+                    const pctSpan = batteryMsgDiv.querySelector('.sim-battery-pct');
+                    if (pctSpan) {
+                      pctSpan.innerText = `${batteryPct}%`;
+                    }
+                    if (batteryPct >= 20) {
+                      clearInterval(interval);
+                      showIncoming('Your session is active. You will receive a summary when charging finishes! Go ebee! ⚡🔋');
+                    }
+                  }, 1500);
+                  
+                }, 1500);
+              });
+            }
+          });
+        }
+        
+        if (bay2Btn) {
+          bay2Btn.addEventListener('click', async () => {
+            const container = bay2Btn.parentElement;
+            container.remove();
+            await showOutgoing('Juicer Port 2 (Occupied)');
+            await showIncoming('<strong>Juicer Port 2 is occupied</strong> by another EV.<br>Please select an available port:');
+            await showQuickReplies();
+          });
+        }
+      };
+      
+      // Bind listeners initially on load
+      bindInteractiveListeners();
+      
+      // Handle the Stimulation button click
+      if (seeStimulationBtn) {
+        seeStimulationBtn.addEventListener('click', async () => {
+          chatBody.innerHTML = '';
+          seeStimulationBtn.disabled = true;
+          seeStimulationBtn.style.opacity = '0.7';
+          seeStimulationBtn.innerHTML = `Interactive Mode Active <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite; margin-left: 5px;">⚡</span>`;
+          
+          showSystemMsg('Messages are end-to-end encrypted.');
+          await new Promise(r => setTimeout(r, 600));
+          
+          await showIncoming('Welcome to <strong>EBEE Juicer</strong>! ⚡<br>Please select your Juicer charging unit to begin:');
+          await showQuickReplies();
+          
+          seeStimulationBtn.disabled = false;
+          seeStimulationBtn.style.opacity = '1';
+          seeStimulationBtn.innerHTML = `Reset Stimulation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`;
+        });
+      }
+
+      // Specs Modal Toggle
+      document.getElementById('openSpecsModalBtn')?.addEventListener('click', function() {
+        const modal = document.getElementById('specsModal');
+        if (modal) modal.style.display = 'flex';
+      });
+      
+      document.getElementById('closeSpecsModalBtn')?.addEventListener('click', function() {
+        const modal = document.getElementById('specsModal');
+        if (modal) modal.style.display = 'none';
+      });
+      
+      document.getElementById('specsModal')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.style.display = 'none';
+        }
+      });
+    });
+  </script>
   </section>
 
   <!-- FOOTER -->

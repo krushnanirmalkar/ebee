@@ -579,7 +579,7 @@
   </div>
 
   <!-- SECTION: How it Works (Light Mode Wavy Flow) -->
-  <section style="padding: 100px 0; background: #ffffff; overflow: hidden; position: relative;">
+  <section style="padding: 100px 0 50px 0; background: #ffffff; overflow: hidden; position: relative;">
     <style>
       .hw-wavy-container {
         display: flex;
@@ -742,6 +742,220 @@
     </div>
   </section>
 
+  <!-- SECTION: WhatsApp Charging Experience (Warm White) -->
+  <section class="whatsapp-charge-section" style="background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05); padding-top: 50px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="whatsapp-grid">
+        
+        <!-- Left Side: Content & Steps -->
+        <div class="whatsapp-content">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary); background: rgba(91, 95, 239, 0.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block;">User Experience</span>
+          <h2 class="whatsapp-title">Charge with the WhatsApp</h2>
+          <p style="font-size: 1.1rem; color: var(--text-dark-muted); line-height: 1.6; margin-bottom: 2.5rem; max-width: 600px;">
+            No app downloads required. No registration barriers. Scan the QR code at your bay to initiate, pay, and monitor your charging session directly inside WhatsApp.
+          </p>
+          
+          <span class="whatsapp-subtitle-orange">Three Easy Steps</span>
+          
+          <div class="whatsapp-steps">
+            
+            <!-- Step 1 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">1</div>
+              <div>
+                <h4 class="whatsapp-step-title">open camera and scan qr</h4>
+                <p class="whatsapp-step-desc">Scan the QR code printed on the charger node casing to open the WhatsApp chat screen.</p>
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">2</div>
+              <div>
+                <h4 class="whatsapp-step-title">select available bay</h4>
+                <p class="whatsapp-step-desc">Confirm your charging slot inside the chat interface to lock the bay for your session.</p>
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="whatsapp-step-item">
+              <div class="whatsapp-step-num">3</div>
+              <div>
+                <h4 class="whatsapp-step-title">plug, pay and go</h4>
+                <p class="whatsapp-step-desc">Connect the charging cable, complete your payment via UPI or credit card, and monitor live status updates directly.</p>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- See Stimulation Button -->
+          <div style="margin-top: 2rem;">
+            <button id="see-stimulation-btn" class="btn btn-primary" style="padding: 1rem 2.25rem; font-size: 1.05rem; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: var(--border-radius-md); background-color: var(--primary); color: white; transition: background-color var(--transition-fast);">
+              See Stimulation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Right Side: Phone Visuals -->
+        <div class="whatsapp-visual-wrapper">
+          <div class="whatsapp-bolt-bg"></div>
+          
+          <!-- iPhone Side Buttons Mockup -->
+          <!-- Left: Action Button -->
+          <div style="position: absolute; left: calc(50% - 158px); top: 110px; width: 3px; height: 18px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <!-- Left: Volume Up -->
+          <div style="position: absolute; left: calc(50% - 158px); top: 140px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <!-- Left: Volume Down -->
+          <div style="position: absolute; left: calc(50% - 158px); top: 182px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <!-- Right: Power Button -->
+          <div style="position: absolute; left: calc(50% + 155px); top: 155px; width: 3px; height: 50px; background: #0f172a; border-radius: 0 2px 2px 0; z-index: 2; box-shadow: 1px 0 2px rgba(0,0,0,0.2);"></div>
+
+          <!-- Front Phone -->
+          <div class="whatsapp-phone-front">
+            <!-- Glossy Glass Reflection Overlay -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%); pointer-events: none; z-index: 11;"></div>
+
+            <!-- Merged Status Bar + Header -->
+            <div style="background: #075E54; display: flex; flex-direction: column; flex-shrink: 0; position: relative; z-index: 10;">
+              <!-- iOS Status Bar -->
+              <div style="height: 30px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; color: white; font-size: 0.62rem; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; select-none: none; pointer-events: none;">
+                <span style="margin-top: 2px;">9:41</span>
+                <!-- Dynamic Island Spacer (centered) -->
+                <div style="width: 72px; height: 18px; visibility: hidden;"></div>
+                <div style="display: flex; gap: 4px; align-items: center; margin-top: 2px;">
+                  <!-- Signal icon -->
+                  <svg width="12" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M2 22h20V2H2v20z" opacity="0.3"/><path d="M17 7L2 22h15V7z"/></svg>
+                  <!-- Wifi icon -->
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M12 21l-12-12c4-4 9-6 12-6s8 2 12 6l-12 12z"/></svg>
+                  <!-- Battery icon -->
+                  <svg width="16" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-top: 1px; opacity: 0.95;"><rect x="1" y="4" width="18" height="16" rx="2"/><line x1="23" y1="10" x2="23" y2="14" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              
+              <!-- WhatsApp Header Info -->
+              <div class="whatsapp-chat-header" style="height: 56px; padding: 10px 12px 0px 12px; display: flex; align-items: center; gap: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: white; flex-shrink: 0;">EB</div>
+                <div style="display: flex; flex-direction: column; text-align: left; flex-grow: 1;">
+                  <span style="font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; gap: 3px; line-height: 1.2;">
+                    EBEE Charge
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="#22C55E"><circle cx="12" cy="12" r="10" fill="#22C55E"/><path d="M9 12l2 2 4-4" fill="none" stroke="white" stroke-width="3"/></svg>
+                  </span>
+                  <span style="font-size: 0.65rem; opacity: 0.8; line-height: 1;">online</span>
+                </div>
+                <div style="display: flex; gap: 12px; opacity: 0.85; align-items: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Chat Body -->
+            <div class="whatsapp-chat-body">
+              <div style="background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%;">
+                Messages are end-to-end encrypted.
+              </div>
+              
+              <!-- Message 1 -->
+              <div style="background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; position: relative;">
+                Welcome to <strong>EBEE Charge</strong>! ⚡<br>Please select your charging bay to begin:
+                <span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41 AM</span>
+              </div>
+              
+              <!-- Quick Replies (Starting State) -->
+              <div style="display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px;">
+                <div class="sim-bay-1" style="background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; font-size: 0.7rem;">
+                  Bay 1 (Available)
+                </div>
+                <div class="sim-bay-2" style="background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;">
+                  Bay 2 (Occupied)
+                </div>
+              </div>
+            </div>
+            
+            <!-- Input Bar -->
+            <div class="whatsapp-chat-input">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <div style="flex-grow: 1; background: white; height: 28px; border-radius: 14px; padding: 6px 12px; color: #999; font-size: 0.68rem; text-align: left;">Type a message...</div>
+              <div style="width: 28px; height: 28px; background: #00a884; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </div>
+            </div>
+
+            <!-- Home Indicator -->
+            <div style="height: 12px; display: flex; justify-content: center; align-items: center; background: #f0f0f0; padding-bottom: 4px; pointer-events: none; z-index: 10; flex-shrink: 0;">
+              <div style="width: 60px; height: 3px; background: #000; border-radius: 1.5px; opacity: 0.25;"></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Traditional Smart Socket VS Central Smart DB (Responsive Card) -->
+  <section class="comparison-section" style="padding: 80px 0; background: #ffffff; text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05);">
+    <div class="container">
+      
+      <!-- Section Title -->
+      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; margin-bottom: 3.5rem; letter-spacing: -0.01em;">
+        Traditional Smart Socket <span style="color: #94a3b8; font-weight: 400;">VS</span> <span style="color: var(--primary);">Smart DB Approach</span>
+      </h2>
+      
+      <!-- Comparison Card Wrapper -->
+      <div class="comparison-card" style="display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.06); max-width: 1000px; margin: 0 auto;">
+        
+        <!-- Left Side: Current Approach (Dark) -->
+        <div style="background: var(--bg-dark); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
+          <div style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 0.5rem;">
+            <h3 style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.6); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">Current Approach</h3>
+          </div>
+          
+          <!-- Point 1 -->
+          <div style="display: flex; gap: 1.25rem; align-items: center;">
+            <div style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.1a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Every socket needs its own internet connection</p>
+          </div>
+          
+          <!-- Point 2 -->
+          <div style="display: flex; gap: 1.25rem; align-items: center;">
+            <div style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">High per-bay cost with full smart sockets</p>
+          </div>
+        </div>
+        
+        <!-- Right Side: Smart DB Solution (Purple) -->
+        <div style="background: var(--primary); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
+          <div style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); margin-bottom: 0.5rem;">
+            <h3 style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.9); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">The Smart DB Solution</h3>
+          </div>
+          
+          <!-- Point 1 -->
+          <div style="display: flex; gap: 1.25rem; align-items: center;">
+            <div style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">Intelligence, metering & relay control move entirely into the central DB unit</p>
+          </div>
+          
+          <!-- Point 2 -->
+          <div style="display: flex; gap: 1.25rem; align-items: center;">
+            <div style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">One internet connection at the DB means bays need zero connectivity</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION: CTA -->
   <section class="sec-dark" style="background-image: url('/assets/images/smart_db_cta_bg.JPG'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
     <!-- Dark overlay for text legibility -->
@@ -827,6 +1041,221 @@
       if (e.target === this) {
         this.style.display = 'none';
         document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <style>
+    /* WhatsApp Simulation Keyframes */
+    @keyframes sim-bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1.0); }
+    }
+    @keyframes sim-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+  <script>
+    // WhatsApp Live Chat Simulation
+    document.addEventListener('DOMContentLoaded', () => {
+      const seeStimulationBtn = document.getElementById('see-stimulation-btn');
+      const chatBody = document.querySelector('.whatsapp-chat-body');
+      
+      if (!chatBody) return;
+      
+      // Helper: System Message
+      const showSystemMsg = (text) => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+        div.innerHTML = text;
+        chatBody.appendChild(div);
+        setTimeout(() => {
+          div.style.opacity = '1';
+          div.style.transform = 'translateY(0)';
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 50);
+      };
+      
+      // Helper: Typing indicator
+      const showTyping = () => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: white; padding: 10px 14px; border-radius: 0px 8px 8px 8px; max-width: 65px; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); display: flex; gap: 4px; align-items: center; justify-content: center; margin-bottom: 12px;';
+        const dotStyle = 'width: 6px; height: 6px; background: #999; border-radius: 50%; display: inline-block; animation: sim-bounce 1.4s infinite ease-in-out both;';
+        div.innerHTML = `
+          <span style="${dotStyle}"></span>
+          <span style="${dotStyle} animation-delay: 0.2s;"></span>
+          <span style="${dotStyle} animation-delay: 0.4s;"></span>
+        `;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+        return div;
+      };
+      
+      // Helper: Incoming message
+      const showIncoming = (text, delay = 1000) => {
+        return new Promise((resolve) => {
+          const typing = showTyping();
+          setTimeout(() => {
+            typing.remove();
+            const div = document.createElement('div');
+            div.style.cssText = 'background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+            div.innerHTML = text + `<span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41 AM</span>`;
+            chatBody.appendChild(div);
+            setTimeout(() => {
+              div.style.opacity = '1';
+              div.style.transform = 'translateY(0)';
+              chatBody.scrollTop = chatBody.scrollHeight;
+              setTimeout(resolve, 500);
+            }, 50);
+          }, delay);
+        });
+      };
+      
+      // Helper: Outgoing message
+      const showOutgoing = (text, delay = 500) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            div.style.cssText = 'background: #dcf8c6; padding: 8px 10px; border-radius: 8px 0px 8px 8px; max-width: 80%; align-self: flex-end; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; margin-bottom: 12px;';
+            div.innerHTML = text + `<span style="display: block; text-align: right; font-size: 0.55rem; color: #58b05c; margin-top: 4px;">09:42 AM <span style="color: #34b7f1; margin-left: 2px;">✓✓</span></span>`;
+            chatBody.appendChild(div);
+            setTimeout(() => {
+              div.style.opacity = '1';
+              div.style.transform = 'translateY(0)';
+              chatBody.scrollTop = chatBody.scrollHeight;
+              setTimeout(resolve, 500);
+            }, 50);
+          }, delay);
+        });
+      };
+      
+      // Helper: Quick Replies creator
+      const showQuickReplies = () => {
+        return new Promise((resolve) => {
+          const container = document.createElement('div');
+          container.style.cssText = 'display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px; opacity: 0; transition: opacity 0.3s ease; margin-bottom: 12px;';
+          
+          const btn1 = document.createElement('div');
+          btn1.className = 'sim-bay-1';
+          btn1.style.cssText = 'background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; transition: all 0.2s; font-size: 0.7rem; animation: sim-pulse 2s infinite;';
+          btn1.innerText = 'Bay 1 (Available)';
+          
+          const btn2 = document.createElement('div');
+          btn2.className = 'sim-bay-2';
+          btn2.style.cssText = 'background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;';
+          btn2.innerText = 'Bay 2 (Occupied)';
+          
+          container.appendChild(btn1);
+          container.appendChild(btn2);
+          chatBody.appendChild(container);
+          
+          setTimeout(() => {
+            container.style.opacity = '1';
+            chatBody.scrollTop = chatBody.scrollHeight;
+            bindInteractiveListeners();
+            resolve();
+          }, 50);
+        });
+      };
+      
+      // Bind click events on quick replies
+      const bindInteractiveListeners = () => {
+        const bay1Btn = chatBody.querySelector('.sim-bay-1');
+        const bay2Btn = chatBody.querySelector('.sim-bay-2');
+        
+        if (bay1Btn) {
+          bay1Btn.addEventListener('click', async () => {
+            const container = bay1Btn.parentElement;
+            container.remove();
+            
+            await showOutgoing('Bay 1 (Available)');
+            await showIncoming('You selected <strong>Bay 1</strong>.<br>Connect your charger and pay below to start:<br>' + 
+              '<div style="margin-top: 6px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; border-radius: 6px; display: flex; flex-direction: column; gap: 4px; text-align:left;">' +
+                '<span style="font-weight: 700; color: var(--primary);">Power Bundle (15 kWh)</span>' +
+                '<span style="color: var(--text-dark-muted); font-size: 0.65rem;">Total Amount: ₹150</span>' +
+                '<div class="sim-pay-btn" style="background: #22C55E; color: white; font-weight: 700; text-align: center; padding: 6px; border-radius: 4px; margin-top: 4px; font-size: 0.7rem; cursor: pointer; transition: background 0.2s;">Pay & Start Charging</div>' +
+              '</div>');
+              
+            const payBtn = chatBody.querySelector('.sim-pay-btn');
+            if (payBtn) {
+              payBtn.addEventListener('click', () => {
+                if (payBtn.classList.contains('processing')) return;
+                payBtn.classList.add('processing');
+                
+                payBtn.style.background = '#8c959f';
+                payBtn.innerHTML = `Processing... <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite;">⚡</span>`;
+                
+                setTimeout(async () => {
+                  payBtn.style.background = '#15803d';
+                  payBtn.innerHTML = `Payment Successful! ✓`;
+                  
+                  await showIncoming('Payment confirmed! ⚡<br>Initiating charging on <strong>Bay 1</strong>...');
+                  
+                  const batteryMsgDiv = document.createElement('div');
+                  batteryMsgDiv.style.cssText = 'background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; margin-bottom: 12px;';
+                  batteryMsgDiv.innerHTML = `<strong>Session Active:</strong><br>• Current Rate: 7.2 kW<br>• Energy Delivered: 0.1 kWh<br>• State of Charge: <span class="sim-battery-pct">15%</span> 🔋<span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:43 AM</span>`;
+                  chatBody.appendChild(batteryMsgDiv);
+                  chatBody.scrollTop = chatBody.scrollHeight;
+                  
+                  let batteryPct = 15;
+                  let energyDelivered = 0.1;
+                  const interval = setInterval(() => {
+                    if (!chatBody.contains(batteryMsgDiv)) {
+                      clearInterval(interval);
+                      return;
+                    }
+                    batteryPct += 1;
+                    energyDelivered += 0.2;
+                    const pctSpan = batteryMsgDiv.querySelector('.sim-battery-pct');
+                    if (pctSpan) {
+                      pctSpan.innerText = `${batteryPct}%`;
+                    }
+                    if (batteryPct >= 20) {
+                      clearInterval(interval);
+                      showIncoming('Your session is active. You will receive a summary when charging finishes! Go ebee! ⚡🔋');
+                    }
+                  }, 1500);
+                  
+                }, 1500);
+              });
+            }
+          });
+        }
+        
+        if (bay2Btn) {
+          bay2Btn.addEventListener('click', async () => {
+            const container = bay2Btn.parentElement;
+            container.remove();
+            await showOutgoing('Bay 2 (Occupied)');
+            await showIncoming('<strong>Bay 2 is occupied</strong> by another EV.<br>Please select an available bay:');
+            await showQuickReplies();
+          });
+        }
+      };
+      
+      // Bind listeners initially on load
+      bindInteractiveListeners();
+      
+      // Handle the Stimulation button click (resets and starts)
+      if (seeStimulationBtn) {
+        seeStimulationBtn.addEventListener('click', async () => {
+          chatBody.innerHTML = '';
+          seeStimulationBtn.disabled = true;
+          seeStimulationBtn.style.opacity = '0.7';
+          seeStimulationBtn.innerHTML = `Interactive Mode Active <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite; margin-left: 5px;">⚡</span>`;
+          
+          showSystemMsg('Messages are end-to-end encrypted.');
+          await new Promise(r => setTimeout(r, 600));
+          
+          await showIncoming('Welcome to <strong>EBEE Charge</strong>! ⚡<br>Please select your charging bay to begin:');
+          await showQuickReplies();
+          
+          seeStimulationBtn.disabled = false;
+          seeStimulationBtn.style.opacity = '1';
+          seeStimulationBtn.innerHTML = `Reset Stimulation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`;
+        });
       }
     });
   </script>

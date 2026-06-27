@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupHeroInteractions();
   setupLogoAnimation();
   setupChallengesAnimations();
+  setupJuicerBenefitsMotion();
 });
 
 /**
@@ -99,7 +100,7 @@ function setupStickyCta() {
 function setupScrollAnimations() {
   // Add animation class to cards and headers dynamically
   const animatedElements = document.querySelectorAll(
-    '.card, .cta-box, .stat-item, .timeline-step, .flow-node, .flow-arrow, .calculator-card, .spec-table-container, section h2, section .subheadline'
+    '.card, .cta-box, .stat-item, .timeline-step, .flow-node, .flow-arrow, .calculator-card, .spec-table-container, section:not([data-juicer-benefits]) h2, section .subheadline'
   );
 
   // Set initial state
@@ -133,6 +134,76 @@ function setupScrollAnimations() {
   }, observerOptions);
 
   animatedElements.forEach(el => observer.observe(el));
+}
+
+function setupJuicerBenefitsMotion() {
+  const section = document.querySelector('[data-juicer-benefits]');
+  if (!section) return;
+
+  const eyebrow = section.querySelector('.section-subtitle');
+  const heading = section.querySelector('h2');
+  const copy = section.querySelector('p');
+  const cards = gsap.utils.toArray(section.querySelectorAll('.adv-card'));
+  const icons = gsap.utils.toArray(section.querySelectorAll('.adv-icon-wrapper'));
+
+  if (!cards.length) return;
+
+  gsap.set([eyebrow, heading, copy].filter(Boolean), {
+    autoAlpha: 0,
+    y: 28
+  });
+
+  gsap.set(cards, {
+    autoAlpha: 0,
+    x: 96,
+    y: 36,
+    scale: 0.96,
+    rotateZ: 1.5,
+    transformOrigin: 'center bottom',
+    willChange: 'transform, opacity'
+  });
+
+  gsap.set(icons, {
+    autoAlpha: 0,
+    scale: 0.82,
+    rotate: -8,
+    transformOrigin: 'center center'
+  });
+
+  const timeline = gsap.timeline({
+    defaults: {
+      ease: 'power3.out'
+    },
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 72%',
+      once: true
+    }
+  });
+
+  timeline
+    .to([eyebrow, heading, copy].filter(Boolean), {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.72,
+      stagger: 0.12
+    })
+    .to(cards, {
+      autoAlpha: 1,
+      x: 0,
+      y: 0,
+      scale: 1,
+      rotateZ: 0,
+      duration: 0.9,
+      stagger: 0.11
+    }, '-=0.28')
+    .to(icons, {
+      autoAlpha: 1,
+      scale: 1,
+      rotate: 0,
+      duration: 0.48,
+      stagger: 0.08
+    }, '-=0.68');
 }
 
 function setupHeroInteractions() {
