@@ -2333,6 +2333,13 @@ footer {
 
 /* --- MOBILE STYLES & RESPONSIVENESS --- */
 @media (max-width: 1024px) {
+  .hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: calc(var(--header-height) + 40px) !important;
+    padding-bottom: 60px !important;
+  }
+
   .split-story {
     grid-template-columns: 1fr;
     gap: 4rem;
