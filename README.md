@@ -1,4 +1,4 @@
-# EBEECHARGE Website
+ # EBEECHARGE Website
 
 An end-to-end, high-conversion EV charging ecosystem website built with HTML5, Vanilla CSS3, and JavaScript, compiled and served locally using Vite.
 
