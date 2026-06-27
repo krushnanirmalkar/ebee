@@ -298,23 +298,40 @@
   </header>
 
   <!-- PRODUCT LAUNCH HERO -->
-  <section class="product-chapter sec-dark" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 100px; position: relative; background-image: url('/assets/dbhero.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- Vignette Overlay -->
-    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 30%, rgba(11, 14, 20, 0.95) 120%); z-index: 1;"></div>
+  <section class="product-chapter sec-dark" style="min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; background-image: url('/assets/dbhero.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Vignette & Left Gradient Overlay for text legibility -->
+    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 20%, rgba(11, 14, 20, 0.7) 120%), linear-gradient(to right, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.5) 45%, transparent 100%); z-index: 1;"></div>
     
-    <div class="hero-glow-container" style="z-index: 0;">
+    <div class="hero-glow-container" style="z-index: 0; left: 10%; top: 50%;">
       <div class="hero-glow-radial"></div>
     </div>
     
-    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; position: relative;">
-      <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 0; line-height: 1.1; text-align: center; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -0.02em;">SMART DB</h1>
+    <div class="container" style="z-index: 2; position: relative; width: 100%;">
+      <div style="max-width: 700px; margin-top: 2rem;">
+        <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.1; text-align: left; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3.5rem, 7vw, 5rem); letter-spacing: -0.02em;">SMART DB</h1>
+        
+        <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">The intelligent heart of your EV charging network.</p>
+        
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem;">
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">Grid-Safe Infrastructure</span>
+          <span style="color: var(--primary);">•</span>
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">Internet Connected</span>
+          <span style="color: var(--primary);">•</span>
+          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">OCPP 1.6J / 2.0.1</span>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="/demo/?product=smart-db" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Demo</a>
+          <a href="#how-it-works" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); color: white; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); transition: all 0.3s ease;">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SECTION: Key Features (Card Style) -->
-  <section class="sec-light" style="padding: 100px 0;">
-    <div class="container">
-      <div style="background-image: url('/assets/images/smart_db_garage.png'); background-size: cover; background-position: right center; background-repeat: no-repeat; border-radius: 12px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; flex-wrap: wrap; min-height: 480px;">
+  <section class="sec-light" style="padding: 60px 0;">
+    <div class="container" style="max-width: 1500px;">
+      <div style="background-image: url('/assets/images/smart_db_garage.png'); background-size: cover; background-position: right center; background-repeat: no-repeat; border-radius: 16px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; flex-wrap: wrap; min-height: 560px;">
         
         <!-- Gradient Overlay for Left Content -->
         <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0.85) 45%, rgba(15,23,42,0) 75%); z-index: 1;"></div>
@@ -561,173 +578,165 @@
     </div>
   </div>
 
-  <!-- SECTION: How it Works (Hover Cards Grid) -->
-  <section class="sec-dark" style="padding: 120px 0; background: linear-gradient(to bottom, #0b0e14, #0f172a);">
+  <!-- SECTION: How it Works (Light Mode Wavy Flow) -->
+  <section style="padding: 100px 0; background: #ffffff; overflow: hidden; position: relative;">
     <style>
-      .hw-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
+      .hw-wavy-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 3rem 1.5rem 0;
+        gap: 1.5rem;
       }
-      .hw-hover-card {
+      .hw-wavy-step {
+        flex: 1;
         position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        height: 480px;
+        text-align: center;
         display: flex;
-        align-items: flex-end;
-        cursor: pointer;
-        background-color: #1a1e28;
-        border: 1px solid rgba(255,255,255,0.05);
+        flex-direction: column;
+        align-items: center;
       }
-      .hw-hover-card .hw-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        z-index: 1;
+      .hw-wavy-step:nth-child(even) {
+        margin-top: 60px;
       }
-      .hw-hover-card:hover .hw-bg {
-        transform: scale(1.08);
-      }
-      .hw-hover-card .hw-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(11, 14, 20, 0.98) 0%, rgba(11, 14, 20, 0.7) 45%, rgba(11, 14, 20, 0) 100%);
-        z-index: 2;
-        transition: background 0.4s ease;
-      }
-      .hw-hover-card:hover .hw-overlay {
-        background: linear-gradient(to top, rgba(11, 14, 20, 0.98) 0%, rgba(11, 14, 20, 0.95) 70%, rgba(11, 14, 20, 0.3) 100%);
-      }
-      .hw-hover-card .hw-content {
-        position: relative;
-        z-index: 3;
-        padding: 2.5rem 2rem;
-        width: 100%;
-      }
-      .hw-hover-card .hw-title {
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 0;
+      .hw-wavy-icon {
+        width: 72px;
+        height: 72px;
+        background: rgba(167, 139, 250, 0.1);
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        justify-content: center;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+        border: 2px solid #ffffff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
       }
-      .hw-hover-card .hw-details {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        color: rgba(248, 250, 252, 0.85);
-        line-height: 1.6;
-        font-size: 1rem;
+      .hw-wavy-title {
+        color: #111827;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+      .hw-wavy-desc {
+        color: #4b5563;
+        font-size: 0.9rem;
+        line-height: 1.5;
         margin: 0;
       }
-      .hw-hover-card:hover .hw-details {
-        max-height: 250px;
-        opacity: 1;
-        margin-top: 1.25rem;
+      .hw-wavy-connector {
+        position: absolute;
+        top: 36px;
+        left: 50%;
+        width: 100%;
+        height: 60px;
+        z-index: 1;
+        pointer-events: none;
+      }
+      @media (max-width: 1024px) {
+        .hw-wavy-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+          padding-top: 1rem;
+        }
+        .hw-wavy-step:nth-child(even) { margin-top: 0; }
+        .hw-wavy-connector { display: none; }
       }
     </style>
-    
-    <div class="container text-center" style="margin-bottom: 5rem;">
-      <span class="section-subtitle" style="color: var(--primary);">Intelligent Distribution</span>
-      <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2.5rem;">How Smart DB works</h2>
-      <p style="color: rgba(248, 250, 252, 0.7); font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+
+    <div class="container text-center" style="margin-bottom: 2rem;">
+      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; text-transform: uppercase;">How It <span style="color: var(--primary);">Works</span></h2>
+      <p style="color: #4b5563; font-size: 1.15rem; max-width: 800px; margin: 1.5rem auto 0; line-height: 1.6;">
         Smart DB is the intelligent heart of your EV charging network.<br>It connects, controls and optimizes every charging point seamlessly.
       </p>
     </div>
 
-    <div class="hw-grid">
+    <div class="hw-wavy-container">
       
       <!-- Step 1 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/mall_parking_ev.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">1</span> User Arrives
-          </h3>
-          <p class="hw-details">User parks the vehicle and plugs in the charger to the 16A socket.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a2 2 0 00-1.6-.8H5a2 2 0 00-2 2v7.4c0 1.1.9 2 2 2h2m10 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0m-8 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0"/></svg>
         </div>
+        <h3 class="hw-wavy-title">User Arrives</h3>
+        <p class="hw-wavy-desc">User parks the vehicle and plugs in the charger to the 16A socket.</p>
       </div>
 
       <!-- Step 2 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/developer_hero_new.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">2</span> Initiate Charging
-          </h3>
-          <p class="hw-details">User scans the QR code / opens the app and selects the bay.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Initiate Charging</h3>
+        <p class="hw-wavy-desc">User scans the QR code / opens the app and selects the bay.</p>
       </div>
 
       <!-- Step 3 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/residential_builder_ev.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">3</span> Make Payment
-          </h3>
-          <p class="hw-details">User makes the payment through preferred payment mode.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Make Payment</h3>
+        <p class="hw-wavy-desc">User makes the payment through preferred payment mode.</p>
       </div>
 
       <!-- Step 4 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/exhibition_centre_ev.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">4</span> Payment Verification
-          </h3>
-          <p class="hw-details">Payment is verified securely on the backend server.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 16.2A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.3"/><polyline points="9 16 12 19 20 11"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Payment Verification</h3>
+        <p class="hw-wavy-desc">Payment is verified securely on the backend server.</p>
       </div>
 
       <!-- Step 5 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/smart_db_cta_bg.JPG');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">5</span> Command to Smart DB
-          </h3>
-          <p class="hw-details">Backend sends command to Smart DB to activate the selected 16A socket.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12v.01"/><path d="M17 12v.01"/><path d="M7 12v.01"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Command to Smart DB</h3>
+        <p class="hw-wavy-desc">Backend sends command to Smart DB to activate the selected 16A socket.</p>
       </div>
 
       <!-- Step 6 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/rwa_hero_new.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">6</span> Current Allowed
-          </h3>
-          <p class="hw-details">Smart DB allows electricity to the socket and charging starts.</p>
+      <div class="hw-wavy-step">
+        <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+        </svg>
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Current Allowed</h3>
+        <p class="hw-wavy-desc">Smart DB allows electricity to the socket and charging starts.</p>
       </div>
 
       <!-- Step 7 -->
-      <div class="hw-hover-card">
-        <div class="hw-bg" style="background-image: url('/assets/images/office_campus_ev.jpg');"></div>
-        <div class="hw-overlay"></div>
-        <div class="hw-content">
-          <h3 class="hw-title">
-            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">7</span> Load Distribution
-          </h3>
-          <p class="hw-details">If multiple cars are charging, Smart DB intelligently distributes available current across all bays.</p>
+      <div class="hw-wavy-step">
+        <div class="hw-wavy-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
+        <h3 class="hw-wavy-title">Load Distribution</h3>
+        <p class="hw-wavy-desc">If multiple cars are charging, Smart DB intelligently distributes available current across all bays.</p>
       </div>
 
     </div>
