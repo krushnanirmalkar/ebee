@@ -311,77 +311,52 @@
     </div>
   </section>
 
-  <!-- SECTION: Key Features -->
-  <section class="sec-light" style="padding: 140px 0;">
+  <!-- SECTION: Key Features (Card Style) -->
+  <section class="sec-light" style="padding: 100px 0;">
     <div class="container">
-      
-      <!-- Top Split Area -->
-      <div class="split-story" style="gap: 4rem; align-items: center; margin-bottom: 5rem;">
-        <div>
-          <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.1;">Key <span style="color: var(--primary);">Features</span></h2>
-          <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark-muted);">
-            The Smart DB serves as the dynamic coordinator for your property's electrical infrastructure. By monitoring aggregate building consumption, it intelligently manages charging speeds to secure grid transformer safety.
-          </p>
-        </div>
-        <div style="background: rgba(15,23,42,0.02); border-radius: var(--border-radius-lg); padding: 3rem; display: flex; justify-content: center; align-items: center;">
-          <img src="/assets/images/smart_db.png" alt="Smart DB Features" style="max-width: 100%; max-height: 400px; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
-        </div>
-      </div>
-
-      <!-- Features Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div style="background-image: url('/assets/images/smart_db_garage.png'); background-size: cover; background-position: right center; background-repeat: no-repeat; border-radius: 12px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; flex-wrap: wrap; min-height: 480px;">
         
-        <!-- Feature 1: Overload Protection -->
-        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <!-- Gradient Overlay for Left Content -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0.85) 45%, rgba(15,23,42,0) 75%); z-index: 1;"></div>
+        
+        <!-- Left Content -->
+        <div style="padding: 5rem 4rem; flex: 1 1 55%; z-index: 2; position: relative;">
+          <h2 style="color: #ffffff; font-size: 1.75rem; margin-bottom: 3.5rem; font-weight: 600;">Why Buy Smart DB</h2>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem 2rem;">
+            <!-- Feature 1 -->
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+              </div>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Electrical Safety Protections</span>
             </div>
-            <div style="text-align: right;">
-              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">Safe</div>
-              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Protocol</div>
+            <!-- Feature 2 -->
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+              </div>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Internet Connected DB</span>
             </div>
-          </div>
-          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">OVERLOAD PROTECTION</h4>
-          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
-            Continuous feedback clamps max current draws below the safety rating of local utility feeds.
-          </p>
-        </div>
-
-        <!-- Feature 2: Precision Metering -->
-        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            <!-- Feature 3 -->
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              </div>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Intelligent Load Balancing</span>
             </div>
-            <div style="text-align: right;">
-              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">100%</div>
-              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Accuracy</div>
-            </div>
-          </div>
-          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">PRECISION METERING</h4>
-          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
-            Accurate live load statements and diagnostic reports pushed directly to the dashboard.
-          </p>
-        </div>
-
-        <!-- Feature 3: Simple Installation -->
-        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
-            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-            </div>
-            <div style="text-align: right;">
-              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">Easy</div>
-              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Setup</div>
+            <!-- Feature 4 -->
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              </div>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Seamless QR Payments</span>
             </div>
           </div>
-          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">SIMPLE INSTALLATION</h4>
-          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
-            Establishes a safe modular bridge without the need for expensive main breaker rebuilds.
-          </p>
         </div>
-
+        
+        <!-- Right Content (Empty to let background show through) -->
+        <div style="flex: 1 1 45%; z-index: 2;"></div>
       </div>
     </div>
   </section>
@@ -506,54 +481,26 @@
             <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
           </g>
 
+          <!-- ANNOTATIONS -->
+          
+          <!-- Annotation: Smart DB Callout -->
+          <path d="M 640 85 C 620 85 610 120 595 140" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle cx="595" cy="140" r="3" fill="#a78bfa"/>
+          <text x="650" y="90" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a78bfa" letter-spacing="1">SMART DB</text>
+
+          <!-- Annotation: 6 Parking Bays Bracket -->
+          <path d="M 110 460 L 110 470 Q 110 480 120 480 L 490 480 Q 500 480 500 490 Q 500 480 510 480 L 900 480 Q 910 480 910 470 L 910 460" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <text x="500" y="520" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a78bfa" letter-spacing="2" text-anchor="middle">6 PARKING BAYS</text>
+
+          <!-- Annotation: The Structure -->
+          <text x="20" y="520" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="3">THE STRUCTURE</text>
+
         </svg>
       </div>
     </div>
   </section>
 
-  <!-- SECTION: Field Cases (Warm White, Visual Splits) -->
-  <section class="sec-light" style="padding: 140px 0;">
-    <div class="container">
-      <div class="max-w-600" style="text-align: left; margin-bottom: 6rem;">
-        <span class="section-subtitle" style="color: var(--primary);">Deployments</span>
-        <h2 style="color: var(--text-dark);">Tested under real property loads.</h2>
-      </div>
 
-      <!-- Case 1 -->
-      <div class="split-story" style="margin-bottom: 120px; gap: 6rem;">
-        <div class="story-visual" style="border: 1px solid rgba(15,23,42,0.05); box-shadow: 0 30px 60px rgba(0,0,0,0.06);">
-          <img src="/assets/images/rwa_hero.png" alt="Residential Greenwood complex EV installation">
-        </div>
-        <div class="story-details">
-          <span class="section-subtitle" style="color: var(--primary);">Case Study: Residential</span>
-          <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Greenwood residency load balance</h3>
-          <p style="color: var(--text-dark-muted); line-height: 1.7;">
-            Greenwood society operated under a strict 45kW municipal transformer cap. Installing standard private chargers meant risking total grid failure when more than six vehicles charged simultaneously. 
-          </p>
-          <p style="color: var(--text-dark-muted); line-height: 1.7; font-weight: 600;">
-            Outcome: Deployed a single Smart DB, expanding slot capacities to 12. Spared Greenwood from a ₹4.5 Lakh transformer rebuild.
-          </p>
-        </div>
-      </div>
-
-      <!-- Case 2 (Reverse) -->
-      <div class="split-story split-story-reverse" style="gap: 6rem;">
-        <div class="story-details">
-          <span class="section-subtitle" style="color: var(--primary);">Case Study: Commercial</span>
-          <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Nexus Mall peak load balancing</h3>
-          <p style="color: var(--text-dark-muted); line-height: 1.7;">
-            Nexus Mall basement parking needed to maintain 15 chargers. During weekend shopping peaks, elevators and cooling loops drew massive power, causing localized voltage fluctuations.
-          </p>
-          <p style="color: var(--text-dark-muted); line-height: 1.7; font-weight: 600;">
-            Outcome: Smart DB coordinates load parameters between air conditioning loops and EV lines. Voltage dropouts cut to zero.
-          </p>
-        </div>
-        <div class="story-visual" style="border: 1px solid rgba(15,23,42,0.05); box-shadow: 0 30px 60px rgba(0,0,0,0.06);">
-          <img src="/assets/images/developer_hero.png" alt="Orion Mall commercial building facade">
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Specs Modal -->
   <div id="specsModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; justify-content: center; align-items: center; padding: 2rem;">
@@ -615,11 +562,14 @@
   </div>
 
   <!-- SECTION: CTA -->
-  <section class="sec-dark" style="background-color: var(--primary); padding: 120px 0;">
-    <div class="container text-center max-w-800">
+  <section class="sec-dark" style="background-image: url('/assets/images/smart_db_cta_bg.jpg'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
+    <!-- Dark overlay for text legibility -->
+    <div style="position: absolute; inset: 0; background: rgba(11, 14, 20, 0.65); z-index: 1;"></div>
+    
+    <div class="container text-center max-w-800" style="position: relative; z-index: 2;">
       <h2 style="color: var(--text-light); margin-bottom: 1rem;">Establish a grid-safe foundation.</h2>
-      <p style="color: rgba(248, 250, 252, 0.85); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with an installation engineer to assess your grid limits.</p>
-      <a href="/demo/?product=smart-db" class="btn btn-white">Request Grid Assessment</a>
+      <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with an installation engineer to assess your grid limits.</p>
+      <a href="/demo/?product=smart-db" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Grid Assessment</a>
     </div>
   </section>
 
