@@ -231,7 +231,7 @@
 <body class="dark-theme">
 
   <!-- HEADER -->
-  <header>
+  <header style="position: absolute; top: 0; left: 0; width: 100%; z-index: 100; background: transparent !important; border: none;">
     <div class="container nav-container">
       <a href="/" class="logo">
         <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
@@ -298,134 +298,215 @@
   </header>
 
   <!-- PRODUCT LAUNCH HERO -->
-  <section class="product-chapter sec-dark" style="min-height: 90vh; display: flex; align-items: center; padding-top: 140px;">
-    <div class="hero-glow-container">
+  <section class="product-chapter sec-dark" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 100px; position: relative; background-image: url('/assets/dbhero.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <!-- Vignette Overlay -->
+    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 30%, rgba(11, 14, 20, 0.95) 120%); z-index: 1;"></div>
+    
+    <div class="hero-glow-container" style="z-index: 0;">
       <div class="hero-glow-radial"></div>
     </div>
     
-    <div class="container product-chapter-grid">
-      <div class="chapter-content">
-        <span class="section-subtitle">Ecosystem Layer 01</span>
-        <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 0.5rem; line-height: 1.1;">Smart DB.</h1>
-        <p class="chapter-subtitle" style="font-size: 1.85rem; margin-bottom: 2rem;">The Foundation Layer</p>
-        <p class="chapter-desc" style="color: var(--text-light-muted); line-height: 1.7;">
-          Intelligent, grid-aware power balancing. The Smart DB sits at the root of your property's electrical infrastructure, throttling charging speeds in real time to secure grid transformer safety.
-        </p>
-        
-        <div class="hero-glass-card">
-          <div class="glass-metric">
-            <div class="glass-metric-val">125A</div>
-            <div class="glass-metric-label">Max Input Draw</div>
-          </div>
-          <div class="glass-metric">
-            <div class="glass-metric-val">5ms</div>
-            <div class="glass-metric-label">Load Throttling Response</div>
-          </div>
-          <div class="glass-metric">
-            <div class="glass-metric-val">6x</div>
-            <div class="glass-metric-label">Parallel Charger Loops</div>
-          </div>
-        </div>
-        
-        <a href="/demo/?product=smart-db" class="btn btn-primary" style="margin-top: 3rem;">Assess Your Building Load →</a>
-      </div>
-      
-      <div class="chapter-visual">
-        <div style="position: relative; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.6); border: 1px solid rgba(248,250,252,0.06);">
-          <img src="/assets/images/smart_db.png" alt="EBEE Smart DB Panel Panel" style="max-width: 100%; display: block;">
-        </div>
-      </div>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; position: relative;">
+      <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 0; line-height: 1.1; text-align: center; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -0.02em;">SMART DB</h1>
     </div>
   </section>
 
-  <!-- SECTION: Overview (Warm White Offset Grid) -->
+  <!-- SECTION: Key Features -->
   <section class="sec-light" style="padding: 140px 0;">
     <div class="container">
-      <div class="split-story" style="gap: 8rem;">
+      
+      <!-- Top Split Area -->
+      <div class="split-story" style="gap: 4rem; align-items: center; margin-bottom: 5rem;">
         <div>
-          <span class="section-subtitle" style="color: var(--primary);">Intelligent Current Balancing</span>
-          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); max-width: 500px; color: var(--text-dark); line-height: 1.15;">Scale EV bays without utility grid upgrades.</h2>
-        </div>
-        <div>
+          <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--text-dark); margin-bottom: 1.5rem; line-height: 1.1;">Key <span style="color: var(--primary);">Features</span></h2>
           <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark-muted);">
-            Building power grids are finite. Adding dozens of standalone EV chargers risks systemic main breaker dropouts when building coolers and lifts operate concurrently.
-          </p>
-          <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark-muted); margin-bottom: 0;">
-            The Smart DB serves as the dynamic coordinator. By monitoring aggregate building consumption, it dials down current to active EV bays in microsecond intervals during peak hours, and accelerates charging speeds overnight when demand drops.
+            The Smart DB serves as the dynamic coordinator for your property's electrical infrastructure. By monitoring aggregate building consumption, it intelligently manages charging speeds to secure grid transformer safety.
           </p>
         </div>
+        <div style="background: rgba(15,23,42,0.02); border-radius: var(--border-radius-lg); padding: 3rem; display: flex; justify-content: center; align-items: center;">
+          <img src="/assets/images/smart_db.png" alt="Smart DB Features" style="max-width: 100%; max-height: 400px; object-fit: contain; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
+        <!-- Feature 1: Overload Protection -->
+        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div style="text-align: right;">
+              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">Safe</div>
+              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Protocol</div>
+            </div>
+          </div>
+          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">OVERLOAD PROTECTION</h4>
+          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
+            Continuous feedback clamps max current draws below the safety rating of local utility feeds.
+          </p>
+        </div>
+
+        <!-- Feature 2: Precision Metering -->
+        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <div style="text-align: right;">
+              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">100%</div>
+              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Accuracy</div>
+            </div>
+          </div>
+          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">PRECISION METERING</h4>
+          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
+            Accurate live load statements and diagnostic reports pushed directly to the dashboard.
+          </p>
+        </div>
+
+        <!-- Feature 3: Simple Installation -->
+        <div style="background: #ffffff; border: 1px solid rgba(15, 23, 42, 0.05); border-radius: var(--border-radius-md); padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(91, 95, 239, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <div style="text-align: right;">
+              <div style="color: var(--primary); font-weight: 700; font-size: 1.1rem;">Easy</div>
+              <div style="font-size: 0.75rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;">Setup</div>
+            </div>
+          </div>
+          <h4 style="color: var(--text-dark); margin-bottom: 0.75rem; font-size: 1.15rem; font-weight: 700;">SIMPLE INSTALLATION</h4>
+          <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">
+            Establishes a safe modular bridge without the need for expensive main breaker rebuilds.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- BLUEPRINT LAYER: How it Integrates (Deep Dark Mode Blueprint) -->
-  <section class="blueprint-section sec-dark">
-    <div class="container">
-      <div class="blueprint-diagram">
-        <div class="blueprint-details" style="text-align: left;">
-          <span class="section-subtitle">Integration Blueprint</span>
-          <h2 style="margin-bottom: 1.5rem; line-height: 1.15;">How the Smart DB Coordinates Power</h2>
-          <p style="color: var(--text-light-muted); line-height: 1.7; margin-bottom: 3rem;">
-            Installed in the main utility room, the Smart DB establishes a safe, modular bridge between raw municipal transformer grids and your charging nodes.
-          </p>
-          
-          <div class="blueprint-card-list">
-            <div class="blueprint-card-item">
-              <div class="blueprint-item-num">01</div>
-              <div>
-                <h4 class="blueprint-item-title">Transformer Protection Loop</h4>
-                <p class="blueprint-item-desc">Continuous feedback clamps max current draws below the safety rating of local utility feeds.</p>
-              </div>
-            </div>
-            <div class="blueprint-card-item">
-              <div class="blueprint-item-num">02</div>
-              <div>
-                <h4 class="blueprint-item-title">Ecosystem Telemetry</h4>
-                <p class="blueprint-item-desc">Pushes live load statements and diagnostic reports to the EBEE Dashboard via encrypted eSIM cellular modules.</p>
-              </div>
-            </div>
-            <div class="blueprint-card-item">
-              <div class="blueprint-item-num">03</div>
-              <div>
-                <h4 class="blueprint-item-title">Modular Expansion</h4>
-                <p class="blueprint-item-desc">Allows you to scale from 2 to 6 loop lines without expensive breaker rebuilds.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <section class="blueprint-section sec-dark" style="position: relative; padding: 60px 0;">
+    <button id="openSpecsModalBtn" class="btn btn-outline" style="position: absolute; top: 40px; right: 80px; z-index: 10; border: 1px solid rgba(255,255,255,0.2); color: white; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 0.8rem 1.75rem; font-size: 1.05rem; font-weight: 600; border-radius: var(--border-radius-sm); cursor: pointer; transition: background 0.2s;">View Specifications</button>
+    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+      <style>
+        .svg-motion-container { width: 100%; max-width: 1400px; margin: 0 auto; overflow: visible; padding: 2rem 0; }
+        @keyframes flow { to { stroke-dashoffset: -100; } }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 2px #b6b9ff); }
+          50% { opacity: 1; filter: drop-shadow(0 0 10px #b6b9ff); }
+        }
+        .wire-base { fill: none; stroke: #4c1d95; stroke-width: 2; }
+        .energy-flow {
+          fill: none; stroke: #a78bfa; stroke-width: 3; stroke-linecap: round;
+          stroke-dasharray: 8 60; animation: flow 2s linear infinite;
+          filter: drop-shadow(0 0 6px #a78bfa);
+        }
+        .flow-1 { animation-delay: 0s; }
+        .flow-2 { animation-delay: -0.4s; }
+        .flow-3 { animation-delay: -0.8s; }
+        .node-glow { fill: #a78bfa; animation: pulse 2s ease-in-out infinite; }
+        .car-outline { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 1; }
+        .car-body { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
+        .charge-icon { stroke: #a78bfa; fill: none; stroke-width: 1.5; }
+      </style>
 
-        <div class="blueprint-visual">
-          <div style="background: rgba(19,23,34,0.6); border: 1px solid rgba(248,250,252,0.05); padding: 3rem; border-radius: var(--border-radius-lg); box-shadow: inset 0 0 40px rgba(91,95,239,0.05);">
-            <svg class="flow-svg" viewBox="0 0 600 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Grid Backdrop lines -->
-              <line x1="50" y1="50" x2="550" y2="50" stroke="rgba(248,250,252,0.03)" stroke-width="1" />
-              <line x1="50" y1="150" x2="550" y2="150" stroke="rgba(248,250,252,0.03)" stroke-width="1" />
-              <line x1="50" y1="250" x2="550" y2="250" stroke="rgba(248,250,252,0.03)" stroke-width="1" />
-              
-              <!-- Flows -->
-              <path d="M 80 150 L 220 150" stroke="#5B5FEF" stroke-width="3" />
-              <path d="M 220 150 C 270 150, 290 80, 340 80 L 450 80" stroke="#B6B9FF" stroke-width="2.5" />
-              <path d="M 220 150 L 340 150 L 450 150" stroke="#B6B9FF" stroke-width="2.5" />
-              <path d="M 220 150 C 270 150, 290 220, 340 220 L 450 220" stroke="#B6B9FF" stroke-width="2.5" />
-              
-              <!-- Main Node -->
-              <circle cx="220" cy="150" r="12" fill="#5B5FEF" />
-              <circle cx="220" cy="150" r="24" stroke="rgba(91,95,239,0.2)" stroke-width="2" />
-              
-              <!-- Leaf Nodes -->
-              <circle cx="450" cy="80" r="8" fill="#B6B9FF" />
-              <circle cx="450" cy="150" r="8" fill="#B6B9FF" />
-              <circle cx="450" cy="220" r="8" fill="#B6B9FF" />
-              
-              <!-- Text -->
-              <text x="80" y="120" fill="var(--text-light-muted)" font-family="Inter" font-size="12">Main Grid Feed</text>
-              <text x="220" y="200" fill="var(--text-light)" font-family="Inter" font-size="14" font-weight="700" text-anchor="middle">Smart DB Node</text>
-              <text x="470" y="85" fill="var(--text-light-muted)" font-family="Inter" font-size="12">Charger Line A (Active)</text>
-              <text x="470" y="155" fill="var(--text-light-muted)" font-family="Inter" font-size="12">Charger Line B (Active)</text>
-              <text x="470" y="225" fill="var(--text-light-muted)" font-family="Inter" font-size="12">Charger Line C (Standby)</text>
-            </svg>
-          </div>
-        </div>
+      <div class="svg-motion-container">
+        <svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
+          
+          <!-- WIRES (Base) -->
+          <path id="feed" class="wire-base" d="M 500 0 L 500 120"/>
+          
+          <path id="wire-L1" class="wire-base" d="M 410 160 L 130 160 Q 110 160 110 180 L 110 300"/>
+          <path id="wire-L2" class="wire-base" d="M 410 180 L 240 180 Q 220 180 220 200 L 220 300"/>
+          <path id="wire-L3" class="wire-base" d="M 410 200 L 350 200 Q 330 200 330 220 L 330 300"/>
+          
+          <path id="wire-R1" class="wire-base" d="M 590 160 L 890 160 Q 910 160 910 180 L 910 300"/>
+          <path id="wire-R2" class="wire-base" d="M 590 180 L 760 180 Q 780 180 780 200 L 780 300"/>
+          <path id="wire-R3" class="wire-base" d="M 590 200 L 650 200 Q 670 200 670 220 L 670 300"/>
+
+          <!-- WIRES (Energy Flow) -->
+          <path class="energy-flow flow-1" d="M 500 0 L 500 120"/>
+          
+          <path class="energy-flow flow-1" d="M 410 160 L 130 160 Q 110 160 110 180 L 110 300"/>
+          <path class="energy-flow flow-2" d="M 410 180 L 240 180 Q 220 180 220 200 L 220 300"/>
+          <path class="energy-flow flow-3" d="M 410 200 L 350 200 Q 330 200 330 220 L 330 300"/>
+          
+          <path class="energy-flow flow-1" d="M 590 160 L 890 160 Q 910 160 910 180 L 910 300"/>
+          <path class="energy-flow flow-2" d="M 590 180 L 760 180 Q 780 180 780 200 L 780 300"/>
+          <path class="energy-flow flow-3" d="M 590 200 L 650 200 Q 670 200 670 220 L 670 300"/>
+
+          <!-- CONNECTION POINTS (Glowing Dots) -->
+          <circle cx="500" cy="120" r="3" class="node-glow"/>
+          <circle cx="110" cy="300" r="3" class="node-glow"/>
+          <circle cx="220" cy="300" r="3" class="node-glow"/>
+          <circle cx="330" cy="300" r="3" class="node-glow"/>
+          <circle cx="670" cy="300" r="3" class="node-glow"/>
+          <circle cx="780" cy="300" r="3" class="node-glow"/>
+          <circle cx="910" cy="300" r="3" class="node-glow"/>
+
+          <!-- CENTRAL SMART DB UNIT -->
+          <!-- Glow behind the box -->
+          <rect x="410" y="120" width="180" height="160" rx="8" fill="none" stroke="#a78bfa" stroke-width="1" filter="drop-shadow(0 0 15px rgba(167, 139, 250, 0.4))"/>
+          <rect x="410" y="120" width="180" height="160" rx="8" fill="#0b0e14" stroke="rgba(255,255,255,0.2)"/>
+          
+          <!-- Text Logo -->
+          <g transform="translate(450, 195)">
+            <text x="-5" y="0" font-family="Inter, sans-serif" font-size="42" font-weight="500" fill="#ffffff" letter-spacing="-1">ebee</text>
+            <text x="40" y="22" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#a78bfa">charge</text>
+          </g>
+
+          <!-- 6 Sockets & Cars -->
+          <g transform="translate(110, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+          <g transform="translate(220, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+          <g transform="translate(330, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+          <g transform="translate(670, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+          <g transform="translate(780, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+          <g transform="translate(910, 300)">
+            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
+            <path d="M 0 35 L 0 60" class="wire-base"/>
+            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
+            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
+          </g>
+
+        </svg>
       </div>
     </div>
   </section>
@@ -474,82 +555,64 @@
     </div>
   </section>
 
-  <!-- SECTION: Specs (Deep Dark Premium Spec Cards) -->
-  <section class="sec-dark" style="padding: 140px 0; border-top: 1px solid rgba(248,250,252,0.05);">
-    <div class="container text-center">
-      <span class="section-subtitle">Technical details</span>
-      <h2 style="margin-bottom: 1.5rem;">Smart DB System Specifications</h2>
-      <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">Comprehensive electrical parameters engineered to meet Indian grid guidelines.</p>
+  <!-- Specs Modal -->
+  <div id="specsModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; justify-content: center; align-items: center; padding: 2rem;">
+    <div style="background: #0b0e14; border: 1px solid rgba(248,250,252,0.1); border-radius: var(--border-radius-lg); max-width: 1000px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;">
+      
+      <button id="closeSpecsModalBtn" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; width: 40px; height: 40px; color: var(--text-light-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
 
-      <div class="spec-grid-premium">
-        <!-- Card 1: Electrical -->
-        <div class="spec-card-premium">
-          <div class="spec-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="spec-card-title">Power Parameters</h3>
-          <div class="spec-detail-list">
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Input Voltage</span>
-              <span class="spec-detail-value">3-Phase 415V AC ±15%</span>
-            </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Frequency</span>
-              <span class="spec-detail-value">50 Hz</span>
-            </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Max Input Draw</span>
-              <span class="spec-detail-value">125A Max</span>
-            </div>
-          </div>
+      <div style="padding: 4rem 3rem;">
+        <div class="text-center">
+          <span class="section-subtitle" style="color: var(--primary);">Technical details</span>
+          <h2 style="margin-bottom: 1.5rem; color: var(--text-light);">Smart DB System Specifications</h2>
+          <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">Comprehensive electrical parameters engineered to meet Indian grid guidelines.</p>
         </div>
 
-        <!-- Card 2: Loops & Safety -->
-        <div class="spec-card-premium">
-          <div class="spec-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3 class="spec-card-title">Safety & Output</h3>
-          <div class="spec-detail-list">
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Loops Supported</span>
-              <span class="spec-detail-value">Up to 6 Simultaneous</span>
+        <div class="spec-grid-premium">
+          <!-- Card 1: Electrical -->
+          <div class="spec-card-premium">
+            <div class="spec-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Response Time</span>
-              <span class="spec-detail-value">5 Milliseconds</span>
-            </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Protection</span>
-              <span class="spec-detail-value">Class II SPD, RCCB</span>
+            <h3 class="spec-card-title" style="color: var(--text-light);">Power Parameters</h3>
+            <div class="spec-detail-list">
+              <div class="spec-detail-row"><span class="spec-detail-label">Input Voltage</span><span class="spec-detail-value">3-Phase 415V AC ±15%</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Frequency</span><span class="spec-detail-value">50 Hz</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Max Input Draw</span><span class="spec-detail-value">125A Max</span></div>
             </div>
           </div>
-        </div>
 
-        <!-- Card 3: Casing & Telecom -->
-        <div class="spec-card-premium">
-          <div class="spec-card-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0z"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+          <!-- Card 2: Loops & Safety -->
+          <div class="spec-card-premium">
+            <div class="spec-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="spec-card-title" style="color: var(--text-light);">Safety & Output</h3>
+            <div class="spec-detail-list">
+              <div class="spec-detail-row"><span class="spec-detail-label">Loops Supported</span><span class="spec-detail-value">Up to 6 Simultaneous</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Response Time</span><span class="spec-detail-value">5 Milliseconds</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Protection</span><span class="spec-detail-value">Class II SPD, RCCB</span></div>
+            </div>
           </div>
-          <h3 class="spec-card-title">Casing & Sync</h3>
-          <div class="spec-detail-list">
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Ingress Rating</span>
-              <span class="spec-detail-value">IP65 / IK10 Weather</span>
+
+          <!-- Card 3: Casing & Telecom -->
+          <div class="spec-card-premium">
+            <div class="spec-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0z"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
             </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Connectivity</span>
-              <span class="spec-detail-value">4G LTE eSIM, RJ45</span>
-            </div>
-            <div class="spec-detail-row">
-              <span class="spec-detail-label">Protocol</span>
-              <span class="spec-detail-value">OCPP 1.6J / 2.0.1</span>
+            <h3 class="spec-card-title" style="color: var(--text-light);">Casing & Sync</h3>
+            <div class="spec-detail-list">
+              <div class="spec-detail-row"><span class="spec-detail-label">Ingress Rating</span><span class="spec-detail-value">IP65 / IK10 Weather</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Connectivity</span><span class="spec-detail-value">4G LTE eSIM, RJ45</span></div>
+              <div class="spec-detail-row"><span class="spec-detail-label">Protocol</span><span class="spec-detail-value">OCPP 1.6J / 2.0.1</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- SECTION: CTA -->
   <section class="sec-dark" style="background-color: var(--primary); padding: 120px 0;">
@@ -616,5 +679,25 @@
 
   <!-- Scripts -->
   <script type="module" src="/js/main.js"></script>
+  <script>
+    document.getElementById('openSpecsModalBtn')?.addEventListener('click', function() {
+      const modal = document.getElementById('specsModal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    document.getElementById('closeSpecsModalBtn')?.addEventListener('click', function() {
+      const modal = document.getElementById('specsModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    document.getElementById('specsModal')?.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 </body>
 </html>

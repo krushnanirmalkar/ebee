@@ -293,26 +293,141 @@
     </section>
   </div>
 
-  <!-- ============================================================
-       SECTION 2: Infrastructure Challenges — Premium Sticky Editorial
-       ============================================================ -->
+  <!-- SECTION 2: Property Challenges (Warm White) - Pinned Scroll Storytelling Track -->
+  <div class="challenges-sticky-wrapper">
+    <section id="challenges" class="challenges-sticky-container">
+      <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        
+        <!-- Section Heading & Intro -->
+        <div class="challenges-intro" style="margin: 0 auto 4rem auto; max-width: 800px; text-align: center;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--text-dark); margin-bottom: 1rem; letter-spacing: -0.02em;">
+            The future of mobility doesn't happen on roads alone.
+          </h2>
+          <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.6; color: var(--text-dark-muted); font-weight: 400; opacity: 0.9;">
+            It happens where people live, work, shop, and stay. EbeeCharge brings EV charging to every destination that matters.
+          </p>
+        </div>
+
+        <div class="challenges-editorial-layout">
+          
+          <!-- Left Side: Sticky List Navigation -->
+          <div class="challenges-nav-col">
+            <ul class="challenges-nav-list">
+              <li><button class="challenge-nav-item-btn active" data-target="0">Malls</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="1">Hotels</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="2">Office Complexes</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="3">Residential Builders</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="4">Housing Societies</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="5">Exhibition Centres</button></li>
+            </ul>
+          </div>
+
+          <!-- Right Side: Pinned/Cross-fading Content Slides -->
+          <div class="challenges-content-col">
+            
+            <!-- Malls -->
+            <div class="property-slide-block active" data-index="0">
+              <div class="property-slide-text">
+                <h3 class="property-title">Malls</h3>
+                <p class="property-challenge-statement">Visitors increasingly expect EV charging while they shop.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/mall_parking_ev.jpg" alt="Mall EV Charging">
+              </div>
+            </div>
+
+            <!-- Hotels -->
+            <div class="property-slide-block" data-index="1">
+              <div class="property-slide-text">
+                <h3 class="property-title">Hotels</h3>
+                <p class="property-challenge-statement">Charging is becoming a guest expectation.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/hotel_entrance_ev.jpg" alt="Hotel EV Charging">
+              </div>
+            </div>
+
+            <!-- Office Complexes -->
+            <div class="property-slide-block" data-index="2">
+              <div class="property-slide-text">
+                <h3 class="property-title">Office Complexes</h3>
+                <p class="property-challenge-statement">Modern tenants expect EV-ready workplaces.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/office_campus_ev.jpg" alt="Office Complex EV Charging">
+              </div>
+            </div>
+
+            <!-- Residential Builders -->
+            <div class="property-slide-block" data-index="3">
+              <div class="property-slide-text">
+                <h3 class="property-title">Residential Builders</h3>
+                <p class="property-challenge-statement">Future residents expect EV infrastructure from day one.</p>
+                <a href="/developers/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/residential_builder_ev.jpg" alt="Residential Builders EV Charging">
+              </div>
+            </div>
+
+            <!-- Housing Societies -->
+            <div class="property-slide-block" data-index="4">
+              <div class="property-slide-text">
+                <h3 class="property-title">Housing Societies</h3>
+                <p class="property-challenge-statement">Support EV adoption without overloading existing infrastructure.</p>
+                <a href="/rwa/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/housing_society_ev.jpg" alt="Housing Societies EV Charging">
+              </div>
+            </div>
+
+            <!-- Exhibition Centres -->
+            <div class="property-slide-block" data-index="5">
+              <div class="property-slide-text">
+                <h3 class="property-title">Exhibition Centres</h3>
+                <p class="property-challenge-statement">Handle charging demand during large events.</p>
+                <a href="/public-infrastructure/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/exhibition_centre_ev.jpg" alt="Exhibition Centres EV Charging">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Inline styling for the Kempower-like sticky storytelling section -->
   <style>
-    /* ── Outer scroll track ── */
-    .infra-challenges-track {
+    .challenges-sticky-wrapper {
       position: relative;
-      /* 6 challenges × 100vh each + 100vh intro + 100vh outro */
-      height: 900vh;
-      background-color: #080a11;
+      background-color: var(--bg-light);
+      padding: 100px 0; /* Add proper padding for natural spacing */
     }
 
-    /* ── Sticky viewport container: horizontal two-panel layout ── */
-    .infra-challenges-sticky {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
+    .challenges-sticky-container {
+      position: relative;
+      width: 100%;
+      border-top: 1px solid rgba(15, 23, 42, 0.03);
     }
 
     /* ── LEFT PANEL: dark background, header + nav stacked ── */
@@ -323,17 +438,13 @@
       flex-direction: column;
       background: #080a11;
       position: relative;
-      z-index: 10;
-      border-right: 1px solid rgba(248,250,252,0.05);
-      overflow: hidden;
     }
 
-    /* ── Section header: compact version for the narrow left panel ── */
-    .infra-section-header {
-      flex-shrink: 0;
-      padding: 72px 2rem 2rem 2.5rem;
-      pointer-events: none;
-      overflow: hidden;
+    .challenges-nav-col {
+      position: sticky;
+      top: 120px; /* Header offset spacing */
+      align-self: start;
+      z-index: 10;
     }
 
     /* ── Left nav: fills remaining left-panel height, centres vertically ── */
@@ -398,135 +509,27 @@
     .infra-two-col {
       flex: 1;
       position: relative;
-      min-height: 0;
-    }
-
-
-    /* vertical progress bar */
-    .infra-progress-rail {
-      position: absolute;
-      left: -22px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(248,250,252,0.08);
-      border-radius: 2px;
-    }
-
-    .infra-progress-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      background: #5B5FEF;
-      border-radius: 2px;
-      height: 0%;
-      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Nav items */
-    .infra-nav-item {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      padding: 10px 0;
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .infra-nav-num {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: rgba(248,250,252,0.22);
-      transition: color 0.4s ease;
-      flex-shrink: 0;
-      min-width: 20px;
-    }
-
-    .infra-nav-label {
-      font-size: 0.88rem;
-      font-weight: 400;
-      line-height: 1.3;
-      color: rgba(248,250,252,0.3);
-      transition: color 0.4s ease, font-weight 0.4s ease;
-    }
-
-    .infra-nav-item.active .infra-nav-num {
-      color: #5B5FEF;
-    }
-
-    .infra-nav-item.active .infra-nav-label {
-      color: #F8FAFC;
-      font-weight: 600;
-    }
-
-    .infra-nav-item:hover .infra-nav-label {
-      color: rgba(248,250,252,0.65);
-    }
-
-    .infra-slide {
-      position: absolute;
-      inset: 0;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 5vw 7vh 4vw;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 140px; /* Premium spacing between content slides */
+    }
+
+    .property-slide-block {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      opacity: 0.25; /* Subtle mute for off-screen items */
+      transform: translateY(30px); /* Framer Motion-style slide entrance */
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
     .infra-slide.active {
       opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Full-bleed image behind content */
-    .infra-slide-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .infra-slide-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.06);
-      transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-      filter: brightness(0.5) saturate(0.85);
-    }
-
-    .infra-slide.active .infra-slide-image img {
-      transform: scale(1);
-    }
-
-    /* Gradient overlay for legibility */
-    .infra-slide-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        to top,
-        rgba(6,8,16,0.96) 0%,
-        rgba(6,8,16,0.65) 40%,
-        rgba(6,8,16,0.12) 75%,
-        rgba(6,8,16,0) 100%
-      );
-    }
-
-    /* Slide content */
-    .infra-slide-content {
-      position: relative;
-      z-index: 2;
-      max-width: 620px;
+      transform: translateY(0);
     }
 
     .infra-slide-number {
@@ -673,7 +676,7 @@
       .infra-challenges-sticky {
         position: relative;
         height: auto;
-        flex-direction: column;
+        padding: 40px 0;
       }
 
       .infra-left-panel {
@@ -682,8 +685,18 @@
         border-bottom: 1px solid rgba(248,250,252,0.06);
       }
 
-      .infra-section-header {
-        padding: 70px 6vw 1.5rem;
+      .challenges-nav-col {
+        position: sticky;
+        top: 64px;
+        background-color: var(--bg-light);
+        padding: 1rem 0;
+        width: 100vw;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        z-index: 100; /* Layer on top of scrolling slides */
       }
 
       .infra-left-col {
@@ -714,8 +727,12 @@
         min-height: 500px;
       }
 
-      .infra-slide-image {
-        position: absolute;
+      .challenges-content-col {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem; /* Spacing for stacked absolute items on mobile */
       }
 
       .infra-transition-screen {
@@ -743,180 +760,26 @@
     }
   </style>
 
-  <!-- SECTION 2: Infrastructure Challenges -->
-  <div class="infra-challenges-track" id="challenges">
-    <div class="infra-challenges-sticky" id="infraSticky">
-
-      <!-- LEFT PANEL: header + navigation -->
-      <div class="infra-left-panel">
-
-        <!-- Section heading -->
-        <div class="infra-section-header" id="infraHeader">
-          <h2 class="infra-section-title">The Challenges Holding Properties Back From EV Readiness</h2>
-          <p class="infra-section-sub">Every property has different requirements, but the biggest obstacles to EV readiness are often the same. From electrical infrastructure and future scalability to compliance and power management, these are the challenges property owners and developers face before installing a single EV charger.</p>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="infra-left-col" aria-label="Infrastructure challenges navigation">
-          <div class="infra-progress-rail" aria-hidden="true">
-            <div class="infra-progress-fill" id="infraProgressFill"></div>
-          </div>
-
-          <button class="infra-nav-item active" data-challenge="0">
-            <span class="infra-nav-label">High Infrastructure Cost</span>
-          </button>
-          <button class="infra-nav-item" data-challenge="1">
-            <span class="infra-nav-label">Limited Electrical Capacity</span>
-          </button>
-          <button class="infra-nav-item" data-challenge="2">
-            <span class="infra-nav-label">Future Expansion</span>
-          </button>
-          <button class="infra-nav-item" data-challenge="3">
-            <span class="infra-nav-label">Government Compliance</span>
-          </button>
-          <button class="infra-nav-item" data-challenge="4">
-            <span class="infra-nav-label">Intelligent Power Distribution</span>
-          </button>
-          <button class="infra-nav-item" data-challenge="5">
-            <span class="infra-nav-label">Operational Complexity</span>
-          </button>
-        </nav>
-
-      </div><!-- /infra-left-panel -->
-
-      <!-- RIGHT PANEL: full-height image slides -->
-      <div class="infra-right-col" id="infraSlideZone">
-
-        <!-- Challenge 01: High Infrastructure Cost -->
-        <div class="infra-slide active" data-slide="0">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_infra_cost.jpg" alt="High infrastructure cost challenge — parking structure electrical conduits">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">High Infrastructure<br>Cost</h3>
-            <p class="infra-slide-desc">Traditional EV charging deployments often require oversized transformers, extensive cabling and expensive electrical upgrades, increasing project costs long before the first charger is installed.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">Commercial Developers</span>
-              <span class="infra-slide-tag">Hotels</span>
-              <span class="infra-slide-tag">Shopping Malls</span>
-              <span class="infra-slide-tag">Residential Builders</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Challenge 02: Limited Electrical Capacity -->
-        <div class="infra-slide" data-slide="1">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_electrical_capacity.jpg" alt="Limited electrical capacity — industrial switchgear panels">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">Limited Electrical<br>Capacity</h3>
-            <p class="infra-slide-desc">Most existing properties were never designed for widespread EV charging. Without intelligent power management, electrical capacity quickly becomes the biggest limitation.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">Housing Societies</span>
-              <span class="infra-slide-tag">Hotels</span>
-              <span class="infra-slide-tag">Office Campuses</span>
-              <span class="infra-slide-tag">Commercial Buildings</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Challenge 03: Future Expansion -->
-        <div class="infra-slide" data-slide="2">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_future_expansion.jpg" alt="Future expansion — construction site showing scale">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">Future<br>Expansion</h3>
-            <p class="infra-slide-desc">Installing infrastructure for today's EV demand isn't enough. As adoption grows, properties need solutions that can scale without rebuilding their electrical systems.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">Residential Projects</span>
-              <span class="infra-slide-tag">Commercial Projects</span>
-              <span class="infra-slide-tag">Mixed-use Developments</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Challenge 04: Government Compliance -->
-        <div class="infra-slide" data-slide="3">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_compliance.jpg" alt="Government compliance — new development parking bays">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">Government<br>Compliance</h3>
-            <p class="infra-slide-desc">New developments are increasingly expected to provide EV-ready parking. Meeting evolving regulations while controlling infrastructure costs has become a major challenge.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">Commercial Developers</span>
-              <span class="infra-slide-tag">Residential Builders</span>
-              <span class="infra-slide-tag">Township Projects</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Challenge 05: Intelligent Power Distribution -->
-        <div class="infra-slide" data-slide="4">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_power_distribution.jpg" alt="Intelligent power distribution — overhead parking facility at night">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">Intelligent Power<br>Distribution</h3>
-            <p class="infra-slide-desc">Supplying power efficiently across multiple charging points without overloading existing infrastructure requires intelligent and dynamic power distribution.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">All Property Types</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Challenge 06: Operational Complexity -->
-        <div class="infra-slide" data-slide="5">
-          <div class="infra-slide-image">
-            <img src="/assets/images/challenge_operational_complexity.jpg" alt="Operational complexity — building management control room">
-          </div>
-          <div class="infra-slide-overlay"></div>
-          <div class="infra-slide-content">
-            <h3 class="infra-slide-heading">Operational<br>Complexity</h3>
-            <p class="infra-slide-desc">Managing multiple chargers, electrical loads, billing, maintenance and future expansion through separate systems creates unnecessary operational complexity.</p>
-            <div class="infra-slide-tags">
-              <span class="infra-slide-tag">All Property Types</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Transition screen: "These Aren't Charging Problems → They're Infrastructure Problems" -->
-        <div class="infra-transition-screen" id="infraTransition">
-          <p class="infra-reveal-line1">These Aren't Charging Problems.</p>
-          <p class="infra-reveal-line2">They're Infrastructure Problems.</p>
-          <p class="infra-reveal-body">Traditional EV solutions focus on the charger.<br>We started with the infrastructure.</p>
-        </div>
-
-      </div><!-- /infra-right-col -->
-    </div><!-- /infra-challenges-sticky -->
-  </div><!-- /infra-challenges-track -->
-
-  <!-- Scroll logic for the new infrastructure challenges section -->
+  <!-- Script to handle scrollspy highlighting and smooth scroll navigation -->
   <script>
-    (function () {
-      const track = document.getElementById('challenges');
-      const sticky = document.getElementById('infraSticky');
-      const header = document.getElementById('infraHeader');
-      const navItems = document.querySelectorAll('.infra-nav-item');
-      const slides = document.querySelectorAll('.infra-slide');
-      const transition = document.getElementById('infraTransition');
-      const progressFill = document.getElementById('infraProgressFill');
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.querySelector('.challenges-sticky-wrapper');
+      const navBtns = document.querySelectorAll('.challenge-nav-item-btn');
+      const slides = document.querySelectorAll('.property-slide-block');
+      const navList = document.querySelector('.challenges-nav-list');
 
-      if (!track || !sticky) return;
+      if (!wrapper || navBtns.length === 0 || slides.length === 0) return;
 
-      const TOTAL_CHALLENGES = 6;
+      const totalSegments = navBtns.length;
 
-      function setActive(index) {
-        // Nav items
-        navItems.forEach((btn, i) => {
-          btn.classList.toggle('active', i === index);
+      // Function to set active tab & slide
+      const updateActiveSegment = (index) => {
+        navBtns.forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
         });
 
         // Slides
@@ -924,32 +787,50 @@
           slide.classList.toggle('active', i === index);
         });
 
-        // Progress fill (maps 0-5 → 0%-100%)
-        if (progressFill) {
-          const pct = ((index + 1) / TOTAL_CHALLENGES) * 100;
-          progressFill.style.height = pct + '%';
+        // Scroll mobile horizontal nav to active item if needed
+        if (window.innerWidth <= 1024 && navList) {
+          const activeBtn = navBtns[index];
+          const navRect = navList.getBoundingClientRect();
+          const btnRect = activeBtn.getBoundingClientRect();
+          if (btnRect.left < navRect.left || btnRect.right > navRect.right) {
+            navList.scrollTo({
+              left: activeBtn.offsetLeft - 32,
+              behavior: 'smooth'
+            });
+          }
+        }
+      };
+
+      // Unified scroll listener for scrollspy tracking
+      const onScroll = () => {
+        // If we are at the very bottom of the page, activate the last segment
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 30) {
+          updateActiveSegment(totalSegments - 1);
+          return;
         }
       }
 
-      function onScroll() {
-        const trackRect = track.getBoundingClientRect();
-        const trackTop = trackRect.top + window.scrollY;
-        const trackH = track.offsetHeight;
-        const vh = window.innerHeight;
-        const scrolled = window.scrollY;
+        let activeIndex = 0;
+        let minDistance = Infinity;
+        // Check relative to 35% of viewport height (comfort zone for scrolling)
+        const targetY = window.innerHeight * 0.35;
 
-        // Only runs on desktop (sticky is disabled on mobile via CSS)
-        if (window.innerWidth <= 900) return;
+        slides.forEach((slide, index) => {
+          const rect = slide.getBoundingClientRect();
+          const distance = Math.abs(rect.top - targetY);
+          
+          // If the slide covers the target line, it is the active slide
+          if (rect.top <= targetY && rect.bottom >= targetY) {
+            activeIndex = index;
+            minDistance = -1;
+          } else if (distance < minDistance && minDistance !== -1) {
+            minDistance = distance;
+            activeIndex = index;
+          }
+        });
 
-        // Header enters viewport as soon as the top of the section comes up (e.g., 20px / ~5mm into view)
-        if (trackRect.top <= vh - 20) {
-          header.classList.add('visible');
-        } else {
-          header.classList.remove('visible');
-        }
-
-        const relScroll = scrolled - trackTop;
-        const scrollRange = trackH - vh;
+        updateActiveSegment(activeIndex);
+      };
 
         if (relScroll < 0) {
           transition.classList.remove('visible', 'reveal-text');
@@ -957,63 +838,31 @@
           return;
         }
 
-        // Progress within the full track: 0 to 1
-        const progress = Math.min(Math.max(relScroll / scrollRange, 0), 1);
-
-        // We allocate scroll like this across the 900vh track:
-        //   - First 100vh (0–11.1%): section header stays
-        //   - Next 600vh (11.1%–77.8%): 6 challenges × 100vh each
-        //   - Last 200vh (77.8%–100%): transition screen + hold
-        const challengeStart = 1 / 9;    // after 1st 100vh
-        const challengeEnd = 7 / 9;      // after 7th 100vh
-        const transitionStart = 7 / 9;
-        const transitionReveal = 7.5 / 9;
-
-        if (progress < challengeStart) {
-          // Intro phase — show slide 0
-          setActive(0);
-          transition.classList.remove('visible', 'reveal-text');
-        } else if (progress >= challengeStart && progress < challengeEnd) {
-          // Challenge slides
-          const challengeProgress = (progress - challengeStart) / (challengeEnd - challengeStart);
-          let idx = Math.floor(challengeProgress * TOTAL_CHALLENGES);
-          if (idx >= TOTAL_CHALLENGES) idx = TOTAL_CHALLENGES - 1;
-          setActive(idx);
-          transition.classList.remove('visible', 'reveal-text');
-        } else {
-          // Transition screen
-          setActive(TOTAL_CHALLENGES - 1); // keep last challenge active in nav
-          transition.classList.add('visible');
-          if (progress >= transitionReveal) {
-            transition.classList.add('reveal-text');
-          } else {
-            transition.classList.remove('reveal-text');
+      // Click nav item to scroll to exact position
+      navBtns.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetSlide = slides[index];
+          if (targetSlide) {
+            // Find scroll position that puts the slide in the target view area
+            const headerOffset = window.innerWidth <= 1024 ? 140 : 120; // site header offset
+            const elementPosition = targetSlide.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            
+            // Temporarily remove scroll listener to avoid active toggling jumpiness during smooth scroll
+            window.removeEventListener('scroll', onScroll);
+            updateActiveSegment(index);
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Re-enable scroll listener after scroll completes
+            setTimeout(() => {
+              window.addEventListener('scroll', onScroll, { passive: true });
+            }, 800);
           }
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-
-      // Click nav items → scroll to corresponding challenge position
-      navItems.forEach((btn, index) => {
-        btn.addEventListener('click', () => {
-          if (window.innerWidth <= 900) return;
-          const trackRect = track.getBoundingClientRect();
-          const trackTop = trackRect.top + window.scrollY;
-          const trackH = track.offsetHeight;
-          const vh = window.innerHeight;
-
-          const challengeStart = 1 / 9;
-          const challengeEnd = 7 / 9;
-          const challengeRange = challengeEnd - challengeStart;
-          const segmentSize = challengeRange / TOTAL_CHALLENGES;
-          const targetProgress = challengeStart + (index * segmentSize) + (segmentSize * 0.4);
-
-          const scrollRange = trackH - vh;
-          const target = trackTop + (targetProgress * scrollRange);
-
-          window.scrollTo({ top: target, behavior: 'smooth' });
         });
       });
     })();
@@ -1206,7 +1055,7 @@
         <div style="text-align: left;">
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Residential Communities</h3>
           <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
-            Greenfield township parking hubs equipped with pre-laid shared trunk lines. Real-estate developers offer EV-ready bays as a standard premium amenity to all new homeowners.
+            Greenfield township parking hubs equipped with pre-laid shared trunk lines. Real-estate developers offer EV-ready bays as a standard premium amenity to all new residents.
           </p>
         </div>
 
