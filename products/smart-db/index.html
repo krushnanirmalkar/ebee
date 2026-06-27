@@ -561,6 +561,178 @@
     </div>
   </div>
 
+  <!-- SECTION: How it Works (Hover Cards Grid) -->
+  <section class="sec-dark" style="padding: 120px 0; background: linear-gradient(to bottom, #0b0e14, #0f172a);">
+    <style>
+      .hw-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .hw-hover-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 480px;
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        background-color: #1a1e28;
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .hw-hover-card .hw-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        z-index: 1;
+      }
+      .hw-hover-card:hover .hw-bg {
+        transform: scale(1.08);
+      }
+      .hw-hover-card .hw-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(11, 14, 20, 0.98) 0%, rgba(11, 14, 20, 0.7) 45%, rgba(11, 14, 20, 0) 100%);
+        z-index: 2;
+        transition: background 0.4s ease;
+      }
+      .hw-hover-card:hover .hw-overlay {
+        background: linear-gradient(to top, rgba(11, 14, 20, 0.98) 0%, rgba(11, 14, 20, 0.95) 70%, rgba(11, 14, 20, 0.3) 100%);
+      }
+      .hw-hover-card .hw-content {
+        position: relative;
+        z-index: 3;
+        padding: 2.5rem 2rem;
+        width: 100%;
+      }
+      .hw-hover-card .hw-title {
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .hw-hover-card .hw-details {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        color: rgba(248, 250, 252, 0.85);
+        line-height: 1.6;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .hw-hover-card:hover .hw-details {
+        max-height: 250px;
+        opacity: 1;
+        margin-top: 1.25rem;
+      }
+    </style>
+    
+    <div class="container text-center" style="margin-bottom: 5rem;">
+      <span class="section-subtitle" style="color: var(--primary);">Intelligent Distribution</span>
+      <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2.5rem;">How Smart DB works</h2>
+      <p style="color: rgba(248, 250, 252, 0.7); font-size: 1.15rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        Smart DB is the intelligent heart of your EV charging network.<br>It connects, controls and optimizes every charging point seamlessly.
+      </p>
+    </div>
+
+    <div class="hw-grid">
+      
+      <!-- Step 1 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/mall_parking_ev.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">1</span> User Arrives
+          </h3>
+          <p class="hw-details">User parks the vehicle and plugs in the charger to the 16A socket.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/developer_hero_new.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">2</span> Initiate Charging
+          </h3>
+          <p class="hw-details">User scans the QR code / opens the app and selects the bay.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/residential_builder_ev.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">3</span> Make Payment
+          </h3>
+          <p class="hw-details">User makes the payment through preferred payment mode.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/exhibition_centre_ev.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">4</span> Payment Verification
+          </h3>
+          <p class="hw-details">Payment is verified securely on the backend server.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/smart_db_cta_bg.JPG');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">5</span> Command to Smart DB
+          </h3>
+          <p class="hw-details">Backend sends command to Smart DB to activate the selected 16A socket.</p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/rwa_hero_new.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">6</span> Current Allowed
+          </h3>
+          <p class="hw-details">Smart DB allows electricity to the socket and charging starts.</p>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="hw-hover-card">
+        <div class="hw-bg" style="background-image: url('/assets/images/office_campus_ev.jpg');"></div>
+        <div class="hw-overlay"></div>
+        <div class="hw-content">
+          <h3 class="hw-title">
+            <span style="color: var(--primary); font-family: monospace; font-size: 1.2rem;">7</span> Load Distribution
+          </h3>
+          <p class="hw-details">If multiple cars are charging, Smart DB intelligently distributes available current across all bays.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- SECTION: CTA -->
   <section class="sec-dark" style="background-image: url('/assets/images/smart_db_cta_bg.JPG'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
     <!-- Dark overlay for text legibility -->
