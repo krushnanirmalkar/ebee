@@ -313,6 +313,141 @@
       overflow: hidden;
       display: flex;
       flex-direction: row;
+  <!-- SECTION 2: Property Challenges (Warm White) - Pinned Scroll Storytelling Track -->
+  <div class="challenges-sticky-wrapper">
+    <section id="challenges" class="challenges-sticky-container">
+      <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        
+        <!-- Section Heading & Intro -->
+        <div class="challenges-intro" style="margin: 0 auto 4rem auto; max-width: 800px; text-align: center;">
+          <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(2rem, 3.5vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--text-dark); margin-bottom: 1rem; letter-spacing: -0.02em;">
+            The future of mobility doesn't happen on roads alone.
+          </h2>
+          <p style="font-family: 'Inter', sans-serif; font-size: 1.15rem; line-height: 1.6; color: var(--text-dark-muted); font-weight: 400; opacity: 0.9;">
+            It happens where people live, work, shop, and stay. EbeeCharge brings EV charging to every destination that matters.
+          </p>
+        </div>
+
+        <div class="challenges-editorial-layout">
+          
+          <!-- Left Side: Sticky List Navigation -->
+          <div class="challenges-nav-col">
+            <ul class="challenges-nav-list">
+              <li><button class="challenge-nav-item-btn active" data-target="0">Malls</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="1">Hotels</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="2">Office Complexes</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="3">Residential Builders</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="4">Housing Societies</button></li>
+              <li><button class="challenge-nav-item-btn" data-target="5">Exhibition Centres</button></li>
+            </ul>
+          </div>
+
+          <!-- Right Side: Pinned/Cross-fading Content Slides -->
+          <div class="challenges-content-col">
+            
+            <!-- Malls -->
+            <div class="property-slide-block active" data-index="0">
+              <div class="property-slide-text">
+                <h3 class="property-title">Malls</h3>
+                <p class="property-challenge-statement">Visitors increasingly expect EV charging while they shop.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/mall_parking_ev.jpg" alt="Mall EV Charging">
+              </div>
+            </div>
+
+            <!-- Hotels -->
+            <div class="property-slide-block" data-index="1">
+              <div class="property-slide-text">
+                <h3 class="property-title">Hotels</h3>
+                <p class="property-challenge-statement">Charging is becoming a guest expectation.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/hotel_entrance_ev.jpg" alt="Hotel EV Charging">
+              </div>
+            </div>
+
+            <!-- Office Complexes -->
+            <div class="property-slide-block" data-index="2">
+              <div class="property-slide-text">
+                <h3 class="property-title">Office Complexes</h3>
+                <p class="property-challenge-statement">Modern tenants expect EV-ready workplaces.</p>
+                <a href="/commercial-properties/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/office_campus_ev.jpg" alt="Office Complex EV Charging">
+              </div>
+            </div>
+
+            <!-- Residential Builders -->
+            <div class="property-slide-block" data-index="3">
+              <div class="property-slide-text">
+                <h3 class="property-title">Residential Builders</h3>
+                <p class="property-challenge-statement">Future residents expect EV infrastructure from day one.</p>
+                <a href="/developers/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/residential_builder_ev.jpg" alt="Residential Builders EV Charging">
+              </div>
+            </div>
+
+            <!-- Housing Societies -->
+            <div class="property-slide-block" data-index="4">
+              <div class="property-slide-text">
+                <h3 class="property-title">Housing Societies</h3>
+                <p class="property-challenge-statement">Support EV adoption without overloading existing infrastructure.</p>
+                <a href="/rwa/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/housing_society_ev.jpg" alt="Housing Societies EV Charging">
+              </div>
+            </div>
+
+            <!-- Exhibition Centres -->
+            <div class="property-slide-block" data-index="5">
+              <div class="property-slide-text">
+                <h3 class="property-title">Exhibition Centres</h3>
+                <p class="property-challenge-statement">Handle charging demand during large events.</p>
+                <a href="/public-infrastructure/" class="property-cta">
+                  Explore Solution <span class="arrow-symbol">→</span>
+                </a>
+              </div>
+              <div class="property-image-frame">
+                <img src="/assets/images/exhibition_centre_ev.jpg" alt="Exhibition Centres EV Charging">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Inline styling for the Kempower-like sticky storytelling section -->
+  <style>
+    .challenges-sticky-wrapper {
+      position: relative;
+      background-color: var(--bg-light);
+      padding: 100px 0; /* Add proper padding for natural spacing */
+    }
+
+    .challenges-sticky-container {
+      position: relative;
+      width: 100%;
+      border-top: 1px solid rgba(15, 23, 42, 0.03);
     }
 
     /* ── LEFT PANEL: dark background, header + nav stacked ── */
@@ -334,6 +469,13 @@
       padding: 72px 2rem 2rem 2.5rem;
       pointer-events: none;
       overflow: hidden;
+    }
+
+    .challenges-nav-col {
+      position: sticky;
+      top: 120px; /* Header offset spacing */
+      align-self: start;
+      z-index: 10;
     }
 
     /* ── Left nav: fills remaining left-panel height, centres vertically ── */
@@ -479,6 +621,22 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 140px; /* Premium spacing between content slides */
+    }
+
+    .property-slide-block {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      opacity: 0.25; /* Subtle mute for off-screen items */
+      transform: translateY(30px); /* Framer Motion-style slide entrance */
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
     }
 
     .infra-slide.active {
@@ -527,6 +685,7 @@
       position: relative;
       z-index: 2;
       max-width: 620px;
+      transform: translateY(0);
     }
 
     .infra-slide-number {
@@ -674,6 +833,7 @@
         position: relative;
         height: auto;
         flex-direction: column;
+        padding: 40px 0;
       }
 
       .infra-left-panel {
@@ -684,6 +844,18 @@
 
       .infra-section-header {
         padding: 70px 6vw 1.5rem;
+      .challenges-nav-col {
+        position: sticky;
+        top: 64px;
+        background-color: var(--bg-light);
+        padding: 1rem 0;
+        width: 100vw;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        z-index: 100; /* Layer on top of scrolling slides */
       }
 
       .infra-left-col {
@@ -716,6 +888,12 @@
 
       .infra-slide-image {
         position: absolute;
+      .challenges-content-col {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem; /* Spacing for stacked absolute items on mobile */
       }
 
       .infra-transition-screen {
@@ -917,6 +1095,26 @@
         // Nav items
         navItems.forEach((btn, i) => {
           btn.classList.toggle('active', i === index);
+  <!-- Script to handle scrollspy highlighting and smooth scroll navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.querySelector('.challenges-sticky-wrapper');
+      const navBtns = document.querySelectorAll('.challenge-nav-item-btn');
+      const slides = document.querySelectorAll('.property-slide-block');
+      const navList = document.querySelector('.challenges-nav-list');
+
+      if (!wrapper || navBtns.length === 0 || slides.length === 0) return;
+
+      const totalSegments = navBtns.length;
+
+      // Function to set active tab & slide
+      const updateActiveSegment = (index) => {
+        navBtns.forEach((btn, i) => {
+          if (i === index) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
         });
 
         // Slides
@@ -928,6 +1126,26 @@
         if (progressFill) {
           const pct = ((index + 1) / TOTAL_CHALLENGES) * 100;
           progressFill.style.height = pct + '%';
+        // Scroll mobile horizontal nav to active item if needed
+        if (window.innerWidth <= 1024 && navList) {
+          const activeBtn = navBtns[index];
+          const navRect = navList.getBoundingClientRect();
+          const btnRect = activeBtn.getBoundingClientRect();
+          if (btnRect.left < navRect.left || btnRect.right > navRect.right) {
+            navList.scrollTo({
+              left: activeBtn.offsetLeft - 32,
+              behavior: 'smooth'
+            });
+          }
+        }
+      };
+
+      // Unified scroll listener for scrollspy tracking
+      const onScroll = () => {
+        // If we are at the very bottom of the page, activate the last segment
+        if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 30) {
+          updateActiveSegment(totalSegments - 1);
+          return;
         }
       }
 
@@ -950,6 +1168,27 @@
 
         const relScroll = scrolled - trackTop;
         const scrollRange = trackH - vh;
+        let activeIndex = 0;
+        let minDistance = Infinity;
+        // Check relative to 35% of viewport height (comfort zone for scrolling)
+        const targetY = window.innerHeight * 0.35;
+
+        slides.forEach((slide, index) => {
+          const rect = slide.getBoundingClientRect();
+          const distance = Math.abs(rect.top - targetY);
+          
+          // If the slide covers the target line, it is the active slide
+          if (rect.top <= targetY && rect.bottom >= targetY) {
+            activeIndex = index;
+            minDistance = -1;
+          } else if (distance < minDistance && minDistance !== -1) {
+            minDistance = distance;
+            activeIndex = index;
+          }
+        });
+
+        updateActiveSegment(activeIndex);
+      };
 
         if (relScroll < 0) {
           transition.classList.remove('visible', 'reveal-text');
@@ -1014,6 +1253,31 @@
           const target = trackTop + (targetProgress * scrollRange);
 
           window.scrollTo({ top: target, behavior: 'smooth' });
+      // Click nav item to scroll to exact position
+      navBtns.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetSlide = slides[index];
+          if (targetSlide) {
+            // Find scroll position that puts the slide in the target view area
+            const headerOffset = window.innerWidth <= 1024 ? 140 : 120; // site header offset
+            const elementPosition = targetSlide.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            
+            // Temporarily remove scroll listener to avoid active toggling jumpiness during smooth scroll
+            window.removeEventListener('scroll', onScroll);
+            updateActiveSegment(index);
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Re-enable scroll listener after scroll completes
+            setTimeout(() => {
+              window.addEventListener('scroll', onScroll, { passive: true });
+            }, 800);
+          }
         });
       });
     })();
@@ -1206,7 +1470,7 @@
         <div style="text-align: left;">
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">Residential Communities</h3>
           <p style="font-size: 0.95rem; color: var(--text-dark-muted); line-height: 1.6;">
-            Greenfield township parking hubs equipped with pre-laid shared trunk lines. Real-estate developers offer EV-ready bays as a standard premium amenity to all new homeowners.
+            Greenfield township parking hubs equipped with pre-laid shared trunk lines. Real-estate developers offer EV-ready bays as a standard premium amenity to all new residents.
           </p>
         </div>
 
