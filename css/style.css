@@ -42,6 +42,13 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
   font-size: 16px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 body {
@@ -51,6 +58,8 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* --- TYPOGRAPHY --- */
@@ -173,7 +182,7 @@ header {
   width: 100%;
   height: var(--header-height);
   background-color: transparent;
-  z-index: 1000;
+  z-index: 99999 !important;
   transition: all var(--transition-normal);
 }
 
@@ -2898,15 +2907,61 @@ footer {
   }
 }
 
-/* Juicer Hero Content shifts slightly left on desktop to avoid image overlap */
-.juicer-hero-content {
+/* MOVABLE CHARGER Hero Content shifts slightly left on desktop to avoid image overlap */
+.movable-charger-hero-content {
   max-width: 540px;
   margin-top: 2rem;
   margin-left: -20px;
 }
 @media (max-width: 768px) {
-  .juicer-hero-content {
+  .movable-charger-hero-content {
     margin-left: 0;
     max-width: 100%;
+  }
+}
+
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary); /* EBEE Indigo */
+  color: var(--text-light);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s ease;
+  box-shadow: 0 10px 25px rgba(91, 95, 239, 0.3);
+}
+
+.back-to-top:hover {
+  background-color: #4b4fe3; /* Slightly darker indigo */
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(91, 95, 239, 0.4);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }

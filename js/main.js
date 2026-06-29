@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
   setupHeroInteractions();
   setupLogoAnimation();
-  setupChallengesAnimations();
-  setupJuicerBenefitsMotion();
+  setupInfrastructureChallenges();
+  setupPurposeBridgeAnimation();
+  setupMovableChargerBenefitsMotion();
+  setupBackToTop();
 });
 
 /**
@@ -100,7 +102,7 @@ function setupStickyCta() {
 function setupScrollAnimations() {
   // Add animation class to cards and headers dynamically
   const animatedElements = document.querySelectorAll(
-    '.card, .cta-box, .stat-item, .timeline-step, .flow-node, .flow-arrow, .calculator-card, .spec-table-container, section:not([data-juicer-benefits]) h2, section .subheadline'
+    '.card, .cta-box, .stat-item, .timeline-step, .flow-node, .flow-arrow, .calculator-card, .spec-table-container, section:not([data-movable-charger-benefits]) h2, section .subheadline'
   );
 
   // Set initial state
@@ -136,8 +138,8 @@ function setupScrollAnimations() {
   animatedElements.forEach(el => observer.observe(el));
 }
 
-function setupJuicerBenefitsMotion() {
-  const section = document.querySelector('[data-juicer-benefits]');
+function setupMovableChargerBenefitsMotion() {
+  const section = document.querySelector('[data-movable-charger-benefits]');
   if (!section) return;
 
   const eyebrow = section.querySelector('.section-subtitle');
@@ -299,6 +301,9 @@ function setupLogoAnimation() {
       window.removeEventListener('resize', handleResize);
       // Only clear GSAP properties on the logo so it aligns correctly with normal CSS slots on window resize
       gsap.set(brandLogo, { clearProps: "all" });
+      
+      // Initialize hero scroll transitions after intro completes
+      setupHeroScrollTransition();
     }
   });
 
@@ -335,137 +340,312 @@ function setupLogoAnimation() {
 }
 
 /**
- * Canvas cursor-following image reveal effect matching produx.design
+ * Smooth parallax and fade transition for the Hero section as you scroll down
  */
-function setupChallengesAnimations() {
-  const section = document.querySelector('.challenges-hover-section');
-  const canvas = document.querySelector('.challenge-float-canvas');
-  if (!section || !canvas) return;
+function setupHeroScrollTransition() {
+  const heroSection = document.querySelector('.premium-hero');
+  const heroContent = document.querySelector('.hero-content-wrapper');
+  const leftBg = document.querySelector('.hero-bg-half.left');
+  const rightBg = document.querySelector('.hero-bg-half.right');
+  const bgGrid = document.querySelector('.hero-bg-grid');
+  const neonGlows = document.querySelectorAll('.neon-glow-left, .neon-glow-right');
 
-  const ctx = canvas.getContext('2d');
-  const items = document.querySelectorAll('.challenge-list-item');
+  if (!heroSection) return;
 
-  // Preload challenge images
-  const imageUrls = [
-    '/assets/images/challenges/chl1.png',
-    '/assets/images/challenges/chl2.png',
-    '/assets/images/challenges/chl3.png',
-    '/assets/images/challenges/chl4.png'
-  ];
-
-  const images = imageUrls.map(url => {
-    const img = new Image();
-    img.src = url;
-    return img;
-  });
-
-  // Animation values
-  let activeIndex = -1;
-  let animState = { opacity: 0, scale: 0.8 };
-  let mouse = { x: 0, y: 0 };
-  let target = { x: 0, y: 0 };
-  let lastTarget = { x: 0, y: 0 };
-  let isHovered = false;
-
-  // Size details for drawn image (premium landscape proportion)
-  const imgWidth = 380;
-  const imgHeight = 250;
-
-  // Resize canvas
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  // 1. Content wrapper (text and buttons) moves up and fades out slowly
+  if (heroContent) {
+    gsap.to(heroContent, {
+      yPercent: -15,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
   }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
 
-  // Track mouse coordinates in fixed screen space
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
+  // 2. Background halves zoom slightly and fade out
+  const splitBgs = [leftBg, rightBg].filter(Boolean);
+  if (splitBgs.length > 0) {
+    gsap.to(splitBgs, {
+      scale: 1.05,
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
 
-  // Attach hover events to items
-  items.forEach((item, index) => {
-    item.addEventListener('mouseenter', () => {
-      activeIndex = index;
-      isHovered = true;
-      
-      // Animate fade-in and scale-in using GSAP
-      gsap.killTweensOf(animState);
-      gsap.to(animState, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        ease: 'power3.out'
-      });
+  // 3. Grid and glow overlays fade out completely
+  const overlays = [bgGrid, ...neonGlows].filter(Boolean);
+  if (overlays.length > 0) {
+    gsap.to(overlays, {
+      opacity: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
+}
+
+/**
+ * Redesigned section: Infrastructure Challenges sticky scroll, parallax, progress bar, and transition screen
+ */
+function setupInfrastructureChallenges() {
+  const section = document.querySelector('.infrastructure-challenges-section');
+  const slides = document.querySelectorAll('.challenge-slide-new');
+  const navItems = document.querySelectorAll('.nav-item-new');
+  const navList = document.querySelector('.challenges-nav-list-new');
+
+  if (!section || slides.length === 0 || navItems.length === 0) return;
+
+  let scrollTriggers = [];
+  let desktopTimeline = null;
+
+  // Function to set active tab & slide classes
+  const updateActiveSegment = (index) => {
+    navItems.forEach((btn, i) => {
+      if (i === index) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
     });
 
-    item.addEventListener('mouseleave', () => {
-      isHovered = false;
-      
-      // Animate fade-out and scale-down
-      gsap.killTweensOf(animState);
-      gsap.to(animState, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.4,
-        ease: 'power3.out',
-        onComplete: () => {
-          if (!isHovered) activeIndex = -1;
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    // Scroll mobile horizontal nav to active item if needed
+    if (window.innerWidth <= 1024 && navList) {
+      const activeBtn = navItems[index];
+      if (activeBtn) {
+        const navRect = navList.getBoundingClientRect();
+        const btnRect = activeBtn.getBoundingClientRect();
+        if (btnRect.left < navRect.left || btnRect.right > navRect.right) {
+          navList.scrollTo({
+            left: activeBtn.offsetLeft - 32,
+            behavior: 'smooth'
+          });
         }
-      });
-    });
-  });
-
-  // Render loop
-  function render() {
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Apply easing to target coordinates (inertia delay)
-    const easeFactor = 0.08;
-    target.x += (mouse.x - target.x) * easeFactor;
-    target.y += (mouse.y - target.y) * easeFactor;
-
-    // Calculate velocities (speed and direction of translation)
-    const vx = target.x - lastTarget.x;
-    const vy = target.y - lastTarget.y;
-    lastTarget.x = target.x;
-    lastTarget.y = target.y;
-
-    if (activeIndex !== -1 && animState.opacity > 0.01) {
-      const activeImg = images[activeIndex];
-      
-      if (activeImg.complete) {
-        ctx.save();
-        
-        // Translate center to active position
-        ctx.translate(target.x, target.y);
-        
-        // Apply rotation (tilt in direction of X velocity)
-        const rotation = vx * 0.0018;
-        ctx.rotate(rotation);
-        
-        // Apply shear / skew mapping (jelly warp based on velocity)
-        const skewX = vx * 0.0012;
-        const skewY = vy * 0.0012;
-        ctx.transform(1, skewY, skewX, 1, 0, 0);
-        
-        // Apply scale & alpha transition values
-        ctx.scale(animState.scale, animState.scale);
-        ctx.globalAlpha = animState.opacity;
-        
-        // Draw the image centered
-        ctx.drawImage(activeImg, -imgWidth / 2, -imgHeight / 2, imgWidth, imgHeight);
-        
-        ctx.restore();
       }
     }
+  };
 
-    requestAnimationFrame(render);
-  }
+  const initAnimations = () => {
+    // Kill existing triggers
+    scrollTriggers.forEach(t => t.kill());
+    scrollTriggers = [];
+    if (desktopTimeline) {
+      desktopTimeline.kill();
+      desktopTimeline = null;
+    }
 
-  // Start the draw loop
-  render();
+    // Reset styles
+    gsap.set([slides, navItems], { clearProps: "all" });
+    slides.forEach(slide => {
+      const heading = slide.querySelector('.challenge-heading') || slide.querySelector('.transition-headline-merged');
+      const desc = slide.querySelector('.challenge-desc') || slide.querySelector('.transition-subheadline-merged');
+      const affects = slide.querySelector('.challenge-affects');
+      const img = slide.querySelector('.challenge-image-container img');
+      gsap.set([heading, desc, affects, img, slide].filter(Boolean), { clearProps: "all" });
+    });
+
+    const isDesktop = window.innerWidth > 1024;
+
+    if (isDesktop) {
+      // DESKTOP: Pinned layout with smooth card overlay fade
+      slides.forEach((slide, i) => {
+        gsap.set(slide, {
+          opacity: i === 0 ? 1 : 0,
+          yPercent: 0,
+          zIndex: i + 1
+        });
+      });
+
+      desktopTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: `+=${slides.length * 150}%`,
+          pin: true,
+          scrub: 1, // 1-second smoothing delay for buttery soft scroll interactions
+          anticipatePin: 1,
+          snap: {
+            snapTo: 1 / (slides.length - 1),
+            duration: { min: 0.5, max: 1.0 }, // Calmer, smoother snapping
+            delay: 0.08, // Subtle pause to let scrolling settle
+            ease: 'power2.out' // Clean deceleration curve
+          }
+        }
+      });
+
+      // Construct timeline transitions where subsequent panels fade in directly on top of previous panels
+      const segmentDuration = 2.0;
+      const slideDuration = 1.0; // 50% fade-in, 50% static hold/read time
+
+      for (let i = 0; i < slides.length - 1; i++) {
+        const nextSlide = slides[i + 1];
+        const startOffset = i * segmentDuration;
+
+        // Fade in the next slide on top of the current slide (which remains solid underneath)
+        desktopTimeline.to(nextSlide, {
+          opacity: 1,
+          duration: slideDuration,
+          ease: 'power1.inOut'
+        }, startOffset);
+
+        // Update active nav indicators immediately at the start of the scroll transition
+        desktopTimeline
+          .call(() => {
+            updateActiveSegment(i);
+          }, null, startOffset)
+          .call(() => {
+            updateActiveSegment(i + 1);
+          }, null, startOffset + 0.1);
+      }
+
+      // Handle nav clicks to jump to corresponding timeline position (to the hold state of each slide)
+      navItems.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (desktopTimeline && desktopTimeline.scrollTrigger) {
+            const st = desktopTimeline.scrollTrigger;
+            const totalDuration = (slides.length - 1) * segmentDuration;
+            const targetProgress = (index * segmentDuration) / totalDuration;
+            const targetScroll = st.start + targetProgress * (st.end - st.start);
+            window.scrollTo({
+              top: targetScroll,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+    } else {
+      // MOBILE: Normal vertical scrolling with ScrollSpy to highlight top horizontal nav
+      slides.forEach((slide, index) => {
+        const spyTrigger = ScrollTrigger.create({
+          trigger: slide,
+          start: 'top center+=80',
+          end: 'bottom center+=80',
+          onEnter: () => updateActiveSegment(index),
+          onEnterBack: () => updateActiveSegment(index)
+        });
+        scrollTriggers.push(spyTrigger);
+      });
+
+      // Handle mobile nav clicks to scroll to target element
+      navItems.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetSlide = slides[index];
+          if (targetSlide) {
+            const headerOffset = 140;
+            const elementPosition = targetSlide.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    }
+  };
+
+  initAnimations();
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initAnimations, 250);
+  });
+}
+
+/**
+ * Subtle and premium reveal animations for the Designed With Purpose transition section
+ */
+function setupPurposeBridgeAnimation() {
+  const section = document.querySelector('.purpose-bridge-section');
+  const eyebrow = document.querySelector('.purpose-eyebrow');
+  const heading = document.querySelector('.purpose-heading');
+  const subText = document.querySelector('.purpose-sub');
+
+  if (!section) return;
+
+  // Set initial states
+  gsap.set([eyebrow, heading, subText].filter(Boolean), {
+    opacity: 0,
+    y: 15
+  });
+
+  // Create ScrollTrigger animation
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: 'top center+=150',
+      toggleActions: 'play none none reverse'
+    }
+  });
+
+  tl.to(eyebrow, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out'
+  })
+  .to(heading, {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: 'power2.out'
+  }, '-=0.4')
+  .to(subText, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: 'power2.out'
+  }, '+=0.15');
+}
+
+/**
+ * Setup and initialize back to top button visibility and smooth scrolling
+ */
+function setupBackToTop() {
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (!backToTopBtn) return;
+
+  const toggleBackToTop = () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
