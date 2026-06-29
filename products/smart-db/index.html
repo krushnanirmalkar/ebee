@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- SEO & Metadata -->
   <title>Smart DB - Intelligent EV Power Distribution | EBEECHARGE</title>
-  <meta name="description" content="Discover the EBEECHARGE Smart DB, a smart electrical distribution panel that serves as the foundation layer of our EV infrastructure, balancing local loads.">
+  <meta name="description"
+    content="Discover the EBEECHARGE Smart DB, a smart electrical distribution panel that serves as the foundation layer of our EV infrastructure, balancing local loads.">
   <link rel="canonical" href="http://localhost:5173/products/smart-db/">
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Smart DB - Intelligent EV Power Distribution | EBEECHARGE">
-  <meta property="og:description" content="Safely scale EV charging on your existing electrical loads with the Smart DB Foundation Layer.">
+  <meta property="og:description"
+    content="Safely scale EV charging on your existing electrical loads with the Smart DB Foundation Layer.">
   <meta property="og:image" content="/assets/images/smart_db.png">
   <meta property="og:url" content="http://localhost:5173/products/smart-db/">
-  
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/style.css">
 
@@ -31,7 +34,7 @@
       z-index: 1;
       pointer-events: none;
     }
-    
+
     .hero-glow-radial {
       position: absolute;
       width: 60vw;
@@ -41,7 +44,7 @@
       right: -10vw;
       border-radius: 50%;
     }
-    
+
     .hero-glass-card {
       background: rgba(248, 250, 252, 0.02);
       border: 1px solid rgba(248, 250, 252, 0.08);
@@ -52,20 +55,20 @@
       margin-top: 3rem;
       display: flex;
       gap: 2.5rem;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
-    
+
     .glass-metric {
       flex: 1;
       border-right: 1px solid rgba(248, 250, 252, 0.08);
       padding-right: 2.5rem;
     }
-    
+
     .glass-metric:last-child {
       border-right: none;
       padding-right: 0;
     }
-    
+
     .glass-metric-val {
       font-family: 'Inter', sans-serif;
       font-size: 2.25rem;
@@ -74,14 +77,14 @@
       line-height: 1.1;
       margin-bottom: 0.25rem;
     }
-    
+
     .glass-metric-label {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-light-muted);
     }
-    
+
     /* Ecosystem Blueprint Styles */
     .blueprint-section {
       background: #0b0e14;
@@ -89,20 +92,20 @@
       border-bottom: 1px solid rgba(248, 250, 252, 0.05);
       padding: 140px 0;
     }
-    
+
     .blueprint-diagram {
       display: grid;
       grid-template-columns: 1.2fr 1.8fr;
       gap: 6rem;
       align-items: center;
     }
-    
+
     .blueprint-card-list {
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
-    
+
     .blueprint-card-item {
       background: rgba(248, 250, 252, 0.01);
       border: 1px solid rgba(248, 250, 252, 0.05);
@@ -113,13 +116,13 @@
       transition: all var(--transition-fast);
       text-align: left;
     }
-    
+
     .blueprint-card-item:hover {
       background: rgba(91, 95, 239, 0.03);
       border-color: rgba(91, 95, 239, 0.2);
       transform: translateX(8px);
     }
-    
+
     .blueprint-item-num {
       width: 36px;
       height: 36px;
@@ -134,21 +137,21 @@
       font-size: 0.95rem;
       flex-shrink: 0;
     }
-    
+
     .blueprint-item-title {
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--text-light);
       margin-bottom: 0.5rem;
     }
-    
+
     .blueprint-item-desc {
       font-size: 0.9rem;
       color: var(--text-light-muted);
       line-height: 1.6;
       margin-bottom: 0;
     }
-    
+
     /* Interactive spec tags */
     .spec-grid-premium {
       display: grid;
@@ -156,7 +159,7 @@
       gap: 2.5rem;
       margin-top: 4rem;
     }
-    
+
     .spec-card-premium {
       background: rgba(248, 250, 252, 0.02);
       border: 1px solid rgba(248, 250, 252, 0.05);
@@ -164,13 +167,13 @@
       padding: 3rem 2.5rem;
       text-align: left;
     }
-    
+
     .spec-card-icon {
       color: var(--accent);
       margin-bottom: 2rem;
       display: flex;
     }
-    
+
     .spec-card-title {
       font-size: 1.35rem;
       font-weight: 700;
@@ -178,49 +181,53 @@
       border-bottom: 1px solid rgba(248, 250, 252, 0.08);
       padding-bottom: 1rem;
     }
-    
+
     .spec-detail-list {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
     }
-    
+
     .spec-detail-row {
       display: flex;
       justify-content: space-between;
       font-size: 0.9rem;
     }
-    
+
     .spec-detail-label {
       color: var(--text-light-muted);
     }
-    
+
     .spec-detail-value {
       font-weight: 600;
       color: var(--text-light);
       text-align: right;
     }
-    
+
     @media (max-width: 1024px) {
       .blueprint-diagram {
         grid-template-columns: 1fr;
         gap: 4rem;
       }
+
       .spec-grid-premium {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+
       .hero-glass-card {
         flex-direction: column;
         gap: 1.5rem;
         padding: 2rem;
       }
+
       .glass-metric {
         border-right: none;
         border-bottom: 1px solid rgba(248, 250, 252, 0.08);
         padding-right: 0;
         padding-bottom: 1.5rem;
       }
+
       .glass-metric:last-child {
         border-bottom: none;
         padding-bottom: 0;
@@ -228,22 +235,27 @@
     }
   </style>
 </head>
+
 <body class="dark-theme">
 
   <!-- HEADER -->
-  <header style="position: absolute; top: 0; left: 0; width: 100%; z-index: 100; background: transparent !important; border: none;">
+  <header
+    style="position: absolute; top: 0; left: 0; width: 100%; z-index: 100; background: transparent !important; border: none;">
     <div class="container nav-container">
       <a href="/" class="logo">
         <img src="/assets/images/logo.svg" alt="EBEECHARGE" class="logo-img">
       </a>
-      
+
       <nav>
         <ul class="nav-links">
-          
+
           <li class="dropdown">
             <span class="dropdown-trigger">
               Products
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </span>
             <div class="dropdown-menu">
               <a href="/products/smart-db/" class="dropdown-item">
@@ -262,7 +274,8 @@
           </li>
           <li><a href="/about/">About</a></li>
           <li><a href="/contact/">Contact</a></li>
-          <li><a href="/demo/" class="btn btn-primary" style="padding: 0.5rem 1.25rem; border: none;">Request Demo</a></li>
+          <li><a href="/demo/" class="btn btn-primary" style="padding: 0.5rem 1.25rem; border: none;">Request Demo</a>
+          </li>
         </ul>
       </nav>
 
@@ -275,31 +288,33 @@
   </header>
 
   <!-- PRODUCT LAUNCH HERO -->
-  <section class="product-chapter sec-dark" style="min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; background-image: url('/assets/dbhero.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <section class="product-chapter sec-dark"
+    style="min-height: 100vh; display: flex; align-items: center; padding-top: 100px; position: relative; background-image: url('/assets/dbhero.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <!-- Vignette & Left Gradient Overlay for text legibility -->
-    <div style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 20%, rgba(11, 14, 20, 0.7) 120%), linear-gradient(to right, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.5) 45%, transparent 100%); z-index: 1;"></div>
-    
+    <div
+      style="position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at center, transparent 20%, rgba(11, 14, 20, 0.7) 120%), linear-gradient(to right, rgba(11, 14, 20, 0.95) 0%, rgba(11, 14, 20, 0.5) 45%, transparent 100%); z-index: 1;">
+    </div>
+
     <div class="hero-glow-container" style="z-index: 0; left: 10%; top: 50%;">
       <div class="hero-glow-radial"></div>
     </div>
-    
+
     <div class="container" style="z-index: 2; position: relative; width: 100%;">
       <div style="max-width: 700px; margin-top: 2rem;">
-        <h1 class="chapter-title" style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.1; text-align: left; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3.5rem, 7vw, 5rem); letter-spacing: -0.02em;">SMART DB</h1>
-        
-        <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">The intelligent heart of your EV charging network.</p>
-        
-        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem;">
-          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">Grid-Safe Infrastructure</span>
-          <span style="color: var(--primary);">•</span>
-          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">Internet Connected</span>
-          <span style="color: var(--primary);">•</span>
-          <span style="color: rgba(248, 250, 252, 0.75); font-size: 1rem; font-weight: 500;">OCPP 1.6J / 2.0.1</span>
-        </div>
+        <h1 class="chapter-title"
+          style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.1; text-align: left; text-shadow: 0 10px 40px rgba(0,0,0,0.8); font-size: clamp(3.5rem, 7vw, 5rem); letter-spacing: -0.02em;">
+          SMART DB</h1>
+
+        <p
+          style="color: rgba(248, 250, 252, 0.9); font-size: 1.25rem; font-weight: 500; margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+          The intelligent heart of your EV charging network.</p>
 
         <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
-          <a href="/demo/?product=smart-db" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Demo</a>
-          <a href="#how-it-works" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); color: white; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); transition: all 0.3s ease;">Learn More</a>
+          <a href="/demo/?product=smart-db" class="btn btn-primary"
+            style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Demo</a>
+          <a href="#how-it-works" class="btn btn-outline"
+            style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); color: white; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); transition: all 0.3s ease;">Learn
+            More</a>
         </div>
       </div>
     </div>
@@ -308,252 +323,156 @@
   <!-- SECTION: Key Features (Card Style) -->
   <section class="sec-light" style="padding: 60px 0;">
     <div class="container" style="max-width: 1500px;">
-      <div style="background-image: url('/assets/images/smart_db_garage.png'); background-size: cover; background-position: right center; background-repeat: no-repeat; border-radius: 16px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; flex-wrap: wrap; min-height: 560px;">
-        
+      <div
+        style="background-image: url('/assets/images/smart_db_garage.png'); background-size: cover; background-position: right center; background-repeat: no-repeat; border-radius: 16px; display: flex; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; flex-wrap: wrap; min-height: 560px;">
+
         <!-- Gradient Overlay for Left Content -->
-        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0.85) 45%, rgba(15,23,42,0) 75%); z-index: 1;"></div>
-        
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,23,42,0.98) 0%, rgba(15,23,42,0.85) 45%, rgba(15,23,42,0) 75%); z-index: 1;">
+        </div>
+
         <!-- Left Content -->
         <div style="padding: 5rem 4rem; flex: 1 1 55%; z-index: 2; position: relative;">
           <h2 style="color: #ffffff; font-size: 1.75rem; margin-bottom: 3.5rem; font-weight: 600;">Why Buy Smart DB</h2>
-          
+
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem 2rem;">
             <!-- Feature 1 -->
             <div style="display: flex; align-items: center; gap: 1.25rem;">
-              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+              <div
+                style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M12 8v4"></path>
+                  <path d="M12 16h.01"></path>
+                </svg>
               </div>
-              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Electrical Safety Protections</span>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Electrical Safety
+                Protections</span>
             </div>
             <!-- Feature 2 -->
             <div style="display: flex; align-items: center; gap: 1.25rem;">
-              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+              <div
+                style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
               </div>
-              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Internet Connected DB</span>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Internet Connected
+                DB</span>
             </div>
             <!-- Feature 3 -->
             <div style="display: flex; align-items: center; gap: 1.25rem;">
-              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              <div
+                style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
               </div>
-              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Intelligent Load Balancing</span>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Intelligent Load
+                Balancing</span>
             </div>
             <!-- Feature 4 -->
             <div style="display: flex; align-items: center; gap: 1.25rem;">
-              <div style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              <div
+                style="width: 54px; height: 54px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; align-items: center; color: #fff; flex-shrink: 0; backdrop-filter: blur(4px);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                  <rect x="9" y="9" width="6" height="6"></rect>
+                  <line x1="9" y1="1" x2="9" y2="4"></line>
+                  <line x1="15" y1="1" x2="15" y2="4"></line>
+                  <line x1="9" y1="20" x2="9" y2="23"></line>
+                  <line x1="15" y1="20" x2="15" y2="23"></line>
+                  <line x1="20" y1="9" x2="23" y2="9"></line>
+                  <line x1="20" y1="14" x2="23" y2="14"></line>
+                  <line x1="1" y1="9" x2="4" y2="9"></line>
+                  <line x1="1" y1="14" x2="4" y2="14"></line>
+                </svg>
               </div>
-              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Seamless QR Payments</span>
+              <span style="color: #e2e8f0; font-size: 1rem; font-weight: 500; line-height: 1.4;">Seamless QR
+                Payments</span>
             </div>
           </div>
         </div>
-        
+
         <!-- Right Content (Empty to let background show through) -->
         <div style="flex: 1 1 45%; z-index: 2;"></div>
       </div>
     </div>
   </section>
 
-  <!-- BLUEPRINT LAYER: How it Integrates (Deep Dark Mode Blueprint) -->
-  <section class="blueprint-section sec-dark" style="position: relative; padding: 60px 0;">
-    <button id="openSpecsModalBtn" class="btn btn-outline" style="position: absolute; top: 40px; right: 80px; z-index: 10; border: 1px solid rgba(255,255,255,0.2); color: white; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); padding: 0.8rem 1.75rem; font-size: 1.05rem; font-weight: 600; border-radius: var(--border-radius-sm); cursor: pointer; transition: background 0.2s;">View Specifications</button>
-    <div class="container" style="display: flex; justify-content: center; align-items: center; width: 100%;">
-      <style>
-        .svg-motion-container { width: 100%; max-width: 1400px; margin: 0 auto; overflow: visible; padding: 2rem 0; }
-        @keyframes flow { to { stroke-dashoffset: -100; } }
-        @keyframes pulse {
-          0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 2px #b6b9ff); }
-          50% { opacity: 1; filter: drop-shadow(0 0 10px #b6b9ff); }
-        }
-        .wire-base { fill: none; stroke: #4c1d95; stroke-width: 2; }
-        .energy-flow {
-          fill: none; stroke: #a78bfa; stroke-width: 3; stroke-linecap: round;
-          stroke-dasharray: 8 60; animation: flow 2s linear infinite;
-          filter: drop-shadow(0 0 6px #a78bfa);
-        }
-        .flow-1 { animation-delay: 0s; }
-        .flow-2 { animation-delay: -0.4s; }
-        .flow-3 { animation-delay: -0.8s; }
-        .node-glow { fill: #a78bfa; animation: pulse 2s ease-in-out infinite; }
-        .car-outline { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 1; }
-        .car-body { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1.5; }
-        .charge-icon { stroke: #a78bfa; fill: none; stroke-width: 1.5; }
-      </style>
+  <!-- SECTION: Technical Details -->
+  <section class="technical-details-section sec-dark" style="padding: 100px 0; background: #0b0e14; border-top: 1px solid rgba(248, 250, 252, 0.05); border-bottom: 1px solid rgba(248, 250, 252, 0.05);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-subtitle" style="color: var(--primary);">Technical details</span>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-light);">Smart DB System Specifications</h2>
+        <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">Comprehensive electrical
+          parameters engineered to meet Indian grid guidelines.</p>
+      </div>
 
-      <div class="svg-motion-container">
-        <svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
-          
-          <!-- WIRES (Base) -->
-          <path id="feed" class="wire-base" d="M 500 0 L 500 120"/>
-          
-          <path id="wire-L1" class="wire-base" d="M 410 160 L 130 160 Q 110 160 110 180 L 110 300"/>
-          <path id="wire-L2" class="wire-base" d="M 410 180 L 240 180 Q 220 180 220 200 L 220 300"/>
-          <path id="wire-L3" class="wire-base" d="M 410 200 L 350 200 Q 330 200 330 220 L 330 300"/>
-          
-          <path id="wire-R1" class="wire-base" d="M 590 160 L 890 160 Q 910 160 910 180 L 910 300"/>
-          <path id="wire-R2" class="wire-base" d="M 590 180 L 760 180 Q 780 180 780 200 L 780 300"/>
-          <path id="wire-R3" class="wire-base" d="M 590 200 L 650 200 Q 670 200 670 220 L 670 300"/>
+      <div class="spec-grid-premium">
+        <!-- Card 1: Electrical -->
+        <div class="spec-card-premium">
+          <div class="spec-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <h3 class="spec-card-title" style="color: var(--text-light);">Power Parameters</h3>
+          <div class="spec-detail-list">
+            <div class="spec-detail-row"><span class="spec-detail-label">Input Voltage</span><span
+                class="spec-detail-value">3-Phase 415V AC ±15%</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Frequency</span><span
+                class="spec-detail-value">50 Hz</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Max Input Draw</span><span
+                class="spec-detail-value">125A Max</span></div>
+          </div>
+        </div>
 
-          <!-- WIRES (Energy Flow) -->
-          <path class="energy-flow flow-1" d="M 500 0 L 500 120"/>
-          
-          <path class="energy-flow flow-1" d="M 410 160 L 130 160 Q 110 160 110 180 L 110 300"/>
-          <path class="energy-flow flow-2" d="M 410 180 L 240 180 Q 220 180 220 200 L 220 300"/>
-          <path class="energy-flow flow-3" d="M 410 200 L 350 200 Q 330 200 330 220 L 330 300"/>
-          
-          <path class="energy-flow flow-1" d="M 590 160 L 890 160 Q 910 160 910 180 L 910 300"/>
-          <path class="energy-flow flow-2" d="M 590 180 L 760 180 Q 780 180 780 200 L 780 300"/>
-          <path class="energy-flow flow-3" d="M 590 200 L 650 200 Q 670 200 670 220 L 670 300"/>
+        <!-- Card 2: Loops & Safety -->
+        <div class="spec-card-premium">
+          <div class="spec-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h3 class="spec-card-title" style="color: var(--text-light);">Safety & Output</h3>
+          <div class="spec-detail-list">
+            <div class="spec-detail-row"><span class="spec-detail-label">Loops Supported</span><span
+                class="spec-detail-value">Up to 6 Simultaneous</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Response Time</span><span
+                class="spec-detail-value">5 Milliseconds</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Protection</span><span
+                class="spec-detail-value">Class II SPD, RCCB</span></div>
+          </div>
+        </div>
 
-          <!-- CONNECTION POINTS (Glowing Dots) -->
-          <circle cx="500" cy="120" r="3" class="node-glow"/>
-          <circle cx="110" cy="300" r="3" class="node-glow"/>
-          <circle cx="220" cy="300" r="3" class="node-glow"/>
-          <circle cx="330" cy="300" r="3" class="node-glow"/>
-          <circle cx="670" cy="300" r="3" class="node-glow"/>
-          <circle cx="780" cy="300" r="3" class="node-glow"/>
-          <circle cx="910" cy="300" r="3" class="node-glow"/>
-
-          <!-- CENTRAL SMART DB UNIT -->
-          <!-- Glow behind the box -->
-          <rect x="410" y="120" width="180" height="160" rx="8" fill="none" stroke="#a78bfa" stroke-width="1" filter="drop-shadow(0 0 15px rgba(167, 139, 250, 0.4))"/>
-          <rect x="410" y="120" width="180" height="160" rx="8" fill="#0b0e14" stroke="rgba(255,255,255,0.2)"/>
-          
-          <!-- Text Logo -->
-          <g transform="translate(450, 195)">
-            <text x="-5" y="0" font-family="Inter, sans-serif" font-size="42" font-weight="500" fill="#ffffff" letter-spacing="-1">ebee</text>
-            <text x="40" y="22" font-family="Inter, sans-serif" font-size="14" font-weight="400" fill="#a78bfa">charge</text>
-          </g>
-
-          <!-- 6 Sockets & Cars -->
-          <g transform="translate(110, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <g transform="translate(220, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <g transform="translate(330, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <g transform="translate(670, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <g transform="translate(780, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <g transform="translate(910, 300)">
-            <rect x="-15" y="0" width="30" height="35" rx="4" fill="#0f172a" stroke="#fff" stroke-width="1.5"/>
-            <circle cx="-5" cy="12" r="1.5" fill="#fff"/><circle cx="5" cy="12" r="1.5" fill="#fff"/><rect x="-4" y="22" width="8" height="2" fill="#fff"/>
-            <path d="M 0 35 L 0 60" class="wire-base"/>
-            <image href="/assets/images/ev_car_top.png" x="-45" y="55" width="90" height="130" style="mix-blend-mode: screen; opacity: 0.75; filter: grayscale(100%) contrast(1.2);" />
-            <circle cx="28" cy="120" r="12" fill="#0b0e14" class="charge-icon"/><path d="M 28 114 L 24 121 L 28 121 L 28 126 L 32 119 L 28 119 Z" fill="#a78bfa"/>
-          </g>
-
-          <!-- ANNOTATIONS -->
-          
-          <!-- Annotation: Smart DB Callout -->
-          <path d="M 640 85 C 620 85 610 120 595 140" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <circle cx="595" cy="140" r="3" fill="#a78bfa"/>
-          <text x="650" y="90" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a78bfa" letter-spacing="1">SMART DB</text>
-
-          <!-- Annotation: 6 Parking Bays Bracket -->
-          <path d="M 110 460 L 110 470 Q 110 480 120 480 L 490 480 Q 500 480 500 490 Q 500 480 510 480 L 900 480 Q 910 480 910 470 L 910 460" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-          <text x="500" y="520" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#a78bfa" letter-spacing="2" text-anchor="middle">6 PARKING BAYS</text>
-
-          <!-- Annotation: The Structure -->
-          <text x="20" y="520" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="3">THE STRUCTURE</text>
-
-        </svg>
+        <!-- Card 3: Casing & Telecom -->
+        <div class="spec-card-premium">
+          <div class="spec-card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0z" />
+              <path d="M12 2v20" />
+              <path d="M2 12h20" />
+            </svg>
+          </div>
+          <h3 class="spec-card-title" style="color: var(--text-light);">Casing & Sync</h3>
+          <div class="spec-detail-list">
+            <div class="spec-detail-row"><span class="spec-detail-label">Ingress Rating</span><span
+                class="spec-detail-value">IP65 / IK10 Weather</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Connectivity</span><span
+                class="spec-detail-value">4G LTE eSIM, RJ45</span></div>
+            <div class="spec-detail-row"><span class="spec-detail-label">Protocol</span><span
+                class="spec-detail-value">OCPP 1.6J / 2.0.1</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-
-
-  <!-- Specs Modal -->
-  <div id="specsModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; justify-content: center; align-items: center; padding: 2rem;">
-    <div style="background: #0b0e14; border: 1px solid rgba(248,250,252,0.1); border-radius: var(--border-radius-lg); max-width: 1000px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative;">
-      
-      <button id="closeSpecsModalBtn" style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; width: 40px; height: 40px; color: var(--text-light-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-
-      <div style="padding: 4rem 3rem;">
-        <div class="text-center">
-          <span class="section-subtitle" style="color: var(--primary);">Technical details</span>
-          <h2 style="margin-bottom: 1.5rem; color: var(--text-light);">Smart DB System Specifications</h2>
-          <p style="color: var(--text-light-muted); max-width: 600px; margin: 0 auto 4rem;">Comprehensive electrical parameters engineered to meet Indian grid guidelines.</p>
-        </div>
-
-        <div class="spec-grid-premium">
-          <!-- Card 1: Electrical -->
-          <div class="spec-card-premium">
-            <div class="spec-card-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3 class="spec-card-title" style="color: var(--text-light);">Power Parameters</h3>
-            <div class="spec-detail-list">
-              <div class="spec-detail-row"><span class="spec-detail-label">Input Voltage</span><span class="spec-detail-value">3-Phase 415V AC ±15%</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Frequency</span><span class="spec-detail-value">50 Hz</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Max Input Draw</span><span class="spec-detail-value">125A Max</span></div>
-            </div>
-          </div>
-
-          <!-- Card 2: Loops & Safety -->
-          <div class="spec-card-premium">
-            <div class="spec-card-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <h3 class="spec-card-title" style="color: var(--text-light);">Safety & Output</h3>
-            <div class="spec-detail-list">
-              <div class="spec-detail-row"><span class="spec-detail-label">Loops Supported</span><span class="spec-detail-value">Up to 6 Simultaneous</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Response Time</span><span class="spec-detail-value">5 Milliseconds</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Protection</span><span class="spec-detail-value">Class II SPD, RCCB</span></div>
-            </div>
-          </div>
-
-          <!-- Card 3: Casing & Telecom -->
-          <div class="spec-card-premium">
-            <div class="spec-card-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0z"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
-            </div>
-            <h3 class="spec-card-title" style="color: var(--text-light);">Casing & Sync</h3>
-            <div class="spec-detail-list">
-              <div class="spec-detail-row"><span class="spec-detail-label">Ingress Rating</span><span class="spec-detail-value">IP65 / IK10 Weather</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Connectivity</span><span class="spec-detail-value">4G LTE eSIM, RJ45</span></div>
-              <div class="spec-detail-row"><span class="spec-detail-label">Protocol</span><span class="spec-detail-value">OCPP 1.6J / 2.0.1</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- SECTION: How it Works (Light Mode Wavy Flow) -->
   <section style="padding: 100px 0 50px 0; background: #ffffff; overflow: hidden; position: relative;">
@@ -567,6 +486,7 @@
         padding: 3rem 1.5rem 0;
         gap: 1.5rem;
       }
+
       .hw-wavy-step {
         flex: 1;
         position: relative;
@@ -575,9 +495,11 @@
         flex-direction: column;
         align-items: center;
       }
+
       .hw-wavy-step:nth-child(even) {
         margin-top: 60px;
       }
+
       .hw-wavy-icon {
         width: 72px;
         height: 72px;
@@ -591,20 +513,23 @@
         position: relative;
         z-index: 2;
         border: 2px solid #ffffff;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
+
       .hw-wavy-title {
         color: #111827;
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: 0.75rem;
       }
+
       .hw-wavy-desc {
         color: #4b5563;
         font-size: 0.9rem;
         line-height: 1.5;
         margin: 0;
       }
+
       .hw-wavy-connector {
         position: absolute;
         top: 36px;
@@ -614,6 +539,7 @@
         z-index: 1;
         pointer-events: none;
       }
+
       @media (max-width: 1024px) {
         .hw-wavy-container {
           flex-direction: column;
@@ -621,27 +547,39 @@
           gap: 3rem;
           padding-top: 1rem;
         }
-        .hw-wavy-step:nth-child(even) { margin-top: 0; }
-        .hw-wavy-connector { display: none; }
+
+        .hw-wavy-step:nth-child(even) {
+          margin-top: 0;
+        }
+
+        .hw-wavy-connector {
+          display: none;
+        }
       }
     </style>
 
     <div class="container text-center" style="margin-bottom: 2rem;">
-      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; text-transform: uppercase;">How It <span style="color: var(--primary);">Works</span></h2>
+      <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; text-transform: uppercase;">How It <span
+          style="color: var(--primary);">Works</span></h2>
       <p style="color: #4b5563; font-size: 1.15rem; max-width: 800px; margin: 1.5rem auto 0; line-height: 1.6;">
-        Smart DB is the intelligent heart of your EV charging network.<br>It connects, controls and optimizes every charging point seamlessly.
+        Smart DB is the intelligent heart of your EV charging network.<br>It connects, controls and optimizes every
+        charging point seamlessly.
       </p>
     </div>
 
     <div class="hw-wavy-container">
-      
+
       <!-- Step 1 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a2 2 0 00-1.6-.8H5a2 2 0 00-2 2v7.4c0 1.1.9 2 2 2h2m10 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0m-8 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a2 2 0 00-1.6-.8H5a2 2 0 00-2 2v7.4c0 1.1.9 2 2 2h2m10 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0m-8 0a2 2 0 11-4 0m4 0a2 2 0 11-4 0" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">User Arrives</h3>
         <p class="hw-wavy-desc">User parks the vehicle and plugs in the charger to the 16A socket.</p>
@@ -650,10 +588,14 @@
       <!-- Step 2 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+            <line x1="12" y1="18" x2="12.01" y2="18" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Initiate Charging</h3>
         <p class="hw-wavy-desc">User scans the QR code / opens the app and selects the bay.</p>
@@ -662,10 +604,14 @@
       <!-- Step 3 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Make Payment</h3>
         <p class="hw-wavy-desc">User makes the payment through preferred payment mode.</p>
@@ -674,10 +620,14 @@
       <!-- Step 4 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 16.2A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.3"/><polyline points="9 16 12 19 20 11"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 16.2A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.3" />
+            <polyline points="9 16 12 19 20 11" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Payment Verification</h3>
         <p class="hw-wavy-desc">Payment is verified securely on the backend server.</p>
@@ -686,10 +636,16 @@
       <!-- Step 5 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 0 C 40 0, 60 100, 100 100" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12v.01"/><path d="M17 12v.01"/><path d="M7 12v.01"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="6" width="20" height="12" rx="2" />
+            <path d="M12 12v.01" />
+            <path d="M17 12v.01" />
+            <path d="M7 12v.01" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Command to Smart DB</h3>
         <p class="hw-wavy-desc">Backend sends command to Smart DB to activate the selected 16A socket.</p>
@@ -698,10 +654,13 @@
       <!-- Step 6 -->
       <div class="hw-wavy-step">
         <svg class="hw-wavy-connector" style="top: -24px;" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2" stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
+          <path d="M 0 100 C 40 100, 60 0, 100 0" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="2"
+            stroke-dasharray="6 6" vector-effect="non-scaling-stroke" />
         </svg>
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Current Allowed</h3>
         <p class="hw-wavy-desc">Smart DB allows electricity to the socket and charging starts.</p>
@@ -710,238 +669,359 @@
       <!-- Step 7 -->
       <div class="hw-wavy-step">
         <div class="hw-wavy-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
         </div>
         <h3 class="hw-wavy-title">Load Distribution</h3>
-        <p class="hw-wavy-desc">If multiple cars are charging, Smart DB intelligently distributes available current across all bays.</p>
+        <p class="hw-wavy-desc">If multiple cars are charging, Smart DB intelligently distributes available current
+          across all bays.</p>
       </div>
 
     </div>
   </section>
 
   <!-- SECTION: WhatsApp Charging Experience (Warm White) -->
-  <section class="whatsapp-charge-section" style="background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05); padding-top: 50px; padding-bottom: 80px;">
+  <section class="whatsapp-charge-section"
+    style="background-color: var(--bg-light); border-top: 1px solid rgba(15, 23, 42, 0.05); padding-top: 50px; padding-bottom: 80px;">
     <div class="container">
       <div class="whatsapp-grid">
-        
+
         <!-- Left Side: Content & Steps -->
         <div class="whatsapp-content">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary); background: rgba(91, 95, 239, 0.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block;">User Experience</span>
+          <span
+            style="font-size: 0.85rem; font-weight: 700; color: var(--primary); background: rgba(91, 95, 239, 0.08); padding: 6px 14px; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em; display: inline-block;">User
+            Experience</span>
           <h2 class="whatsapp-title">Charge with the WhatsApp</h2>
-          <p style="font-size: 1.1rem; color: var(--text-dark-muted); line-height: 1.6; margin-bottom: 2.5rem; max-width: 600px;">
-            No app downloads required. No registration barriers. Scan the QR code at your bay to initiate, pay, and monitor your charging session directly inside WhatsApp.
+          <p
+            style="font-size: 1.1rem; color: var(--text-dark-muted); line-height: 1.6; margin-bottom: 2.5rem; max-width: 600px;">
+            No app downloads required. No registration barriers. Scan the QR code at your bay to initiate, pay, and
+            monitor your charging session directly inside WhatsApp.
           </p>
-          
+
           <span class="whatsapp-subtitle-orange">Three Easy Steps</span>
-          
+
           <div class="whatsapp-steps">
-            
+
             <!-- Step 1 -->
             <div class="whatsapp-step-item">
               <div class="whatsapp-step-num">1</div>
               <div>
                 <h4 class="whatsapp-step-title">open camera and scan qr</h4>
-                <p class="whatsapp-step-desc">Scan the QR code printed on the charger node casing to open the WhatsApp chat screen.</p>
+                <p class="whatsapp-step-desc">Scan the QR code printed on the charger node casing to open the WhatsApp
+                  chat screen.</p>
               </div>
             </div>
-            
+
             <!-- Step 2 -->
             <div class="whatsapp-step-item">
               <div class="whatsapp-step-num">2</div>
               <div>
                 <h4 class="whatsapp-step-title">select available bay</h4>
-                <p class="whatsapp-step-desc">Confirm your charging slot inside the chat interface to lock the bay for your session.</p>
+                <p class="whatsapp-step-desc">Confirm your charging slot inside the chat interface to lock the bay for
+                  your session.</p>
               </div>
             </div>
-            
+
             <!-- Step 3 -->
             <div class="whatsapp-step-item">
               <div class="whatsapp-step-num">3</div>
               <div>
                 <h4 class="whatsapp-step-title">plug, pay and go</h4>
-                <p class="whatsapp-step-desc">Connect the charging cable, complete your payment via UPI or credit card, and monitor live status updates directly.</p>
+                <p class="whatsapp-step-desc">Connect the charging cable, complete your payment via UPI or credit card,
+                  and monitor live status updates directly.</p>
               </div>
             </div>
-            
+
           </div>
-          
+
           <!-- See Stimulation Button -->
           <div style="margin-top: 2rem;">
-            <button id="see-stimulation-btn" class="btn btn-primary" style="padding: 1rem 2.25rem; font-size: 1.05rem; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: var(--border-radius-md); background-color: var(--primary); color: white; transition: background-color var(--transition-fast);">
+            <button id="see-stimulation-btn" class="btn btn-primary"
+              style="padding: 1rem 2.25rem; font-size: 1.05rem; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; border: none; cursor: pointer; border-radius: var(--border-radius-md); background-color: var(--primary); color: white; transition: background-color var(--transition-fast);">
               See Stimulation
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
             </button>
           </div>
         </div>
-        
+
         <!-- Right Side: Phone Visuals -->
         <div class="whatsapp-visual-wrapper">
           <div class="whatsapp-bolt-bg"></div>
-          
+
           <!-- iPhone Side Buttons Mockup -->
           <!-- Left: Action Button -->
-          <div style="position: absolute; left: calc(50% - 158px); top: 110px; width: 3px; height: 18px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div
+            style="position: absolute; left: calc(50% - 158px); top: 110px; width: 3px; height: 18px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);">
+          </div>
           <!-- Left: Volume Up -->
-          <div style="position: absolute; left: calc(50% - 158px); top: 140px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div
+            style="position: absolute; left: calc(50% - 158px); top: 140px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);">
+          </div>
           <!-- Left: Volume Down -->
-          <div style="position: absolute; left: calc(50% - 158px); top: 182px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div
+            style="position: absolute; left: calc(50% - 158px); top: 182px; width: 3px; height: 32px; background: #0f172a; border-radius: 2px 0 0 2px; z-index: 2; box-shadow: -1px 0 2px rgba(0,0,0,0.2);">
+          </div>
           <!-- Right: Power Button -->
-          <div style="position: absolute; left: calc(50% + 155px); top: 155px; width: 3px; height: 50px; background: #0f172a; border-radius: 0 2px 2px 0; z-index: 2; box-shadow: 1px 0 2px rgba(0,0,0,0.2);"></div>
+          <div
+            style="position: absolute; left: calc(50% + 155px); top: 155px; width: 3px; height: 50px; background: #0f172a; border-radius: 0 2px 2px 0; z-index: 2; box-shadow: 1px 0 2px rgba(0,0,0,0.2);">
+          </div>
 
           <!-- Front Phone -->
           <div class="whatsapp-phone-front">
             <!-- Glossy Glass Reflection Overlay -->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%); pointer-events: none; z-index: 11;"></div>
+            <div
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%); pointer-events: none; z-index: 11;">
+            </div>
 
             <!-- Merged Status Bar + Header -->
-            <div style="background: #075E54; display: flex; flex-direction: column; flex-shrink: 0; position: relative; z-index: 10;">
+            <div
+              style="background: #075E54; display: flex; flex-direction: column; flex-shrink: 0; position: relative; z-index: 10;">
               <!-- iOS Status Bar -->
-              <div style="height: 30px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; color: white; font-size: 0.62rem; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; select-none: none; pointer-events: none;">
+              <div
+                style="height: 30px; padding: 0 16px; display: flex; justify-content: space-between; align-items: center; color: white; font-size: 0.62rem; font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; select-none: none; pointer-events: none;">
                 <span style="margin-top: 2px;">9:41</span>
                 <!-- Dynamic Island Spacer (centered) -->
                 <div style="width: 72px; height: 18px; visibility: hidden;"></div>
                 <div style="display: flex; gap: 4px; align-items: center; margin-top: 2px;">
                   <!-- Signal icon -->
-                  <svg width="12" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M2 22h20V2H2v20z" opacity="0.3"/><path d="M17 7L2 22h15V7z"/></svg>
+                  <svg width="12" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;">
+                    <path d="M2 22h20V2H2v20z" opacity="0.3" />
+                    <path d="M17 7L2 22h15V7z" />
+                  </svg>
                   <!-- Wifi icon -->
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;"><path d="M12 21l-12-12c4-4 9-6 12-6s8 2 12 6l-12 12z"/></svg>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.95;">
+                    <path d="M12 21l-12-12c4-4 9-6 12-6s8 2 12 6l-12 12z" />
+                  </svg>
                   <!-- Battery icon -->
-                  <svg width="16" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-top: 1px; opacity: 0.95;"><rect x="1" y="4" width="18" height="16" rx="2"/><line x1="23" y1="10" x2="23" y2="14" stroke-linecap="round"/></svg>
+                  <svg width="16" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    style="margin-top: 1px; opacity: 0.95;">
+                    <rect x="1" y="4" width="18" height="16" rx="2" />
+                    <line x1="23" y1="10" x2="23" y2="14" stroke-linecap="round" />
+                  </svg>
                 </div>
               </div>
-              
+
               <!-- WhatsApp Header Info -->
-              <div class="whatsapp-chat-header" style="height: 56px; padding: 10px 12px 0px 12px; display: flex; align-items: center; gap: 8px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: white; flex-shrink: 0;">EB</div>
+              <div class="whatsapp-chat-header"
+                style="height: 56px; padding: 10px 12px 0px 12px; display: flex; align-items: center; gap: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+                <div
+                  style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: white; flex-shrink: 0;">
+                  EB</div>
                 <div style="display: flex; flex-direction: column; text-align: left; flex-grow: 1;">
-                  <span style="font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; gap: 3px; line-height: 1.2;">
+                  <span
+                    style="font-size: 0.88rem; font-weight: 700; display: flex; align-items: center; gap: 3px; line-height: 1.2;">
                     EBEE Charge
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="#22C55E"><circle cx="12" cy="12" r="10" fill="#22C55E"/><path d="M9 12l2 2 4-4" fill="none" stroke="white" stroke-width="3"/></svg>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="#22C55E">
+                      <circle cx="12" cy="12" r="10" fill="#22C55E" />
+                      <path d="M9 12l2 2 4-4" fill="none" stroke="white" stroke-width="3" />
+                    </svg>
                   </span>
                   <span style="font-size: 0.65rem; opacity: 0.8; line-height: 1;">online</span>
                 </div>
                 <div style="display: flex; gap: 12px; opacity: 0.85; align-items: center;">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="23 7 16 12 23 17 23 7" />
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                  </svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="1.5" />
+                    <circle cx="12" cy="5" r="1.5" />
+                    <circle cx="12" cy="19" r="1.5" />
+                  </svg>
                 </div>
               </div>
             </div>
-            
+
             <!-- Chat Body -->
             <div class="whatsapp-chat-body">
-              <div style="background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%;">
+              <div
+                style="background: rgba(225, 245, 254, 0.95); padding: 5px 10px; border-radius: 8px; text-align: center; font-size: 0.62rem; color: #546e7a; align-self: center; box-shadow: 0 1px 1px rgba(0,0,0,0.05); width: fit-content; max-width: 90%;">
                 Messages are end-to-end encrypted.
               </div>
-              
+
               <!-- Message 1 -->
-              <div style="background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; position: relative;">
+              <div
+                style="background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; position: relative;">
                 Welcome to <strong>EBEE Charge</strong>! ⚡<br>Please select your charging bay to begin:
-                <span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41 AM</span>
+                <span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:41
+                  AM</span>
               </div>
-              
+
               <!-- Quick Replies (Starting State) -->
-              <div style="display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px;">
-                <div class="sim-bay-1" style="background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; font-size: 0.7rem;">
+              <div
+                style="display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px;">
+                <div class="sim-bay-1"
+                  style="background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; font-size: 0.7rem;">
                   Bay 1 (Available)
                 </div>
-                <div class="sim-bay-2" style="background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;">
+                <div class="sim-bay-2"
+                  style="background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;">
                   Bay 2 (Occupied)
                 </div>
               </div>
             </div>
-            
+
             <!-- Input Bar -->
             <div class="whatsapp-chat-input">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-              <div style="flex-grow: 1; background: white; height: 28px; border-radius: 14px; padding: 6px 12px; color: #999; font-size: 0.68rem; text-align: left;">Type a message...</div>
-              <div style="width: 28px; height: 28px; background: #00a884; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+              <div
+                style="flex-grow: 1; background: white; height: 28px; border-radius: 14px; padding: 6px 12px; color: #999; font-size: 0.68rem; text-align: left;">
+                Type a message...</div>
+              <div
+                style="width: 28px; height: 28px; background: #00a884; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.15);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
               </div>
             </div>
 
             <!-- Home Indicator -->
-            <div style="height: 12px; display: flex; justify-content: center; align-items: center; background: #f0f0f0; padding-bottom: 4px; pointer-events: none; z-index: 10; flex-shrink: 0;">
+            <div
+              style="height: 12px; display: flex; justify-content: center; align-items: center; background: #f0f0f0; padding-bottom: 4px; pointer-events: none; z-index: 10; flex-shrink: 0;">
               <div style="width: 60px; height: 3px; background: #000; border-radius: 1.5px; opacity: 0.25;"></div>
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
 
   <!-- SECTION: Traditional Smart Socket VS Central Smart DB (Responsive Card) -->
-  <section class="comparison-section" style="padding: 80px 0; background: #ffffff; text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05);">
+  <section class="comparison-section"
+    style="padding: 80px 0; background: #ffffff; text-align: center; border-top: 1px solid rgba(15, 23, 42, 0.05);">
     <div class="container">
-      
+
       <!-- Section Title -->
       <h2 style="color: #111827; font-size: 2.5rem; font-weight: 700; margin-bottom: 3.5rem; letter-spacing: -0.01em;">
-        Traditional Smart Socket <span style="color: #94a3b8; font-weight: 400;">VS</span> <span style="color: var(--primary);">Smart DB Approach</span>
+        Traditional Smart Socket <span style="color: #94a3b8; font-weight: 400;">VS</span> <span
+          style="color: var(--primary);">Smart DB Approach</span>
       </h2>
-      
+
       <!-- Comparison Card Wrapper -->
-      <div class="comparison-card" style="display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.06); max-width: 1000px; margin: 0 auto;">
-        
+      <div class="comparison-card"
+        style="display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.06); max-width: 1000px; margin: 0 auto;">
+
         <!-- Left Side: Current Approach (Dark) -->
-        <div style="background: var(--bg-dark); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
-          <div style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 0.5rem;">
-            <h3 style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.6); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">Current Approach</h3>
+        <div
+          style="background: var(--bg-dark); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
+          <div
+            style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 0.5rem;">
+            <h3
+              style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.6); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">
+              Current Approach</h3>
           </div>
-          
+
           <!-- Point 1 -->
           <div style="display: flex; gap: 1.25rem; align-items: center;">
-            <div style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.1a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+            <div
+              style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                <path d="M8.53 16.1a6 6 0 0 1 6.95 0" />
+                <circle cx="12" cy="20" r="1" fill="currentColor" />
+              </svg>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Every socket needs its own internet connection</p>
+            <p
+              style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">
+              Every socket needs its own internet connection</p>
           </div>
-          
+
           <!-- Point 2 -->
           <div style="display: flex; gap: 1.25rem; align-items: center;">
-            <div style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <div
+              style="width: 44px; height: 44px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: rgba(255, 255, 255, 0.9);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">High per-bay cost with full smart sockets</p>
+            <p
+              style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: rgba(255, 255, 255, 0.9);">
+              High per-bay cost with full smart sockets</p>
           </div>
         </div>
-        
+
         <!-- Right Side: Smart DB Solution (Purple) -->
-        <div style="background: var(--primary); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
-          <div style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); margin-bottom: 0.5rem;">
-            <h3 style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.9); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">The Smart DB Solution</h3>
+        <div
+          style="background: var(--primary); padding: 3rem 2.5rem; color: #ffffff; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; gap: 2rem;">
+          <div
+            style="padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.15); margin-bottom: 0.5rem;">
+            <h3
+              style="font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.9); margin: 0; text-align: center; font-family: 'Inter', sans-serif;">
+              The Smart DB Solution</h3>
           </div>
-          
+
           <!-- Point 1 -->
           <div style="display: flex; gap: 1.25rem; align-items: center;">
-            <div style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+            <div
+              style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="15" x2="23" y2="15" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="15" x2="4" y2="15" />
+              </svg>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">Intelligence, metering & relay control move entirely into the central DB unit</p>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">Intelligence,
+              metering & relay control move entirely into the central DB unit</p>
           </div>
-          
+
           <!-- Point 2 -->
           <div style="display: flex; gap: 1.25rem; align-items: center;">
-            <div style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <div
+              style="width: 44px; height: 44px; background: rgba(0, 0, 0, 0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #ffffff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                <line x1="6" y1="6" x2="6.01" y2="6" />
+                <line x1="6" y1="18" x2="6.01" y2="18" />
+              </svg>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">One internet connection at the DB means bays need zero connectivity</p>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500; color: #ffffff;">One internet
+              connection at the DB means bays need zero connectivity</p>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
 
   <!-- SECTION: CTA -->
-  <section class="sec-dark" style="background-image: url('/assets/images/smart_db_cta_bg.JPG'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
+  <section class="sec-dark"
+    style="background-image: url('/assets/images/smart_db_cta_bg.JPG'); background-size: cover; background-position: center; padding: 140px 0; position: relative;">
     <!-- Dark overlay for text legibility -->
     <div style="position: absolute; inset: 0; background: rgba(11, 14, 20, 0.65); z-index: 1;"></div>
-    
+
     <div class="container text-center max-w-800" style="position: relative; z-index: 2;">
       <h2 style="color: var(--text-light); margin-bottom: 1rem;">Establish a grid-safe foundation.</h2>
-      <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with an installation engineer to assess your grid limits.</p>
-      <a href="/demo/?product=smart-db" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Grid Assessment</a>
+      <p style="color: rgba(248, 250, 252, 0.9); font-size: 1.15rem; margin-bottom: 2.5rem;">Speak with an installation
+        engineer to assess your grid limits.</p>
+      <a href="/demo/?product=smart-db" class="btn btn-primary"
+        style="padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600;">Request Grid Assessment</a>
     </div>
   </section>
 
@@ -1002,19 +1082,19 @@
   <!-- Scripts -->
   <script type="module" src="/js/main.js"></script>
   <script>
-    document.getElementById('openSpecsModalBtn')?.addEventListener('click', function() {
+    document.getElementById('openSpecsModalBtn')?.addEventListener('click', function () {
       const modal = document.getElementById('specsModal');
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
-    
-    document.getElementById('closeSpecsModalBtn')?.addEventListener('click', function() {
+
+    document.getElementById('closeSpecsModalBtn')?.addEventListener('click', function () {
       const modal = document.getElementById('specsModal');
       modal.style.display = 'none';
       document.body.style.overflow = '';
     });
-    
-    document.getElementById('specsModal')?.addEventListener('click', function(e) {
+
+    document.getElementById('specsModal')?.addEventListener('click', function (e) {
       if (e.target === this) {
         this.style.display = 'none';
         document.body.style.overflow = '';
@@ -1025,12 +1105,26 @@
   <style>
     /* WhatsApp Simulation Keyframes */
     @keyframes sim-bounce {
-      0%, 80%, 100% { transform: scale(0); }
-      40% { transform: scale(1.0); }
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1.0);
+      }
     }
+
     @keyframes sim-spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 
@@ -1039,9 +1133,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       const seeStimulationBtn = document.getElementById('see-stimulation-btn');
       const chatBody = document.querySelector('.whatsapp-chat-body');
-      
+
       if (!chatBody) return;
-      
+
       // Helper: System Message
       const showSystemMsg = (text) => {
         const div = document.createElement('div');
@@ -1054,7 +1148,7 @@
           chatBody.scrollTop = chatBody.scrollHeight;
         }, 50);
       };
-      
+
       // Helper: Typing indicator
       const showTyping = () => {
         const div = document.createElement('div');
@@ -1069,7 +1163,7 @@
         chatBody.scrollTop = chatBody.scrollHeight;
         return div;
       };
-      
+
       // Helper: Incoming message
       const showIncoming = (text, delay = 1000) => {
         return new Promise((resolve) => {
@@ -1089,7 +1183,7 @@
           }, delay);
         });
       };
-      
+
       // Helper: Outgoing message
       const showOutgoing = (text, delay = 500) => {
         return new Promise((resolve) => {
@@ -1107,27 +1201,27 @@
           }, delay);
         });
       };
-      
+
       // Helper: Quick Replies creator
       const showQuickReplies = () => {
         return new Promise((resolve) => {
           const container = document.createElement('div');
           container.style.cssText = 'display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; margin-left: 10px; opacity: 0; transition: opacity 0.3s ease; margin-bottom: 12px;';
-          
+
           const btn1 = document.createElement('div');
           btn1.className = 'sim-bay-1';
           btn1.style.cssText = 'background: #e1f5fe; border: 1px solid #4fc3f7; color: #0288d1; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; cursor: pointer; transition: all 0.2s; font-size: 0.7rem; animation: sim-pulse 2s infinite;';
           btn1.innerText = 'Bay 1 (Available)';
-          
+
           const btn2 = document.createElement('div');
           btn2.className = 'sim-bay-2';
           btn2.style.cssText = 'background: #eceff1; border: 1px solid #b0bec5; color: #78909c; padding: 6px 12px; border-radius: 20px; font-weight: 700; text-align: center; opacity: 0.8; font-size: 0.7rem; cursor: pointer;';
           btn2.innerText = 'Bay 2 (Occupied)';
-          
+
           container.appendChild(btn1);
           container.appendChild(btn2);
           chatBody.appendChild(container);
-          
+
           setTimeout(() => {
             container.style.opacity = '1';
             chatBody.scrollTop = chatBody.scrollHeight;
@@ -1136,46 +1230,46 @@
           }, 50);
         });
       };
-      
+
       // Bind click events on quick replies
       const bindInteractiveListeners = () => {
         const bay1Btn = chatBody.querySelector('.sim-bay-1');
         const bay2Btn = chatBody.querySelector('.sim-bay-2');
-        
+
         if (bay1Btn) {
           bay1Btn.addEventListener('click', async () => {
             const container = bay1Btn.parentElement;
             container.remove();
-            
+
             await showOutgoing('Bay 1 (Available)');
-            await showIncoming('You selected <strong>Bay 1</strong>.<br>Connect your charger and pay below to start:<br>' + 
+            await showIncoming('You selected <strong>Bay 1</strong>.<br>Connect your charger and pay below to start:<br>' +
               '<div style="margin-top: 6px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; border-radius: 6px; display: flex; flex-direction: column; gap: 4px; text-align:left;">' +
-                '<span style="font-weight: 700; color: var(--primary);">Power Bundle (15 kWh)</span>' +
-                '<span style="color: var(--text-dark-muted); font-size: 0.65rem;">Total Amount: ₹150</span>' +
-                '<div class="sim-pay-btn" style="background: #22C55E; color: white; font-weight: 700; text-align: center; padding: 6px; border-radius: 4px; margin-top: 4px; font-size: 0.7rem; cursor: pointer; transition: background 0.2s;">Pay & Start Charging</div>' +
+              '<span style="font-weight: 700; color: var(--primary);">Power Bundle (15 kWh)</span>' +
+              '<span style="color: var(--text-dark-muted); font-size: 0.65rem;">Total Amount: ₹150</span>' +
+              '<div class="sim-pay-btn" style="background: #22C55E; color: white; font-weight: 700; text-align: center; padding: 6px; border-radius: 4px; margin-top: 4px; font-size: 0.7rem; cursor: pointer; transition: background 0.2s;">Pay & Start Charging</div>' +
               '</div>');
-              
+
             const payBtn = chatBody.querySelector('.sim-pay-btn');
             if (payBtn) {
               payBtn.addEventListener('click', () => {
                 if (payBtn.classList.contains('processing')) return;
                 payBtn.classList.add('processing');
-                
+
                 payBtn.style.background = '#8c959f';
                 payBtn.innerHTML = `Processing... <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite;">⚡</span>`;
-                
+
                 setTimeout(async () => {
                   payBtn.style.background = '#15803d';
                   payBtn.innerHTML = `Payment Successful! ✓`;
-                  
+
                   await showIncoming('Payment confirmed! ⚡<br>Initiating charging on <strong>Bay 1</strong>...');
-                  
+
                   const batteryMsgDiv = document.createElement('div');
                   batteryMsgDiv.style.cssText = 'background: white; padding: 8px 10px; border-radius: 0px 8px 8px 8px; max-width: 85%; align-self: flex-start; box-shadow: 0 1px 2px rgba(0,0,0,0.08); text-align: left; margin-bottom: 12px;';
                   batteryMsgDiv.innerHTML = `<strong>Session Active:</strong><br>• Current Rate: 7.2 kW<br>• Energy Delivered: 0.1 kWh<br>• State of Charge: <span class="sim-battery-pct">15%</span> 🔋<span style="display: block; text-align: right; font-size: 0.55rem; color: #999; margin-top: 4px;">09:43 AM</span>`;
                   chatBody.appendChild(batteryMsgDiv);
                   chatBody.scrollTop = chatBody.scrollHeight;
-                  
+
                   let batteryPct = 15;
                   let energyDelivered = 0.1;
                   const interval = setInterval(() => {
@@ -1194,13 +1288,13 @@
                       showIncoming('Your session is active. You will receive a summary when charging finishes! Go ebee! ⚡🔋');
                     }
                   }, 1500);
-                  
+
                 }, 1500);
               });
             }
           });
         }
-        
+
         if (bay2Btn) {
           bay2Btn.addEventListener('click', async () => {
             const container = bay2Btn.parentElement;
@@ -1211,10 +1305,10 @@
           });
         }
       };
-      
+
       // Bind listeners initially on load
       bindInteractiveListeners();
-      
+
       // Handle the Stimulation button click (resets and starts)
       if (seeStimulationBtn) {
         seeStimulationBtn.addEventListener('click', async () => {
@@ -1222,13 +1316,13 @@
           seeStimulationBtn.disabled = true;
           seeStimulationBtn.style.opacity = '0.7';
           seeStimulationBtn.innerHTML = `Interactive Mode Active <span class="spinner" style="display:inline-block; animation: sim-spin 1s linear infinite; margin-left: 5px;">⚡</span>`;
-          
+
           showSystemMsg('Messages are end-to-end encrypted.');
           await new Promise(r => setTimeout(r, 600));
-          
+
           await showIncoming('Welcome to <strong>EBEE Charge</strong>! ⚡<br>Please select your charging bay to begin:');
           await showQuickReplies();
-          
+
           seeStimulationBtn.disabled = false;
           seeStimulationBtn.style.opacity = '1';
           seeStimulationBtn.innerHTML = `Reset Stimulation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`;
@@ -1238,10 +1332,12 @@
   </script>
   <!-- Back to Top Button -->
   <button class="back-to-top" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
       <line x1="12" y1="19" x2="12" y2="5"></line>
       <polyline points="5 12 12 5 19 12"></polyline>
     </svg>
   </button>
 </body>
+
 </html>
