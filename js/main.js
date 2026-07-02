@@ -400,181 +400,32 @@ function setupHeroScrollTransition() {
 }
 
 /**
- * Redesigned section: Infrastructure Challenges sticky scroll, parallax, progress bar, and transition screen
+ * Redesigned section: Infrastructure Challenges vertical hover-expand accordion
  */
 function setupInfrastructureChallenges() {
-  const section = document.querySelector('.infrastructure-challenges-section');
-  const slides = document.querySelectorAll('.challenge-slide-new');
-  const navItems = document.querySelectorAll('.nav-item-new');
-  const navList = document.querySelector('.challenges-nav-list-new');
+  const cards = document.querySelectorAll('.hover-expand-card');
+  if (cards.length === 0) return;
 
-  if (!section || slides.length === 0 || navItems.length === 0) return;
-
-  let scrollTriggers = [];
-  let desktopTimeline = null;
-
-  // Function to set active tab & slide classes
-  const updateActiveSegment = (index) => {
-    navItems.forEach((btn, i) => {
+  const setActiveCard = (index) => {
+    cards.forEach((card, i) => {
       if (i === index) {
-        btn.classList.add('active');
+        card.classList.add('active');
       } else {
-        btn.classList.remove('active');
+        card.classList.remove('active');
       }
     });
-
-    slides.forEach((slide, i) => {
-      if (i === index) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
-    });
-
-    // Scroll mobile horizontal nav to active item if needed
-    if (window.innerWidth <= 1024 && navList) {
-      const activeBtn = navItems[index];
-      if (activeBtn) {
-        const navRect = navList.getBoundingClientRect();
-        const btnRect = activeBtn.getBoundingClientRect();
-        if (btnRect.left < navRect.left || btnRect.right > navRect.right) {
-          navList.scrollTo({
-            left: activeBtn.offsetLeft - 32,
-            behavior: 'smooth'
-          });
-        }
-      }
-    }
   };
 
-  const initAnimations = () => {
-    // Kill existing triggers
-    scrollTriggers.forEach(t => t.kill());
-    scrollTriggers = [];
-    if (desktopTimeline) {
-      desktopTimeline.kill();
-      desktopTimeline = null;
-    }
-
-    // Reset styles
-    gsap.set([slides, navItems], { clearProps: "all" });
-    slides.forEach(slide => {
-      const heading = slide.querySelector('.challenge-heading') || slide.querySelector('.transition-headline-merged');
-      const desc = slide.querySelector('.challenge-desc') || slide.querySelector('.transition-subheadline-merged');
-      const affects = slide.querySelector('.challenge-affects');
-      const img = slide.querySelector('.challenge-image-container img');
-      gsap.set([heading, desc, affects, img, slide].filter(Boolean), { clearProps: "all" });
+  cards.forEach((card, index) => {
+    // Expand on hover
+    card.addEventListener('mouseenter', () => {
+      setActiveCard(index);
     });
 
-    const isDesktop = window.innerWidth > 1024;
-
-    if (isDesktop) {
-      // DESKTOP: Pinned layout with smooth card overlay fade
-      slides.forEach((slide, i) => {
-        gsap.set(slide, {
-          opacity: i === 0 ? 1 : 0,
-          yPercent: 0,
-          zIndex: i + 1
-        });
-      });
-
-      desktopTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: `+=${slides.length * 150}%`,
-          pin: true,
-          scrub: 1, // 1-second smoothing delay for buttery soft scroll interactions
-          anticipatePin: 1,
-          snap: {
-            snapTo: 1 / (slides.length - 1),
-            duration: { min: 0.5, max: 1.0 }, // Calmer, smoother snapping
-            delay: 0.08, // Subtle pause to let scrolling settle
-            ease: 'power2.out' // Clean deceleration curve
-          }
-        }
-      });
-
-      // Construct timeline transitions where subsequent panels fade in directly on top of previous panels
-      const segmentDuration = 2.0;
-      const slideDuration = 1.0; // 50% fade-in, 50% static hold/read time
-
-      for (let i = 0; i < slides.length - 1; i++) {
-        const nextSlide = slides[i + 1];
-        const startOffset = i * segmentDuration;
-
-        // Fade in the next slide on top of the current slide (which remains solid underneath)
-        desktopTimeline.to(nextSlide, {
-          opacity: 1,
-          duration: slideDuration,
-          ease: 'power1.inOut'
-        }, startOffset);
-
-        // Update active nav indicators immediately at the start of the scroll transition
-        desktopTimeline
-          .call(() => {
-            updateActiveSegment(i);
-          }, null, startOffset)
-          .call(() => {
-            updateActiveSegment(i + 1);
-          }, null, startOffset + 0.1);
-      }
-
-      // Handle nav clicks to jump to corresponding timeline position (to the hold state of each slide)
-      navItems.forEach((btn, index) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (desktopTimeline && desktopTimeline.scrollTrigger) {
-            const st = desktopTimeline.scrollTrigger;
-            const totalDuration = (slides.length - 1) * segmentDuration;
-            const targetProgress = (index * segmentDuration) / totalDuration;
-            const targetScroll = st.start + targetProgress * (st.end - st.start);
-            window.scrollTo({
-              top: targetScroll,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-    } else {
-      // MOBILE: Normal vertical scrolling with ScrollSpy to highlight top horizontal nav
-      slides.forEach((slide, index) => {
-        const spyTrigger = ScrollTrigger.create({
-          trigger: slide,
-          start: 'top center+=80',
-          end: 'bottom center+=80',
-          onEnter: () => updateActiveSegment(index),
-          onEnterBack: () => updateActiveSegment(index)
-        });
-        scrollTriggers.push(spyTrigger);
-      });
-
-      // Handle mobile nav clicks to scroll to target element
-      navItems.forEach((btn, index) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetSlide = slides[index];
-          if (targetSlide) {
-            const headerOffset = 140;
-            const elementPosition = targetSlide.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-    }
-  };
-
-  initAnimations();
-
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(initAnimations, 250);
+    // Expand on click/tap
+    card.addEventListener('click', () => {
+      setActiveCard(index);
+    });
   });
 }
 
